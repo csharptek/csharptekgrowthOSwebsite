@@ -81,7 +81,11 @@ async function capturePage(context, requestedUrl, screenshotPath) {
 async function main() {
   const baseUrl = option('base-url', 'https://growthos.csharptek.com').replace(/\/$/, '');
   const parsedBaseUrl = new URL(baseUrl);
-  if (parsedBaseUrl.protocol !== 'https:') throw new Error('Use an HTTPS deployment URL for review captures.');
+  const loopbackHosts = new Set(['localhost', '127.0.0.1', '[::1]']);
+  const localPreview = parsedBaseUrl.protocol === 'http:' && loopbackHosts.has(parsedBaseUrl.hostname);
+  if (parsedBaseUrl.protocol !== 'https:' && !localPreview) {
+    throw new Error('Use an HTTPS deployment URL or an HTTP loopback address for local review captures.');
+  }
 
   const version = safeVersion(option('version', new Date().toISOString().replace(/[:.]/g, '-')));
   const root = path.resolve(__dirname, '..');
