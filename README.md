@@ -13,6 +13,10 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+## Post-deployment website review
+
+After each successful deployment, tell Codex the deployment is live; Codex will capture the live homepage and main solution pages with Playwright. Each run saves the rendered homepage DOM, full-page homepage screenshot, full-page screenshots of all six main solution pages, and a manifest under `website-review/<version>/`, then creates `website-review-<version>.zip` in the repository root. The version uses the deployment ID or release tag when available, otherwise a unique UTC timestamp. Review artifacts are ignored by Git; share the ZIP directly when someone needs a copy.
+
 ## Build
 
 ```bash
@@ -23,6 +27,8 @@ npm run start
 ## Environment configuration
 
 Copy `.env.example` to `.env.local` and add the existing production credentials and property IDs. Keep secrets server-side. `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_GA_MEASUREMENT_ID`, and the reCAPTCHA site key are public identifiers; database and Microsoft Graph values must remain private.
+
+`SITE_INDEXING_ENABLED` defaults to `false`: preview builds emit `noindex` metadata and do not publish a sitemap. Set it to `true` only for the approved canonical public deployment.
 
 - Careers listings use `DATABASE_URL` and the existing `job_post` table.
 - Application submissions preserve the existing multipart field names and forward to `CAREERS_APPLY_API_URL`; the current careers service is the default.

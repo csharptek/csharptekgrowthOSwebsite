@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "review:capture": "node scripts/capture-website-review.cjs"
   },
   "dependencies": {
+    "motion": "^13.4.6",
     "next": "^16.0.0",
     "pg": "^8.16.3",
     "react": "^19.0.0",

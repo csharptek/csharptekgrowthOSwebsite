@@ -9,6 +9,7 @@ const staticPaths = [
 ];
 
 export default async function sitemap() {
+  if (process.env.SITE_INDEXING_ENABLED !== 'true') return [];
   const now = new Date();
   let posts = [];
   try { posts = await getPublishedPosts(); } catch (error) { console.error('Blog sitemap entries unavailable:', error.message); }

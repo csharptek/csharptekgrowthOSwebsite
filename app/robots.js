@@ -1,5 +1,7 @@
 const siteUrl = 'https://www.csharptek.com';
 
 export default function robots() {
-  return { rules: [{ userAgent: '*', allow: '/', disallow: ['/api/'] }], sitemap: `${siteUrl}/sitemap.xml`, host: siteUrl };
+  const indexingEnabled = process.env.SITE_INDEXING_ENABLED === 'true';
+  const rules = [{ userAgent: '*', allow: '/', disallow: ['/api/'] }];
+  return indexingEnabled ? { rules, sitemap: `${siteUrl}/sitemap.xml`, host: siteUrl } : { rules };
 }

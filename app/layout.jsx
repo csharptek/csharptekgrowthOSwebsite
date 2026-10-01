@@ -1,10 +1,12 @@
 import './globals.css';
+import './design-refresh.css';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import AnalyticsScripts from '../components/AnalyticsScripts';
 import Tracking from '../components/Tracking';
 
 const siteUrl = 'https://www.csharptek.com';
+const indexingEnabled = process.env.SITE_INDEXING_ENABLED === 'true';
 const organizationSchema = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Csharptek', url: siteUrl, email: 'info@csharptek.com', logo: `${siteUrl}/icon.svg`, description: 'AI, product engineering and modernization for established companies.' };
 
 export const metadata = {
@@ -14,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/' },
   openGraph: { type: 'website', url: siteUrl, siteName: 'Csharptek', title: 'Csharptek | AI, Product Engineering & Modernization', description: 'Turn complex technology initiatives into production-ready systems.' },
   twitter: { card: 'summary_large_image', title: 'Csharptek | AI, Product Engineering & Modernization', description: 'Turn complex technology initiatives into production-ready systems.' },
-  robots: { index: true, follow: true }
+  robots: { index: indexingEnabled, follow: indexingEnabled }
 };
 
 export default function RootLayout({ children }) {

@@ -18,23 +18,13 @@ const proof = [
 
 export default function HomePage() {
   return <>
-    <section className="hero">
+    <section className="hero hero-editorial">
       <div className="hero-inner wrap">
         <div className="hero-copy">
-          <div className="hero-eyebrow"><i/> AI · Product Engineering · Modernization</div>
-          <h1>Turn complex initiatives into <em>production-ready</em> systems.</h1>
-          <p>Csharptek helps established companies put AI into production, add intelligent capabilities to products, automate complex workflows, and modernize applications and cloud infrastructure.</p>
-          <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss your initiative <Icon name="arrow" size={17}/></Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore our work <Icon name="arrow" size={16}/></Link></div>
-          <div className="hero-caption"><div className="avatar-stack" aria-hidden="true"><span>AI</span><span>DX</span><span>AZ</span></div><span>Senior engineering for the work that matters.</span></div>
-        </div>
-        <div className="hero-visual" aria-label="Illustration of connected AI, product, data and cloud systems" role="img">
-          <div className="visual-orbit"/><div className="visual-orbit orbit-two"/><div className="visual-core"><div className="core-glyph">C<span>#</span></div></div>
-          <div className="node-line line-one"/><div className="node-line line-two"/><div className="node-line line-three"/><div className="node-line line-four"/>
-          <div className="visual-node node-one"><span className="node-dot"><Icon name="spark" size={15}/></span><span><b>AI systems</b><small>RAG · agents · evaluation</small></span></div>
-          <div className="visual-node node-two"><span className="node-dot"><Icon name="layers" size={15}/></span><span><b>Products</b><small>Apps · APIs · experiences</small></span></div>
-          <div className="visual-node node-three"><span className="node-dot"><Icon name="flow" size={15}/></span><span><b>Workflows</b><small>People · data · operations</small></span></div>
-          <div className="visual-node node-four"><span className="node-dot"><Icon name="orbit" size={15}/></span><span><b>Cloud</b><small>Azure · .NET · DevOps</small></span></div>
-          <span className="visual-spark spark-one">✳</span><span className="visual-spark spark-two">✳</span>
+          <div className="hero-eyebrow">AI · Product Engineering · Modernization</div>
+          <h1>Turn complex technology initiatives into <em>production-ready</em> systems.</h1>
+          <p>Csharptek helps established companies put AI into production, add intelligent capabilities to existing products, automate complex workflows, and modernize applications and cloud infrastructure.</p>
+          <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss Your Initiative</Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore Our Work</Link></div>
         </div>
       </div>
     </section>

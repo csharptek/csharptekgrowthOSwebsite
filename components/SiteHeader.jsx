@@ -1,71 +1,147 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import Link from 'next/link';
 import Icon from './Icon';
 
-const solutions = [
-  ['AI Production Engineering', '/solutions/ai-production-engineering', 'Move an AI initiative into production'],
-  ['AI Product Engineering', '/solutions/ai-product-engineering', 'Add useful AI to an existing product'],
-  ['Intelligent Workflow Automation', '/solutions/intelligent-workflow-automation', 'Connect fragmented operations'],
-  ['Application & Cloud Modernization', '/azure-app-modernization-services', 'Improve the systems you already depend on'],
-  ['Healthcare AI & Automation', '/solutions/healthcare-ai-automation', 'Build smarter healthcare workflows'],
-  ['Microsoft Marketplace Engineering', '/services/marketplace', 'Launch and operate SaaS on Marketplace']
-];
-const industries = [
-  ['/industries/healthcare', 'Healthcare', 'Product and workflow technology around the work of care'],
-  ['/industries/technology-saas', 'Technology & SaaS', 'Product, AI and commerce engineering for SaaS teams']
-];
-const capabilities = [
-  ['/capabilities/ai-llm', 'AI & LLM engineering', 'RAG, agents, evaluation and integration'],
-  ['/capabilities/product-engineering', 'Product engineering', 'Applications, experiences and APIs'],
-  ['/capabilities/azure', 'Azure', 'Architecture, identity and platform engineering'],
-  ['/capabilities/dotnet', '.NET', 'Modernization and application development'],
-  ['/capabilities/cloud-devops', 'Cloud & DevOps', 'Infrastructure, delivery and operations'],
-  ['/capabilities/data-integrations', 'Data & integrations', 'Connect information, products and workflows']
-];
-const products = ['TekDial', 'ConvoSphere', 'TekSocial', 'Interview Scheduler'].map((name) => [`/products/${name.toLowerCase().replaceAll(' ', '-')}`, name, 'Csharptek product']);
-const company = [
-  ['/about', 'About', 'How we work'], ['/leadership', 'Leadership', 'Engineering leadership'],
-  ['/careers', 'Careers', 'Build systems that matter'], ['/contact', 'Contact', 'Start a conversation']
-];
+const groups = {
+  solutions: {
+    title: 'Solutions',
+    href: '/solutions',
+    items: [
+      ['/solutions/ai-production-engineering', 'AI Production Engineering'],
+      ['/solutions/ai-product-engineering', 'AI Product Engineering'],
+      ['/solutions/intelligent-workflow-automation', 'Intelligent Workflow Automation'],
+      ['/azure-app-modernization-services', 'Application & Cloud Modernization'],
+      ['/solutions/healthcare-ai-automation', 'Healthcare AI & Automation'],
+      ['/services/marketplace', 'Microsoft Marketplace Engineering']
+    ]
+  },
+  industries: {
+    title: 'Industries',
+    href: '/industries',
+    items: [
+      ['/industries/healthcare', 'Healthcare'],
+      ['/industries/technology-saas', 'Technology & SaaS']
+    ]
+  },
+  capabilities: {
+    title: 'Capabilities',
+    href: '/capabilities',
+    items: [
+      ['/capabilities/ai-llm', 'AI & LLM Engineering'],
+      ['/capabilities/product-engineering', 'Product Engineering'],
+      ['/capabilities/azure', 'Azure'],
+      ['/capabilities/dotnet', '.NET'],
+      ['/capabilities/cloud-devops', 'Cloud & DevOps'],
+      ['/capabilities/data-integrations', 'Data & Integrations']
+    ]
+  },
+  products: {
+    title: 'Products',
+    href: '/products',
+    items: [
+      ['/products/tekdial', 'TekDial'],
+      ['/products/convosphere', 'ConvoSphere'],
+      ['/products/teksocial', 'TekSocial'],
+      ['/products/interview-scheduler', 'Interview Scheduler']
+    ]
+  },
+  company: {
+    title: 'Company',
+    href: '/about',
+    items: [
+      ['/about', 'About'],
+      ['/leadership', 'Leadership'],
+      ['/careers', 'Careers'],
+      ['/contact', 'Contact']
+    ]
+  }
+};
 
-function MenuGroup({ title, href, items, close }) {
-  return <div className="nav-group nav-compact"><Link className="nav-label" href={href} onClick={close} aria-haspopup="true">{title} <span className="nav-chevron">⌄</span></Link><div className="mega-menu compact-menu"><div className="mega-links">{items.map(([url, label, detail])=><Link href={url} key={url} onClick={close}><span>{label}</span><small>{detail}</small></Link>)}</div></div></div>;
+function MenuPanel({ menu, close, reduceMotion }) {
+  const data = groups[menu];
+  return <motion.div
+    id={`header-menu-panel-${menu}`}
+    className="mega-menu"
+    role="region"
+    aria-label={`${data.title} menu`}
+    initial={reduceMotion ? false : { opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+  >
+    <div className="mega-links">
+      {data.items.map(([href, label]) => <Link href={href} key={href} onClick={close}>
+        <span>{label}</span>
+      </Link>)}
+    </div>
+  </motion.div>;
+}
+
+function MenuTrigger({ id, active, onToggle, onHover }) {
+  return <button
+    className={`nav-label ${active ? 'is-active' : ''}`}
+    type="button"
+    aria-expanded={active}
+    aria-controls={`header-menu-panel-${id}`}
+    onClick={() => onToggle(id)}
+    onMouseEnter={() => onHover(id)}
+    onFocus={() => onHover(id)}
+  >
+    {groups[id].title}
+  </button>;
+}
+
+function MenuGroup({ id, activeMenu, onToggle, onHover, close, reduceMotion }) {
+  return <div className="nav-group">
+    <MenuTrigger id={id} active={activeMenu === id} onToggle={onToggle} onHover={onHover}/>
+    <AnimatePresence initial={false} mode="wait">
+      {activeMenu === id && <MenuPanel key={id} menu={id} close={close} reduceMotion={reduceMotion}/>}
+    </AnimatePresence>
+  </div>;
 }
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
+  const [activeMenu, setActiveMenu] = useState(null);
+  const headerRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+  const close = () => { setOpen(false); setActiveMenu(null); };
+  const toggleMenu = (id) => setActiveMenu((current) => current === id ? null : id);
+  const hoverMenu = (id) => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setActiveMenu(id); };
 
-  return (
-    <header className="site-header">
-      <div className="header-inner wrap">
-        <Link href="/" className="brand" aria-label="Csharptek home" onClick={close}>
-          <span className="brand-mark">C<span>#</span></span>
-          <span className="brand-name">Csharptek<span className="brand-period">.</span></span>
-        </Link>
-        <button className="mobile-menu-toggle" type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
-          <Icon name={open ? 'close' : 'menu'} size={22}/>
-        </button>
-        <nav className={`main-nav ${open ? 'is-open' : ''}`} aria-label="Main navigation">
-          <div className="nav-group nav-solutions">
-            <Link className="nav-label" href="/solutions" onClick={close}>Solutions <span className="nav-chevron">⌄</span></Link>
-            <div className="mega-menu">
-              <div className="mega-intro"><span className="eyebrow">Built around your initiative</span><p>Practical engineering for the systems your business is ready to move forward.</p><Link href="/solutions" onClick={close} className="text-link">Explore all solutions <Icon name="arrow" size={16}/></Link></div>
-              <div className="mega-links">{solutions.map(([label, href, detail]) => <Link href={href} key={href} onClick={close}><span>{label}</span><small>{detail}</small></Link>)}</div>
-            </div>
-          </div>
-          <Link href="/case-studies" onClick={close}>Case studies</Link>
-          <MenuGroup title="Industries" href="/industries" items={industries} close={close}/>
-          <MenuGroup title="Capabilities" href="/capabilities" items={capabilities} close={close}/>
-          <Link href="/blog" onClick={close}>Insights</Link>
-          <MenuGroup title="Products" href="/products" items={products} close={close}/>
-          <MenuGroup title="Company" href="/about" items={company} close={close}/>
-          <Link href="/contact" className="nav-cta" onClick={close}>Discuss your initiative <Icon name="arrow" size={16}/></Link>
-        </nav>
-      </div>
-      {open && <button className="nav-backdrop" aria-label="Close navigation" onClick={close}/>}
-    </header>
-  );
+  useEffect(() => {
+    const onKeyDown = (event) => { if (event.key === 'Escape') close(); };
+    const onPointerDown = (event) => { if (!headerRef.current?.contains(event.target)) close(); };
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('pointerdown', onPointerDown);
+    };
+  }, []);
+
+  return <header ref={headerRef} className="site-header" onMouseLeave={() => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setActiveMenu(null); }}>
+    <div className="header-inner wrap">
+      <Link href="/" className="brand" aria-label="Csharptek home" onClick={close}>
+        <span className="brand-name">Csharptek</span>
+      </Link>
+      <button className="mobile-menu-toggle" type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => { setOpen(!open); setActiveMenu(null); }}>
+        <Icon name={open ? 'close' : 'menu'} size={22}/>
+      </button>
+      <nav className={`main-nav ${open ? 'is-open' : ''}`} aria-label="Main navigation">
+        <MenuGroup id="solutions" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
+        <Link href="/case-studies" onClick={close}>Case studies</Link>
+        <MenuGroup id="industries" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
+        <MenuGroup id="capabilities" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
+        <Link href="/blog" onClick={close}>Insights</Link>
+        <MenuGroup id="products" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
+        <MenuGroup id="company" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
+        <Link href="/contact" className="nav-cta" onClick={close}>Discuss Your Initiative</Link>
+      </nav>
+    </div>
+    {open && <button className="nav-backdrop" type="button" aria-label="Close navigation" onClick={close}/>}
+  </header>;
 }
