@@ -1,6 +1,5 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 const { existsSync } = require('node:fs');
 
 function loadPlaywright() {
@@ -28,19 +27,34 @@ function safeVersion(value) {
   return safe;
 }
 
-function escapePowerShell(value) {
-  return value.replace(/'/g, "''");
+function captureStamp() {
+  return new Date().toISOString().replace(/[:.]/g, '-');
 }
 
-function createZip(outputFolder, archivePath, version) {
-  if (process.platform === 'win32') {
-    const command = `Compress-Archive -LiteralPath '${escapePowerShell(outputFolder)}' -DestinationPath '${escapePowerShell(archivePath)}' -CompressionLevel Optimal -Force`;
-    const result = spawnSync('powershell.exe', ['-NoLogo', '-NoProfile', '-Command', command], { stdio: 'inherit' });
-    if (result.status !== 0) throw new Error(`Could not create ${path.basename(archivePath)}.`);
-    return;
+async function promoteLatestCapture(reviewRoot, outputFolder, version) {
+  const obsoleteRoot = path.join(reviewRoot, 'obsolete');
+  await fs.mkdir(obsoleteRoot, { recursive: true });
+  const entries = await fs.readdir(reviewRoot, { withFileTypes: true });
+  const stamp = captureStamp();
+  let oldRootFiles;
+
+  for (const entry of entries) {
+    if (entry.name === 'obsolete' || entry.name === version) continue;
+    const source = path.join(reviewRoot, entry.name);
+    if (entry.isDirectory()) {
+      let destination = path.join(obsoleteRoot, entry.name);
+      if (existsSync(destination)) destination = path.join(obsoleteRoot, `${entry.name}-${stamp}`);
+      await fs.rename(source, destination);
+    } else {
+      oldRootFiles ||= path.join(obsoleteRoot, `previous-current-${stamp}`);
+      await fs.mkdir(oldRootFiles, { recursive: true });
+      await fs.rename(source, path.join(oldRootFiles, entry.name));
+    }
   }
-  const result = spawnSync('tar', ['-a', '-c', '-f', archivePath, '-C', path.dirname(outputFolder), path.basename(outputFolder)], { stdio: 'inherit' });
-  if (result.status !== 0) throw new Error(`Could not create ${path.basename(archivePath)}.`);
+
+  for (const entry of await fs.readdir(outputFolder, { withFileTypes: true })) {
+    if (entry.isFile()) await fs.copyFile(path.join(outputFolder, entry.name), path.join(reviewRoot, entry.name));
+  }
 }
 
 async function waitForRender(page) {
@@ -89,8 +103,8 @@ async function main() {
 
   const version = safeVersion(option('version', new Date().toISOString().replace(/[:.]/g, '-')));
   const root = path.resolve(__dirname, '..');
-  const outputFolder = path.join(root, 'website-review', version);
-  const archivePath = path.join(root, `website-review-${version}.zip`);
+  const reviewRoot = path.join(root, 'website-review');
+  const outputFolder = path.join(reviewRoot, version);
   await fs.mkdir(outputFolder, { recursive: true });
 
   const { chromium } = loadPlaywright();
@@ -157,8 +171,8 @@ async function main() {
       console.warn('One or more pages did not return HTTP 200; see manifest.json.');
     }
     await browser.close();
-    createZip(outputFolder, archivePath, version);
-    console.log(JSON.stringify({ version, outputFolder, archivePath, pages: manifest }, null, 2));
+    await promoteLatestCapture(reviewRoot, outputFolder, version);
+    console.log(JSON.stringify({ version, outputFolder, reviewRoot, pages: manifest }, null, 2));
   } catch (error) {
     await browser.close().catch(() => {});
     throw error;
