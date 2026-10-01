@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Icon from './Icon';
 
 const groups = {
@@ -126,7 +127,7 @@ export default function SiteHeader() {
   return <header ref={headerRef} className="site-header" onMouseLeave={() => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setActiveMenu(null); }}>
     <div className="header-inner wrap">
       <Link href="/" className="brand" aria-label="Csharptek home" onClick={close}>
-        <span className="brand-name">Csharptek</span>
+        <Image src="/csharptek-logo.png" alt="" width={1024} height={191} priority className="brand-logo" />
       </Link>
       <button className="mobile-menu-toggle" type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => { setOpen(!open); setActiveMenu(null); }}>
         <Icon name={open ? 'close' : 'menu'} size={22}/>
