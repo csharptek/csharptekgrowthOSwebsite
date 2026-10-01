@@ -1,0 +1,12 @@
+import Link from 'next/link';
+import CareersBoard from '../../components/CareersBoard';
+
+export const metadata = {
+  title: 'Careers at Csharptek',
+  description: 'Explore current opportunities to work on AI, product engineering, cloud and software initiatives at Csharptek.',
+  alternates: { canonical: '/careers' }
+};
+
+export default function CareersPage() {
+  return <><section className="page-hero"><div className="wrap page-hero-inner"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span>Careers</div><span className="eyebrow">Careers at Csharptek</span><h1>Build systems that matter beyond the demo.</h1><p>Work on real product, AI and cloud engineering challenges with teams who care about how the system works in the real world.</p><div style={{marginTop:28}}><a className="button" href="#openings">Explore open roles <span aria-hidden="true">↓</span></a></div></div></section><section className="section"><div className="wrap"><div className="section-heading"><span className="eyebrow">A place to do meaningful engineering</span><h2>Bring your curiosity to real systems.</h2><p>Our work spans product engineering, AI, cloud platforms and healthcare workflows. We value clear thinking, thoughtful delivery and ownership of the details.</p></div><div className="solution-grid"><article className="content-panel"><span className="eyebrow">01 / Craft</span><h3>Build beyond prototypes</h3><p>Work through the integrations, quality and operating questions that make software useful in practice.</p></article><article className="content-panel"><span className="eyebrow">02 / Growth</span><h3>Learn across disciplines</h3><p>See how product, AI, data, cloud and user experience meet in a real delivery environment.</p></article><article className="content-panel"><span className="eyebrow">03 / Ownership</span><h3>Make your work count</h3><p>Take responsibility for clear outcomes, contribute ideas and keep improving how the system works.</p></article></div></div></section><section className="section section-dark" id="openings"><div className="wrap"><div className="section-heading"><span className="eyebrow eyebrow-light">Current opportunities</span><h2>Find a role where you can make a difference.</h2><p>Openings and application status are loaded from Csharptek’s careers service.</p></div><CareersBoard/></div></section></>;
+}
