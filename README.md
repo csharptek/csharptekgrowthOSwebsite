@@ -15,7 +15,7 @@ Open `http://localhost:3000`.
 
 ## Post-deployment website review
 
-After each successful deployment, tell Codex the deployment is live; Codex will capture the live homepage and main solution pages with Playwright. Each run saves the rendered homepage DOM, full-page homepage screenshot, full-page screenshots of all six main solution pages, and a manifest under `website-review/<version>/`, then creates `website-review-<version>.zip` in the repository root. The version uses the deployment ID or release tag when available, otherwise a unique UTC timestamp. Review artifacts are ignored by Git; share the ZIP directly when someone needs a copy.
+After each successful deployment, tell Codex the deployment is live; Codex will capture the live homepage and main solution pages with Playwright. Each run saves the rendered homepage DOM, full-page homepage screenshot, full-page screenshots of all six main solution pages, and a manifest under `website-review/<version>/`. It also copies the newest captures to the top level of `website-review/` for convenient local review and moves older captures into `website-review/obsolete/`. Captures are not packaged into a ZIP unless requested. The version uses the deployment ID or release tag when available, otherwise a unique UTC timestamp. Review artifacts are ignored by Git.
 
 ## Build
 

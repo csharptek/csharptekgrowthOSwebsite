@@ -1,6 +1,9 @@
 export const solutions = [
   {
     slug: 'ai-production-engineering',
+    h1: 'Turn AI prototypes and initiatives into production systems.',
+    supporting: 'Move from promising AI experiments to reliable systems integrated with your data, applications and operational workflows.',
+    cta: 'Discuss Your AI Initiative',
     number: '01',
     eyebrow: 'From prototype to production',
     title: 'AI Production Engineering',
@@ -13,6 +16,9 @@ export const solutions = [
   },
   {
     slug: 'ai-product-engineering',
+    h1: 'Add AI capabilities to products your customers already use.',
+    supporting: 'Design and engineer AI-powered product capabilities that fit your existing product, data, architecture and customer experience.',
+    cta: 'Discuss Your Product Initiative',
     number: '02',
     eyebrow: 'Make your product more useful',
     title: 'AI Product Engineering',
@@ -25,6 +31,9 @@ export const solutions = [
   },
   {
     slug: 'intelligent-workflow-automation',
+    h1: 'Turn complex manual workflows into intelligent systems.',
+    supporting: 'Connect people, applications, data and AI to automate workflows that currently depend on email, spreadsheets, calls and disconnected systems.',
+    cta: 'Discuss Your Workflow',
     number: '03',
     eyebrow: 'Connect work that is stuck between systems',
     title: 'Intelligent Workflow Automation',
@@ -37,6 +46,9 @@ export const solutions = [
   },
   {
     slug: 'application-cloud-modernization',
+    h1: 'Modernize the applications your business already depends on.',
+    supporting: 'Improve legacy applications, cloud architecture, APIs, deployment pipelines and infrastructure without treating modernization as a rewrite by default.',
+    cta: 'Discuss Your Initiative',
     number: '04',
     eyebrow: 'Improve the systems you already depend on',
     title: 'Application & Cloud Modernization',
@@ -49,6 +61,9 @@ export const solutions = [
   },
   {
     slug: 'healthcare-ai-automation',
+    h1: 'Build smarter healthcare workflows with production AI.',
+    supporting: 'Reduce administrative workload, automate operational workflows and integrate production AI into healthcare systems and products.',
+    cta: 'Discuss Your Initiative',
     number: '05',
     eyebrow: 'Technology for real healthcare operations',
     title: 'Healthcare AI & Automation',
@@ -61,6 +76,9 @@ export const solutions = [
   },
   {
     slug: 'microsoft-marketplace-engineering',
+    h1: 'Build and launch SaaS products on Microsoft Marketplace.',
+    supporting: 'Implement the technical components required to commercialize SaaS through Microsoft’s Marketplace ecosystem.',
+    cta: 'Discuss Your Initiative',
     number: '06',
     eyebrow: 'Turn a SaaS product into a marketplace offer',
     title: 'Microsoft Marketplace Engineering',
@@ -97,6 +115,21 @@ export const legacyRedirects = [
 ];
 
 export const trustItems = ['Microsoft Solutions Partner', 'Azure', '.NET', 'AI engineering', 'Healthcare', 'International delivery'];
+
+export const solutionCases = {
+  'ai-production-engineering': ['payautomation', 'rag-pipeline', 'travel-data-ai'],
+  'ai-product-engineering': ['virilocity', 'image-to-video', 'connected-wellness-product'],
+  'intelligent-workflow-automation': ['woundmedix', 'clinical-workforce-platform', 'virilocity'],
+  'application-cloud-modernization': ['dotnet-azure-modernization', 'travel-data-ai', 'payautomation'],
+  'healthcare-ai-automation': ['medical-documentation', 'healthcare-mobile-app', 'woundmedix'],
+  'microsoft-marketplace-engineering': ['payautomation', 'landminer', 'virilocity']
+};
+
+export function solutionHref(slug) {
+  if (slug === 'application-cloud-modernization') return '/azure-app-modernization-services';
+  if (slug === 'microsoft-marketplace-engineering') return '/services/marketplace';
+  return `/solutions/${slug}`;
+}
 
 export function getSolution(slug) {
   return solutions.find((solution) => solution.slug === slug);
