@@ -4,9 +4,12 @@ import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import AnalyticsScripts from '../components/AnalyticsScripts';
 import Tracking from '../components/Tracking';
+import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import ConsentBanner from '../components/ConsentBanner';
 
 const siteUrl = 'https://www.csharptek.com';
 const indexingEnabled = process.env.SITE_INDEXING_ENABLED === 'true';
+const websiteSchema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Csharptek', url: siteUrl };
 const organizationSchema = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Csharptek', url: siteUrl, email: 'info@csharptek.com', logo: `${siteUrl}/icon.svg`, description: 'AI, product engineering and modernization for established companies.' };
 
 export const metadata = {
@@ -26,8 +29,10 @@ export default function RootLayout({ children }) {
     <SiteHeader/>
     <main id="main">{children}</main>
     <SiteFooter/>
-    <AnalyticsScripts/>
+    <ConsentBanner><AnalyticsScripts/></ConsentBanner>
+    <BreadcrumbSchema/>
     <Tracking/>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}/>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c') }}/>
   </body></html>;
 }
