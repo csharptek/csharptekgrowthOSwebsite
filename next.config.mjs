@@ -2,6 +2,8 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      { source: '/products/convosphere', destination: '/products', permanent: false },
+      { source: '/products/interview-scheduler', destination: '/products', permanent: false },
       { source: '/portfolio', destination: '/case-studies', permanent: true },
       { source: '/casestudy/:slug*', destination: '/case-studies', permanent: true },
       { source: '/case-study/:slug*', destination: '/case-studies', permanent: true },
