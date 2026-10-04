@@ -4,7 +4,7 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request) {
-  const endpoint = process.env.CAREERS_APPLY_API_URL || 'https://pleasing-balance-production-708f.up.railway.app/api/Career/apply';
+  const endpoint = process.env.CAREERS_APPLY_API_URL || 'https://interviewschedulerprodapi.azurewebsites.net/api/Career/apply';
   try {
     const incoming = await request.formData();
     const firstName = String(incoming.get('Firstname') || '').trim();

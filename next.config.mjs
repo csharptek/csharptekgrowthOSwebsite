@@ -53,7 +53,10 @@ const nextConfig = {
       { source: '/industries/realestate', destination: '/industries', permanent: true },
       { source: '/industries/petcare', destination: '/industries/healthcare', permanent: true },
       { source: '/industries/wellness', destination: '/industries/healthcare', permanent: true },
-      { source: '/industries/automation', destination: '/solutions/intelligent-workflow-automation', permanent: true }
+      { source: '/industries/automation', destination: '/solutions/intelligent-workflow-automation', permanent: true },
+      { source: '/industries/crm', destination: '/solutions/intelligent-workflow-automation', permanent: true },
+      { source: '/industries/marketplace', destination: '/services/marketplace', permanent: true },
+      { source: '/custom-mobile-app-development-services', destination: '/solutions/ai-product-engineering', permanent: true }
     ];
   }
 };

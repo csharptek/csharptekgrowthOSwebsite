@@ -6,6 +6,20 @@ export const dynamic = 'force-dynamic';
 function clean(value, limit = 3000) { return typeof value === 'string' ? value.trim().slice(0, limit) : ''; }
 function validEmail(value) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && value.length <= 254; }
 
+// Optional: also send the inquiry to TekGrowth. Never blocks the visitor if TekGrowth is unreachable.
+async function forwardToTekGrowth(lead) {
+  const url = process.env.TEKGROWTH_LEAD_WEBHOOK_URL;
+  if (!url) return;
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    if (process.env.TEKGROWTH_LEAD_WEBHOOK_SECRET) headers.Authorization = `Bearer ${process.env.TEKGROWTH_LEAD_WEBHOOK_SECRET}`;
+    const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify(lead), cache: 'no-store', signal: AbortSignal.timeout(8000) });
+    if (!response.ok) console.error('TekGrowth lead webhook returned', response.status);
+  } catch (error) {
+    console.error('TekGrowth lead webhook failed:', error.message);
+  }
+}
+
 export async function POST(request) {
   let body;
   try { body = await request.json(); } catch { return NextResponse.json({ success: false, message: 'Please submit the form again.' }, { status: 400 }); }
@@ -37,6 +51,7 @@ export async function POST(request) {
       body: JSON.stringify({ message: { subject: `Website inquiry: ${initiative} — ${name}`, body: { contentType: 'Text', content: details }, toRecipients: [{ emailAddress: { address: 'info@csharptek.com' } }], replyTo: [{ emailAddress: { address: email, name } }] }, saveToSentItems: true }), cache: 'no-store'
     });
     if (mailResponse.status !== 202) throw new Error('Microsoft Graph could not deliver the inquiry');
+    await forwardToTekGrowth({ name, email, company, role, initiativeType: initiative, timeline, message, source: 'website-contact-form', submittedAt: new Date().toISOString() });
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     console.error('Contact submission unavailable:', error.message);
