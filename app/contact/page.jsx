@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import LeadForm from '../../components/LeadForm';
 
-export const metadata = { title: 'Discuss Your Initiative', description: 'Tell Csharptek what you are trying to build, modernize or automate.' };
+export const metadata = { title: 'Discuss Your Initiative', description: 'Tell Csharptek what you are trying to build, modernize or automate, and our engineering team will respond with a practical next step.', alternates: { canonical: '/contact' } };
 
 export default async function ContactPage({ searchParams }) {
   const query = await searchParams;

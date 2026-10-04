@@ -1,4 +1,5 @@
 import { solutions } from '../data/site';
+import { caseStudyDetails } from '../data/caseStudies';
 import { getPublishedPosts } from '../lib/blog';
 
 export const dynamic = 'force-dynamic';
@@ -16,6 +17,7 @@ export default async function sitemap() {
   const solutionPaths = solutions.filter((item) => !['application-cloud-modernization', 'microsoft-marketplace-engineering'].includes(item.slug)).map((item) => `/solutions/${item.slug}`);
   const capabilityPaths = ['ai-llm','product-engineering','azure','dotnet','cloud-devops','data-integrations'].map((slug) => `/capabilities/${slug}`);
   const productPaths = ['tekdial','convosphere','teksocial','interview-scheduler'].map((slug) => `/products/${slug}`);
-  const urls = [...staticPaths, ...solutionPaths, ...capabilityPaths, ...productPaths, ...posts.map((post) => `/blog/${post.slug}`)];
+  const casePaths = Object.entries(caseStudyDetails).filter(([, d]) => d.published === true).map(([slug]) => `/case-studies/${slug}`);
+  const urls = [...staticPaths, ...casePaths, ...solutionPaths, ...capabilityPaths, ...productPaths, ...posts.map((post) => `/blog/${post.slug}`)];
   return urls.map((path) => ({ url: `${siteUrl}${path}`, lastModified: now, changeFrequency: path === '/' ? 'weekly' : 'monthly', priority: path === '/' ? 1 : path.startsWith('/solutions') ? 0.9 : 0.7 }));
 }

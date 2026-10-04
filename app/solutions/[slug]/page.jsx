@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const solution = getSolution(slug);
-  return solution ? { title: solution.title, description: solution.description, alternates: { canonical: `/solutions/${slug}` }, openGraph: { title: `${solution.title} | Csharptek`, description: solution.description } } : {};
+  return solution ? { title: solution.title, description: solution.description, alternates: { canonical: `/solutions/${slug}` }, openGraph: { title: `${solution.title} | Csharptek`, description: solution.description, images: ['/opengraph-image'] }, twitter: { card: 'summary_large_image', title: `${solution.title} | Csharptek`, description: solution.description, images: ['/opengraph-image'] } } : {};
 }
 
 export default async function SolutionPage({ params }) {

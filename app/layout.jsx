@@ -13,9 +13,8 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: 'Csharptek | AI, Product Engineering & Modernization', template: '%s | Csharptek' },
   description: 'Csharptek helps established companies put AI into production, add intelligent capabilities to products, automate complex workflows, and modernize applications and cloud infrastructure.',
-  alternates: { canonical: '/' },
-  openGraph: { type: 'website', url: siteUrl, siteName: 'Csharptek', title: 'Csharptek | AI, Product Engineering & Modernization', description: 'Turn complex technology initiatives into production-ready systems.' },
-  twitter: { card: 'summary_large_image', title: 'Csharptek | AI, Product Engineering & Modernization', description: 'Turn complex technology initiatives into production-ready systems.' },
+  openGraph: { type: 'website', url: siteUrl, siteName: 'Csharptek', title: 'Csharptek | AI, Product Engineering & Modernization', description: 'Turn complex technology initiatives into production-ready systems.', images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Csharptek' }] },
+  twitter: { card: 'summary_large_image', title: 'Csharptek | AI, Product Engineering & Modernization', description: 'Turn complex technology initiatives into production-ready systems.', images: ['/opengraph-image'] },
   robots: { index: indexingEnabled, follow: indexingEnabled }
 };
 

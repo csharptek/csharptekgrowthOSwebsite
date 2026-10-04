@@ -24,8 +24,9 @@ export async function makeBlogMetadata(params, prefix = '/blog') {
     return {
       title: post.meta_title || post.title,
       description: post.meta_description || post.excerpt || '',
-      alternates: { canonical: `${prefix}/${slug}` },
-      openGraph: { type: 'article', title: post.meta_title || post.title, description: post.meta_description || post.excerpt || '', ...(post.og_image_url ? { images: [post.og_image_url] } : {}) },
+      alternates: { canonical: `/blog/${slug}` },
+      openGraph: { type: 'article', title: post.meta_title || post.title, description: post.meta_description || post.excerpt || '', images: [post.og_image_url || '/opengraph-image'] },
+      twitter: { card: 'summary_large_image', title: post.meta_title || post.title, description: post.meta_description || post.excerpt || '', images: [post.og_image_url || '/opengraph-image'] },
       ...(Array.isArray(post.tags) && post.tags.length ? { keywords: post.tags } : {})
     };
   } catch { return { title: 'Insights' }; }

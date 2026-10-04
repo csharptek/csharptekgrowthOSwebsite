@@ -4,7 +4,7 @@ import { caseStudies, solutions } from '../../data/site';
 import { getCaseStudyDetail } from '../../data/caseStudies';
 import './case-study.css';
 
-export const metadata = { title: 'Case Studies', description: 'Explore selected Csharptek product, AI, workflow and marketplace engineering stories.', alternates: { canonical: '/case-studies' } };
+export const metadata = { title: 'Case Studies', description: 'Explore selected Csharptek engineering stories covering AI products, workflow automation, healthcare systems, modernization and marketplace delivery.', alternates: { canonical: '/case-studies' } };
 
 const icons = { 'ai-production-engineering': 'spark', 'ai-product-engineering': 'layers', 'intelligent-workflow-automation': 'flow', 'application-cloud-modernization': 'orbit', 'healthcare-ai-automation': 'plus', 'microsoft-marketplace-engineering': 'grid' };
 

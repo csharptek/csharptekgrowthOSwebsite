@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import Icon from '../components/Icon';
+import HeroVisual from '../components/HeroVisual';
 import { caseStudies, solutions, trustItems } from '../data/site';
+
+export const metadata = { alternates: { canonical: '/' } };
 
 const intents = [
   { title: 'Put AI into production', text: 'Move AI prototypes, RAG systems and agent initiatives into reliable production systems.', slug: 'ai-production-engineering', icon: 'spark' },
@@ -26,6 +29,7 @@ export default function HomePage() {
           <p>Csharptek helps established companies put AI into production, add intelligent capabilities to existing products, automate complex workflows, and modernize applications and cloud infrastructure.</p>
           <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss Your Initiative</Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore Our Work</Link></div>
         </div>
+        <HeroVisual/>
       </div>
     </section>
 

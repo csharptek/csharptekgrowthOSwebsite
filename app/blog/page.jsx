@@ -11,7 +11,7 @@ const topics = [
   ['Microsoft Marketplace', 'The fulfillment, metering and identity work behind SaaS commerce on Microsoft Marketplace.', '/services/marketplace']
 ];
 
-export const metadata = { title: 'Insights', description: 'Perspectives on AI production, product engineering, automation, modernization and Microsoft Marketplace.' };
+export const metadata = { title: 'Insights', description: 'Perspectives on AI production, product engineering, automation, modernization and Microsoft Marketplace engineering from the Csharptek team.', alternates: { canonical: '/blog' } };
 
 export const dynamic = 'force-dynamic';
 

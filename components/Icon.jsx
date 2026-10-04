@@ -10,6 +10,12 @@ const paths = {
   close: <><path d="m18 6-12 12M6 6l12 12"/></>,
   check: <path d="m5 12 4 4L19 6"/>,
   play: <path d="m9 6 10 6-10 6V6Z"/>,
+  linkedin: <><path d="M6.5 9.5v8M6.5 6.2v.1"/><path d="M11 17.5v-8M11 12.8c0-2 1.3-3.3 3.1-3.3s2.9 1.2 2.9 3.2v4.8"/><rect x="3" y="3" width="18" height="18" rx="3"/></>,
+  mail: <><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 8 8 6 8-6"/></>,
+  x: <><path d="M4 4l16 16M20 4 4 20"/></>,
+  youtube: <><rect x="3" y="6" width="18" height="12" rx="4"/><path d="m10.5 9.5 4 2.5-4 2.5v-5Z"/></>,
+  facebook: <><path d="M14 8h2.5V4.5H14a3.5 3.5 0 0 0-3.5 3.5v2H8v3.5h2.5V20H14v-6.5h2.3l.5-3.5H14V8.2c0-.1 0-.2 0-.2Z"/></>,
+  instagram: <><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><path d="M16.8 7.2v.1"/></>,
   plusSmall: <><path d="M12 5v14M5 12h14"/></>
 };
 
