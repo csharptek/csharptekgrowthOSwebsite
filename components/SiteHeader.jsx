@@ -44,9 +44,7 @@ const groups = {
     href: '/products',
     items: [
       ['/products/tekdial', 'TekDial'],
-      ['/products/convosphere', 'ConvoSphere'],
       ['/products/teksocial', 'TekSocial'],
-      ['/products/interview-scheduler', 'Interview Scheduler']
     ]
   },
   company: {
