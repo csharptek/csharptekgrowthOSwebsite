@@ -220,3 +220,18 @@ body { background: var(--paper); color: var(--ink); }
 .footer-social { display: flex; gap: 10px; margin-top: 18px; }
 .footer-social a { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; color: #a3deef; transition: background .2s, color .2s; }
 .footer-social a:hover { background: #a3deef; color: #07131f; }
+
+.faq-list { max-width: 860px; display: grid; gap: 10px; }
+.faq-item { border: 1px solid #d3e8f0; border-radius: 12px; background: #fff; padding: 0 20px; }
+.faq-item summary { cursor: pointer; padding: 18px 0; color: #003850; font-weight: 600; font-size: 15px; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:after { content: '+'; float: right; color: #006898; font-size: 20px; line-height: 1; }
+.faq-item[open] summary:after { content: '–'; }
+.faq-item p { margin: 0 0 18px; color: #536b75; font-size: 14px; line-height: 1.7; }
+.step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.step-card { border: 1px solid #d3e8f0; border-radius: 14px; background: #fff; padding: 22px; }
+.step-card b { display: block; color: #006898; font-size: 11px; letter-spacing: .12em; margin-bottom: 10px; }
+.step-card h3 { margin: 0 0 8px; font-size: 16px; color: #003850; }
+.step-card p { margin: 0; color: #536b75; font-size: 13px; line-height: 1.65; }
+@media (max-width: 760px) { .step-grid { grid-template-columns: 1fr; } }
+.section-tint { background: #f1f8fb; }

@@ -56,6 +56,7 @@ const nextConfig = {
       { source: '/industries/automation', destination: '/solutions/intelligent-workflow-automation', permanent: true },
       { source: '/industries/crm', destination: '/solutions/intelligent-workflow-automation', permanent: true },
       { source: '/industries/marketplace', destination: '/services/marketplace', permanent: true },
+      { source: '/software-products-development-solutions', destination: '/solutions/ai-product-engineering', permanent: true },
       { source: '/custom-mobile-app-development-services', destination: '/solutions/ai-product-engineering', permanent: true }
     ];
   }
