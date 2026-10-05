@@ -60,8 +60,20 @@ artworkBySlug['solutions-index'] = {
   alt: 'A cyan-to-teal ribbon moving through sculptural layers of warm-white architectural material.'
 };
 artworkBySlug['capabilities-index'] = {
-  src: '/images/brand/hero-human-systems.png',
-  alt: 'A crafted engineering studio arrangement joined by a continuous cyan-to-teal path.'
+  src: '/images/brand/service-cloud-architecture.png',
+  alt: 'A layered cloud architecture model with connected components and a teal integration path.'
+};
+artworkBySlug['industries-index'] = {
+  src: '/images/brand/hero-system-path.png',
+  alt: 'A continuous teal path connecting distinct systems and work environments.'
+};
+artworkBySlug['industry-healthcare'] = {
+  src: '/images/brand/case-medical-documentation.png',
+  alt: 'A healthcare documentation workflow represented by a phone, voice capture and connected review.'
+};
+artworkBySlug['industry-technology-saas'] = {
+  src: '/images/brand/solution-ai-product.png',
+  alt: 'A connected software product concept with a teal path linking product components.'
 };
 
 export default function BrandArtwork({ slug }) {
