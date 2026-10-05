@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Icon from './Icon';
 import { getPublishedPost, getPublishedPosts } from '../lib/blog';
 import RelatedStories from './RelatedStories';
+import ArticleArtwork, { ArticleCardArtwork } from './ArticleArtwork';
 import { solutions } from '../data/site';
 
 const articleConnections = {
@@ -74,7 +75,7 @@ export default async function BlogStory({ params, prefix = '/blog' }) {
   const safeSchema = JSON.stringify(schema).replace(/</g, '\\u003c');
 
   return <>
-    <section className="page-hero case-detail-hero"><div className="wrap page-hero-inner"><Link href="/blog" className="text-link" style={{color:'#b7deeb',marginBottom:22}}>← Back to insights</Link><span className="eyebrow">{post.category || 'Csharptek insight'}{post.read_time ? ` · ${post.read_time}` : ''}</span><h1>{post.title}</h1><p>{post.excerpt || post.meta_description}</p><div className="detail-meta">{post.published_at && <span>{dateLabel(post.published_at)}</span>}{post.author_name && <span>By {post.author_name}</span>}</div></div></section>
+    <section className="page-hero case-detail-hero"><div className="wrap page-hero-art-inner"><div className="page-hero-inner"><Link href="/blog" className="text-link" style={{color:'#b7deeb',marginBottom:22}}>← Back to insights</Link><span className="eyebrow">{post.category || 'Csharptek insight'}{post.read_time ? ` · ${post.read_time}` : ''}</span><h1>{post.title}</h1><p>{post.excerpt || post.meta_description}</p><div className="detail-meta">{post.published_at && <span>{dateLabel(post.published_at)}</span>}{post.author_name && <span>By {post.author_name}</span>}</div></div><ArticleArtwork category={post.category} title={post.title}/></div></section>
     <section className="section"><article className="wrap narrow-article">
       <div className="article-prose">{blocks.map((block, index) => {
         const text = typeof block?.text === 'string' ? block.text : '';
@@ -89,7 +90,7 @@ export default async function BlogStory({ params, prefix = '/blog' }) {
     </article></section>
     {connection && <section className="section-tight"><div className="wrap"><span className="eyebrow">From insight to implementation</span><h2>Explore the engineering behind this topic.</h2><p>See how this subject connects to Csharptek’s delivery work and the related solution area.</p>{connectedSolution && <Link className="text-link" href={`/solutions/${connectedSolution.slug}`}>{connectedSolution.title} <Icon name="arrow" size={15}/></Link>}</div></section>}
     {connection && connection.cases.length > 0 && <RelatedStories slugs={connection.cases}/>}
-    {related.length > 0 && <section className="section-tight"><div className="wrap"><div className="section-heading"><span className="eyebrow">Keep exploring</span><h2>More from Csharptek</h2></div><div className="article-list">{related.map((item) => <article className="article-card" key={item.slug}><div className="article-art"/><div className="article-card-body"><span className="eyebrow">{item.category || 'Insight'}</span><h3>{item.title}</h3><p>{item.excerpt || item.meta_description}</p><Link className="text-link" href={`${prefix}/${item.slug}`}>Read the article <Icon name="arrow" size={15}/></Link></div></article>)}</div></div></section>}
+    {related.length > 0 && <section className="section-tight"><div className="wrap"><div className="section-heading"><span className="eyebrow">Keep exploring</span><h2>More from Csharptek</h2></div><div className="article-list">{related.map((item) => <article className="article-card" key={item.slug}><ArticleCardArtwork category={item.category} title={item.title}/><div className="article-card-body"><span className="eyebrow">{item.category || 'Insight'}</span><h3>{item.title}</h3><p>{item.excerpt || item.meta_description}</p><Link className="text-link" href={`${prefix}/${item.slug}`}>Read the article <Icon name="arrow" size={15}/></Link></div></article>)}</div></div></section>}
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeSchema }}/>
   </>;
 }

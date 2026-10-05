@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Icon from '../../../components/Icon';
 import { caseStudies, getSolution, solutionHref } from '../../../data/site';
@@ -50,7 +51,7 @@ export default async function CaseStudyPage({ params }) {
 
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}/>
-    <section className="page-hero case-detail-hero"><div className="wrap page-hero-inner"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/case-studies">Case studies</Link><span>/</span>{item.name}</div><span className="eyebrow">{item.label}</span><h1>{item.title}</h1><p>{item.summary}</p><div className="detail-meta"><span>Engineering story</span><span>{solution?.title}</span></div></div></section>
+    <section className="page-hero case-detail-hero"><div className="wrap page-hero-art-inner"><div className="page-hero-inner"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/case-studies">Case studies</Link><span>/</span>{item.name}</div><span className="eyebrow">{item.label}</span><h1>{item.title}</h1><p>{item.summary}</p><div className="detail-meta"><span>Engineering story</span><span>{solution?.title}</span></div></div><figure className="brand-artwork"><Image src={`/images/brand/case-${item.slug}.png`} alt={`Illustrative artwork representing ${item.name} engineering work.`} width={1152} height={896} sizes="(max-width: 760px) 100vw, 42vw" priority/></figure></div></section>
 
     <div className="wrap"><div className="cs-facts">{detail.facts.map((fact) => <div className="cs-fact" key={fact.label}><span>{fact.label}</span><strong>{fact.value}</strong></div>)}</div></div>
 

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Icon from '../../../components/Icon';
+import BrandArtwork from '../../../components/BrandArtwork';
 import RelatedStories from '../../../components/RelatedStories';
 import { capabilities } from '../../../data/capabilities';
 import { solutionHref as getSolutionHref, getSolution } from '../../../data/site';
@@ -24,7 +25,7 @@ export default async function CapabilityPage({ params }) {
 
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}/>
-    <section className="page-hero"><div className="wrap page-hero-inner"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/capabilities">Capabilities</Link><span>/</span>{item.title}</div><span className="eyebrow">Engineering capability</span><h1>{item.title}</h1><p>{item.description}</p><div style={{marginTop:28}}><Link className="button" href={`/contact?initiative=${encodeURIComponent(item.title)}`}>Discuss an initiative <Icon name="arrow" size={16}/></Link></div></div></section>
+    <section className="page-hero"><div className="wrap page-hero-art-inner"><div className="page-hero-inner"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/capabilities">Capabilities</Link><span>/</span>{item.title}</div><span className="eyebrow">Engineering capability</span><h1>{item.title}</h1><p>{item.description}</p><div style={{marginTop:28}}><Link className="button" href={`/contact?initiative=${encodeURIComponent(item.title)}`}>Discuss an initiative <Icon name="arrow" size={16}/></Link></div></div><BrandArtwork slug={item.slug}/></div></section>
 
     <section className="section"><div className="wrap content-grid"><div><span className="eyebrow">Where this capability fits</span><h2>Apply the right depth to the problem in front of you.</h2><p>Teams rarely need a capability in isolation. We connect it to the product, data, identity, cloud and operating context already in place, then agree on a delivery path that fits the initiative.</p><ul className="check-list">{item.areas.map((area)=><li key={area}><Icon name="check" size={16}/>{area}</li>)}</ul></div><aside className="content-panel"><span className="eyebrow">Related solution</span><h3>{solution?.title}</h3><p>{solution?.short}</p><p>Use this capability when the initiative needs focused engineering depth within a wider product or operational outcome.</p><Link className="button button-dark" href={solutionUrl}>Explore {solution?.title} <Icon name="arrow" size={15}/></Link></aside></div></section>
 

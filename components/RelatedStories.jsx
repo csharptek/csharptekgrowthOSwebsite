@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Icon from './Icon';
 import { caseStudies } from '../data/site';
 
@@ -15,6 +16,7 @@ export default function RelatedStories({ slugs = [], title = 'Relevant engineeri
       </div>
       <div className="case-grid">
         {stories.map((story) => <article className="case-card" key={story.slug}>
+          <div className="case-art"><Image src={`/images/brand/case-${story.slug}.png`} alt={`Illustrative artwork representing ${story.name} engineering work.`} width={1152} height={896} sizes="(max-width: 760px) 50vw, 33vw"/><span className="case-art-label">{story.name}</span></div>
           <div className="case-body">
             <span className="case-label">{story.label}</span>
             <h3>{story.title}</h3>
