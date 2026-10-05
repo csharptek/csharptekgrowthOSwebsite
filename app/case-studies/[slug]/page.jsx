@@ -13,7 +13,8 @@ export async function generateMetadata({ params }) {
   const detail = getCaseStudyDetail(slug);
   if (!item) return {};
   const indexable = detail?.published === true;
-  return { title: item.title, description: item.summary, alternates: { canonical: `/case-studies/${slug}` }, robots: { index: indexable, follow: true } };
+  const title = item.title.length > 50 ? { absolute: item.title } : item.title;
+  return { title, description: item.summary, alternates: { canonical: `/case-studies/${slug}` }, robots: { index: indexable, follow: true } };
 }
 
 export default async function CaseStudyPage({ params }) {
