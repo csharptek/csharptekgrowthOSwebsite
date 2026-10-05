@@ -1,26 +1,40 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 import Icon from './Icon';
 
-export default function LeadForm({ defaultInitiative = '' }) {
+export const CONTACT_REASONS = [
+  'General Enquiry',
+  'Project Consultation (Free)',
+  'Career / Job Application',
+  'Partnership / Collaboration',
+  'Support / Existing Client',
+  'Other'
+];
+
+export default function LeadForm({ defaultInitiative = '', defaultReason = '' }) {
   const [status, setStatus] = useState('');
+  const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
   const started = useRef(false);
+  const initialReason = defaultReason || (defaultInitiative ? 'Project Consultation (Free)' : '');
 
   async function submit(event) {
     event.preventDefault();
     if (busy) return;
     setBusy(true);
     setStatus('');
+    setOk(false);
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
     try {
       const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-      const result = await response.json();
+      const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.success) throw new Error(result.message || 'Your message could not be sent. Please try again.');
-      window.dataLayer?.push({ event: 'form_submit', form_name: 'initiative', initiative_type: data.initiativeType });
-      setStatus('Thanks. Your initiative is on its way to our team. We’ll be in touch.');
+      window.dataLayer?.push({ event: 'form_submit', form_name: 'contact', contact_reason: data.reason, initiative_type: data.initiativeType || '' });
+      setOk(true);
+      setStatus('Thanks — your message is with our team. We reply within 24 hours on business days.');
       form.reset();
     } catch (error) {
       setStatus(error.message || 'Something went wrong. Email info@csharptek.com and we’ll help.');
@@ -29,16 +43,18 @@ export default function LeadForm({ defaultInitiative = '' }) {
     }
   }
 
-  return <form className="lead-form" onSubmit={submit} onFocus={() => { if (!started.current) { started.current = true; window.dataLayer?.push({ event: 'form_start', form_name: 'initiative' }); } }}>
+  return <form className="lead-form" onSubmit={submit} onFocus={() => { if (!started.current) { started.current = true; window.dataLayer?.push({ event: 'form_start', form_name: 'contact' }); } }}>
+    <div className="lead-form-head field-full"><h3>Send us a message</h3><p>Fields marked * are required.</p></div>
     <div className="honeypot" aria-hidden="true"><label htmlFor="lead-website">Leave this blank</label><input id="lead-website" name="website" tabIndex={-1} autoComplete="off"/></div>
-    <div className="field"><label htmlFor="lead-name">Name *</label><input id="lead-name" name="name" autoComplete="name" required maxLength={120}/></div>
-    <div className="field"><label htmlFor="lead-email">Work email *</label><input id="lead-email" type="email" name="email" autoComplete="email" required maxLength={254}/></div>
-    <div className="field"><label htmlFor="lead-company">Company *</label><input id="lead-company" name="company" autoComplete="organization" required maxLength={160}/></div>
-    <div className="field"><label htmlFor="lead-role">Your role</label><input id="lead-role" name="role" autoComplete="organization-title" maxLength={120}/></div>
-    <div className="field"><label htmlFor="lead-initiative">Initiative type *</label><select id="lead-initiative" name="initiativeType" defaultValue={defaultInitiative} required><option value="" disabled>Select an initiative</option>{defaultInitiative && !['AI initiative','AI product','Workflow automation','Modernization','Healthcare','Marketplace','Other'].includes(defaultInitiative) && <option value={defaultInitiative}>{defaultInitiative}</option>}<option>AI initiative</option><option>AI product</option><option>Workflow automation</option><option>Modernization</option><option>Healthcare</option><option>Marketplace</option><option>Other</option></select></div>
-    <div className="field"><label htmlFor="lead-timeline">Timeline</label><select id="lead-timeline" name="timeline" defaultValue=""><option value="">Select a timeframe</option><option>As soon as possible</option><option>Within 1–3 months</option><option>Within 3–6 months</option><option>Exploring options</option></select></div>
-    <div className="field field-full"><label htmlFor="lead-message">What are you trying to build, modernize or automate? *</label><textarea id="lead-message" name="message" required maxLength={6000} placeholder="A little context helps us bring the right people into the conversation."/></div>
-    <div className="form-submit"><button className="button" type="submit" disabled={busy}>{busy ? 'Sending…' : 'Discuss your initiative'} <Icon name="arrow" size={16}/></button><small>We’ll use these details to respond to your inquiry.</small></div>
-    {status && <p className="form-status" role="status" aria-live="polite">{status}</p>}
+    {defaultInitiative && <input type="hidden" name="initiativeType" value={defaultInitiative}/>}
+    <div className="field"><label htmlFor="lead-name">Name *</label><input id="lead-name" name="name" autoComplete="name" required maxLength={120} placeholder="Your full name"/></div>
+    <div className="field"><label htmlFor="lead-email">Email *</label><input id="lead-email" type="email" name="email" autoComplete="email" required maxLength={254} placeholder="you@company.com"/></div>
+    <div className="field"><label htmlFor="lead-company">Company</label><input id="lead-company" name="company" autoComplete="organization" maxLength={160} placeholder="Company name"/></div>
+    <div className="field"><label htmlFor="lead-phone">Phone</label><input id="lead-phone" type="tel" name="phone" autoComplete="tel" maxLength={40} placeholder="+1 555 000 0000"/></div>
+    <div className="field field-full"><label htmlFor="lead-reason">Reason for contact *</label><select id="lead-reason" name="reason" defaultValue={initialReason} required><option value="" disabled>Select a reason</option>{CONTACT_REASONS.map((reason) => <option key={reason}>{reason}</option>)}</select></div>
+    {defaultInitiative && <p className="lead-form-context field-full">Regarding: <strong>{defaultInitiative}</strong></p>}
+    <div className="field field-full"><label htmlFor="lead-message">Tell us about your project *</label><textarea id="lead-message" name="message" required maxLength={6000} placeholder="A brief description of your project, industry, rough timeline and budget range helps us give you a useful first response."/></div>
+    <div className="form-submit"><button className="button" type="submit" disabled={busy}>{busy ? 'Sending…' : 'Send message'} <Icon name="arrow" size={16}/></button><small>By submitting you agree to our <Link className="text-link" href="/privacy-policy">Privacy Policy</Link>. We never share your data with third parties.</small></div>
+    {status && <p className={`form-status${ok ? ' is-success' : ' is-error'}`} role="status" aria-live="polite">{status}</p>}
   </form>;
 }
