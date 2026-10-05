@@ -2,6 +2,21 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Icon from './Icon';
 import { getPublishedPost, getPublishedPosts } from '../lib/blog';
+import RelatedStories from './RelatedStories';
+import { solutions } from '../data/site';
+
+const articleConnections = {
+  'ai-medical-scribe-azure-openai': { solution: 'healthcare-ai-automation', cases: ['medical-documentation', 'healthcare-mobile-app'] },
+  'vibe-coding-mvp-development': { solution: 'ai-product-engineering', cases: ['image-to-video', 'virilocity'] },
+  'hipaa-compliant-ai-healthcare-startups': { solution: 'healthcare-ai-automation', cases: ['medical-documentation', 'healthcare-mobile-app'] },
+  'ai-voice-agents-vs-call-centres': { solution: 'intelligent-workflow-automation', cases: ['woundmedix'] },
+  'how-rag-pipelines-work': { solution: 'ai-production-engineering', cases: ['rag-pipeline', 'travel-data-ai'] },
+  'building-bilingual-ai-middle-east': { solution: 'ai-production-engineering', cases: ['travel-data-ai'] },
+  'fax-to-ai-healthcare-automation': { solution: 'healthcare-ai-automation', cases: ['woundmedix', 'medical-documentation'] },
+  'ai-in-edtech-2025': { solution: 'ai-product-engineering', cases: ['virilocity'] },
+  'pet-care-tech-rfid-ai': { solution: 'intelligent-workflow-automation', cases: [] },
+  'how-to-pick-ai-stack-startup': { solution: 'ai-production-engineering', cases: ['rag-pipeline'] }
+};
 
 function dateLabel(value) {
   if (!value) return '';
@@ -43,6 +58,8 @@ export default async function BlogStory({ params, prefix = '/blog' }) {
   if (!post) notFound();
   const blocks = bodyBlocks(post);
   const tags = Array.isArray(post.tags) ? post.tags : [];
+  const connection = articleConnections[slug];
+  const connectedSolution = connection && solutions.find((item) => item.slug === connection.solution);
   const schema = {
     '@context': 'https://schema.org', '@type': 'Article', headline: post.title,
     description: post.meta_description || post.excerpt || '',
@@ -70,6 +87,8 @@ export default async function BlogStory({ params, prefix = '/blog' }) {
       {tags.length > 0 && <div className="tag-list article-tags">{tags.filter((tag) => typeof tag === 'string').map((tag) => <span key={tag}>{tag}</span>)}</div>}
       {post.author_name && <div className="author-strip"><span className="author-avatar">{post.author_name.charAt(0)}</span><span><b>{post.author_name}</b>{post.author_role && <small>{post.author_role}</small>}</span></div>}
     </article></section>
+    {connection && <section className="section-tight"><div className="wrap"><span className="eyebrow">From insight to implementation</span><h2>Explore the engineering behind this topic.</h2><p>See how this subject connects to Csharptek’s delivery work and the related solution area.</p>{connectedSolution && <Link className="text-link" href={`/solutions/${connectedSolution.slug}`}>{connectedSolution.title} <Icon name="arrow" size={15}/></Link>}</div></section>}
+    {connection && connection.cases.length > 0 && <RelatedStories slugs={connection.cases}/>}
     {related.length > 0 && <section className="section-tight"><div className="wrap"><div className="section-heading"><span className="eyebrow">Keep exploring</span><h2>More from Csharptek</h2></div><div className="article-list">{related.map((item) => <article className="article-card" key={item.slug}><div className="article-art"/><div className="article-card-body"><span className="eyebrow">{item.category || 'Insight'}</span><h3>{item.title}</h3><p>{item.excerpt || item.meta_description}</p><Link className="text-link" href={`${prefix}/${item.slug}`}>Read the article <Icon name="arrow" size={15}/></Link></div></article>)}</div></div></section>}
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeSchema }}/>
   </>;

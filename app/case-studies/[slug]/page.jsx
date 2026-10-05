@@ -5,6 +5,9 @@ import { caseStudies, getSolution, solutionHref } from '../../../data/site';
 import { getCaseStudyDetail } from '../../../data/caseStudies';
 import '../case-study.css';
 
+const siteUrl = 'https://www.csharptek.com';
+const indexingEnabled = process.env.SITE_INDEXING_ENABLED === 'true';
+
 export function generateStaticParams() { return caseStudies.map(({ slug }) => ({ slug })); }
 
 export async function generateMetadata({ params }) {
@@ -12,13 +15,13 @@ export async function generateMetadata({ params }) {
   const item = caseStudies.find((study) => study.slug === slug);
   const detail = getCaseStudyDetail(slug);
   if (!item) return {};
-  const indexable = detail?.published === true;
+  const indexable = indexingEnabled && detail?.published === true;
   const solutionTitle = getSolution(item.solution)?.title || 'Engineering';
   return {
     title: item.title,
     description: item.summary,
     alternates: { canonical: `/case-studies/${slug}` },
-    robots: { index: indexable, follow: true },
+    robots: { index: indexable, follow: indexingEnabled },
     openGraph: { title: item.title, description: item.summary, type: 'article', url: `/case-studies/${slug}` }
   };
 }
@@ -39,10 +42,10 @@ export default async function CaseStudyPage({ params }) {
     "@type": "Article",
     "headline": item.title,
     "description": item.summary,
-    "url": `/case-studies/${slug}`,
-    "isPartOf": { "@type": "WebSite", "url": "https://csharptek.com" },
+    "url": `${siteUrl}/case-studies/${slug}`,
+    "isPartOf": { "@type": "WebSite", "url": siteUrl },
     "author": { "@type": "Organization", "name": "Csharptek" },
-    "publisher": { "@type": "Organization", "name": "Csharptek", "logo": { "@type": "ImageObject", "url": "https://csharptek.com/csharptek-logo.png" } }
+    "publisher": { "@type": "Organization", "name": "Csharptek", "url": siteUrl, "logo": { "@type": "ImageObject", "url": `${siteUrl}/csharptek-logo.png` } }
   };
 
   return <>
@@ -60,7 +63,7 @@ export default async function CaseStudyPage({ params }) {
 
       <section className="cs-block content-grid"><div><span className="eyebrow">Engineering details</span><h2>Where the engineering mattered.</h2><ul className="check-list">{detail.engineering.map((point) => <li key={point}><Icon name="check" size={16}/>{point}</li>)}</ul></div><aside className="content-panel"><span className="eyebrow">Integrations</span><h3>Connected systems</h3><div className="tag-list">{detail.integrations.map((name) => <span key={name}>{name}</span>)}</div></aside></section>
 
-      <section className="cs-block"><span className="eyebrow">Results</span><h2>What was delivered.</h2><ul className="check-list">{detail.results.map((point) => <li key={point}><Icon name="check" size={16}/>{point}</li>)}</ul>{detail.resultsNote && <div className="cs-note">{detail.resultsNote}</div>}</section>
+      <section className="cs-block"><span className="eyebrow">Delivery outcomes</span><h2>What was delivered.</h2><ul className="check-list">{detail.results.map((point) => <li key={point}><Icon name="check" size={16}/>{point}</li>)}</ul></section>
 
       <section className="cs-block"><span className="eyebrow">Technology</span><h2>Built with.</h2><div className="tag-list">{detail.technology.map((name) => <span key={name}>{name}</span>)}</div></section>
 

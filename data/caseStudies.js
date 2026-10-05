@@ -36,7 +36,6 @@ export const caseStudyDetails = {
       'The Marketplace purchase-to-cancellation lifecycle is implemented end to end.',
       'The architecture was designed around a low operating-cost target.'
     ],
-    resultsNote: 'Customer and commercial metrics will be added once confirmed.',
     technology: ['TypeScript', 'Node.js', 'Next.js', 'React', 'Azure Cosmos DB', 'Azure OpenAI', 'Container Apps', 'Key Vault', 'Application Insights', 'Service Bus', 'Terraform', 'Docker', 'GitHub Actions', 'HubSpot', 'Microsoft Marketplace']
   },
 
@@ -73,7 +72,6 @@ export const caseStudyDetails = {
       'Human approval is built into the publishing flow rather than added afterwards.',
       'A full test, security and accessibility pipeline gates every deployment.'
     ],
-    resultsNote: 'Live customer numbers and final launch status will be added once confirmed.',
     technology: ['TypeScript', 'Node.js 22', 'Next.js', 'Neon PostgreSQL', 'pgvector', 'Redis', 'Claude', 'Stripe', 'Docker', 'GitHub Actions', 'Entra ID', 'Key Vault', 'Microsoft Graph', 'Azure Marketplace APIs', 'HubSpot', 'Shopify', 'Webflow']
   },
 
@@ -110,7 +108,6 @@ export const caseStudyDetails = {
       'Callers are routed by intent, with structured data captured for every lane.',
       'The voice flow was later paused for the client’s own operational reasons. The underlying workflows remain implemented.'
     ],
-    resultsNote: 'Operational metrics such as call volume and time saved will be added once confirmed.',
     technology: ['Twilio', 'Vapi', 'Gemini', 'Node.js', 'Railway', 'Mailgun', 'PostgreSQL', 'Make.com', 'Google Sheets', 'HubSpot', 'Slack', 'Gmail', 'Zoom', 'Google Calendar', 'Zoho Sign', 'Google Drive']
   },
 
@@ -145,7 +142,6 @@ export const caseStudyDetails = {
       'A working web and iOS product that transcribes visits and drafts clinical notes.',
       'Delivered as a web application and an iOS application.'
     ],
-    resultsNote: 'Documentation-time savings, accuracy and adoption figures are not published here.',
     technology: ['AI/ML', 'Speech transcription', 'Clinical note generation', 'Microsoft Azure', 'Web application', 'iOS']
   },
 
@@ -178,7 +174,6 @@ export const caseStudyDetails = {
       'A year-long engagement delivering improvements to an existing retrieval pipeline.',
       'Agent workflows and vector search working together over private knowledge.'
     ],
-    resultsNote: 'Evaluation methods and performance figures are not published here.',
     technology: ['Python', 'OpenAI API', 'Claude', 'n8n', 'Weaviate', 'Private LLM']
   },
 
@@ -211,7 +206,6 @@ export const caseStudyDetails = {
       'A long-running engagement, active since January 2026.',
       'A working path from unstructured travel content to structured reservation data.'
     ],
-    resultsNote: 'Accuracy, throughput and cost figures are not published here.',
     technology: ['C#', 'Azure OpenAI', 'Azure Document Intelligence', 'REST APIs', 'Email and document processing']
   },
 
@@ -245,7 +239,6 @@ export const caseStudyDetails = {
       'The engagement was completed successfully within its fixed-price scope.',
       'Fulfillment, metering, identity, certification and acquisition work were delivered together.'
     ],
-    resultsNote: 'Marketplace listing details will be added once confirmed.',
     technology: ['Microsoft Azure', 'Microsoft Marketplace', 'Partner Center', 'SaaS Fulfillment APIs', 'Metering APIs', 'Entra ID', 'Full-stack web development', 'A/B testing', 'Heatmaps', 'CRM integration']
   },
 
@@ -280,7 +273,6 @@ export const caseStudyDetails = {
       'All planned milestones were delivered and paid.',
       'Production validation was completed.'
     ],
-    resultsNote: 'User adoption and clinical outcome figures are not published here.',
     technology: ['iOS', 'Android', 'Native recording', 'Transcription', 'AI clinical notes', 'Admin portal', 'App Store', 'Google Play']
   },
 
@@ -313,7 +305,6 @@ export const caseStudyDetails = {
     results: [
       'Three automations are live and tested; four of five courses carry real client content.'
     ],
-    resultsNote: 'This engagement has not launched. Verification automation, final content, live payments and QA are still in progress.',
     technology: ['LearnWorlds', 'Make.com', 'Google Sheets', 'Stripe', 'Nursys API', 'Gmail', 'Webhooks']
   },
 
@@ -346,7 +337,6 @@ export const caseStudyDetails = {
       'The project was completed in the engagement window.',
       'Users can submit an image, wait confidently, then preview and download the result.'
     ],
-    resultsNote: 'Provider, processing-time and business metrics are not published here.',
     technology: ['Image upload', 'Prompt engineering', 'AI video-model integration', 'Asynchronous processing', 'Web application']
   },
 
@@ -378,7 +368,6 @@ export const caseStudyDetails = {
     results: [
       'Main features are working in code and deployed on production domains.'
     ],
-    resultsNote: 'Adoption, revenue and wellness-outcome figures are not published here.',
     technology: ['.NET 8', 'ASP.NET Core', 'EF Core 9', 'PostgreSQL', 'Supabase', 'React', 'Vite', 'Tailwind', 'Docker', 'Railway']
   },
 
@@ -411,7 +400,6 @@ export const caseStudyDetails = {
     results: [
       'Multi-year .NET and Azure delivery, including a roughly 2,500-hour .NET engagement.'
     ],
-    resultsNote: 'A single client-specific modernization story with measured outcomes will replace this overview once approved.',
     technology: ['.NET Core', 'C#', 'Blazor', 'SQL Server', 'Entity Framework', 'Azure', 'Entra ID', 'Azure SQL', 'App Service', 'Docker', 'AKS', 'Terraform', 'Azure DevOps', 'GitHub Actions']
   }
 };
