@@ -1,5 +1,8 @@
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    qualities: [75, 95],
+  },
   async redirects() {
     return [
       { source: '/products/convosphere', destination: '/products', permanent: false },
