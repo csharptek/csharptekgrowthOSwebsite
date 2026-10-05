@@ -23,6 +23,7 @@ const proof = [
 export default function HomePage() {
   return <>
     <section className="hero hero-editorial">
+      <HeroVisual />
       <div className="hero-inner wrap">
         <div className="hero-copy">
           <div className="hero-eyebrow">AI · Product Engineering · Modernization</div>
@@ -30,7 +31,6 @@ export default function HomePage() {
           <p>Csharptek helps established companies put AI into production, add intelligent capabilities to existing products, automate complex workflows, and modernize applications and cloud infrastructure.</p>
           <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss Your Initiative</Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore Our Work</Link></div>
         </div>
-        <HeroVisual/>
       </div>
     </section>
 

@@ -28,15 +28,18 @@ body { background: var(--paper); color: var(--ink); }
 .section-dark, .site-footer { background: var(--ink); }
 .content-panel, .lead-form { border-color: var(--line); }
 .tag-list span { background: var(--mist, #e8f3f3); color: #315963; }
-.hero { color: var(--ink); background: linear-gradient(120deg, #f5f7f4 0%, #edf5f4 72%, #e1f1f3 100%); }
-.hero:before, .hero:after, .page-hero:after { content: none; }
-.hero-eyebrow, .hero h1 em, .hero-caption-rule { color: var(--blue); }
-.hero-eyebrow i { background: var(--sky); box-shadow: 0 0 14px rgba(36, 184, 221, .45); }
-.hero h1 { color: var(--ink); }
-.hero-copy > p { color: var(--muted); }
+.hero { color: #fff; position: relative; isolation: isolate; min-height: clamp(620px, 58vw, 790px); background: #0b252b; }
+.hero:before { content: ''; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(7, 31, 36, .97) 0%, rgba(7, 31, 36, .91) 33%, rgba(7, 31, 36, .60) 55%, rgba(7, 31, 36, .12) 100%), linear-gradient(0deg, rgba(7, 31, 36, .45), transparent 48%, rgba(7, 31, 36, .16)); }
+.hero:after, .page-hero:after { content: none; }
+.hero-eyebrow, .hero-caption-rule { color: #a9c96a; }
+.hero h1 em { color: #78dcec; }
+.hero-eyebrow i { background: #a9c96a; box-shadow: 0 0 14px rgba(169, 201, 106, .5); }
+.hero h1 { color: #fff; }
+.hero-copy > p { color: rgba(241, 249, 247, .83); }
 .hero .button { background: var(--blue); }
 .hero .button:hover { background: var(--ink); box-shadow: 0 10px 24px rgba(0, 127, 149, .18); }
-.hero .button-outline { background: transparent; color: var(--ink); border-color: rgba(16, 38, 45, .28); }
+.hero .button-outline { background: rgba(10, 34, 40, .35); color: #fff; border-color: rgba(255, 255, 255, .5); }
+.hero .button-outline:hover { background: rgba(255, 255, 255, .12); color: #fff; }
 .trust-row { background: #fff; }
 .trust-items span:before { background: var(--sky); }
 .card-icon, .solution-card-icon { color: var(--blue); background: #e8f3f3; }
@@ -83,9 +86,11 @@ body { background: var(--paper); color: var(--ink); }
 
 /* Motion stays decorative; the information is visible without animation. */
 .hero-visual { transform: none; }
-.hero-visual-wrap { position: relative; width: 100%; max-width: 100%; aspect-ratio: 1.28; min-height: 320px; margin: 0; padding: 0; overflow: hidden; border: 1px solid rgba(7, 55, 68, .11); border-radius: 14px; background: #edf5f3; box-shadow: 0 24px 60px rgba(16, 38, 45, .12); }
-.hero-brand-image { width: 100%; height: 100%; object-fit: cover; object-position: 72% center; animation: ctek-image-drift 24s ease-in-out infinite alternate; }
-.hero-visual-wrap:after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg, rgba(245, 247, 244, .08), transparent 35%, rgba(7, 55, 68, .08)); }
+.hero-inner { display: flex; min-height: inherit; align-items: center; padding: clamp(94px, 12vw, 164px) 0; }
+.hero-copy { position: relative; z-index: 2; max-width: 770px; }
+.hero h1 { max-width: 790px; }
+.hero-visual-wrap { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0b252b; }
+.hero-brand-image { object-fit: cover; object-position: 76% center; animation: ctek-image-drift 36s ease-in-out infinite alternate; }
 .case-card, .solution-card, .intent-card { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
 .case-card:hover, .solution-card:hover, .intent-card:hover { transform: translateY(-3px); }
 @keyframes ctek-image-drift { from { transform: scale(1.01) translateY(0); } to { transform: scale(1.045) translateY(-3px); } }
@@ -97,8 +102,10 @@ body { background: var(--paper); color: var(--ink); }
   .case-card:hover, .solution-card:hover, .intent-card:hover { transform: none; }
 }
 @media (max-width: 480px) {
-  .hero-visual { transform: none; margin: 20px 0 0; }
-  .hero-visual-wrap { min-height: 240px; }
+  .hero { min-height: 680px; }
+  .hero-inner { padding: 96px 0 70px; }
+  .hero-brand-image { object-position: 72% center; }
+  .hero:before { background: linear-gradient(90deg, rgba(7, 31, 36, .84), rgba(7, 31, 36, .52)), linear-gradient(0deg, rgba(7, 31, 36, .60), rgba(7, 31, 36, .2)); }
 }
 @media (max-width: 760px) {
   .page-hero-art-inner { grid-template-columns: 1fr; gap: 28px; }
