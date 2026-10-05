@@ -15,7 +15,7 @@ const organizationSchema = { '@context': 'https://schema.org', '@type': 'Organiz
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: 'Csharptek | AI, Product Engineering & Modernization', template: '%s | Csharptek' },
-  description: 'Csharptek helps established companies put AI into production, add intelligent capabilities to products, automate complex workflows, and modernize applications and cloud infrastructure.',
+  description: 'Csharptek helps established companies put AI into production, build intelligent products, automate complex workflows and modernize cloud applications.',
   openGraph: { type: 'website', url: siteUrl, siteName: 'Csharptek', title: 'Csharptek | AI, Product Engineering & Modernization', description: 'Turn complex technology initiatives into production-ready systems.', images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Csharptek' }] },
   twitter: { card: 'summary_large_image', title: 'Csharptek | AI, Product Engineering & Modernization', description: 'Turn complex technology initiatives into production-ready systems.', images: ['/opengraph-image'] },
   robots: { index: indexingEnabled, follow: indexingEnabled }
