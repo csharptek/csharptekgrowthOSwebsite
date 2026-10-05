@@ -1,10 +1,10 @@
 // Full case-study content, grounded in the Csharptek Case Study Master Pack (2026-10-01).
 // Rules: anonymized (no client or product names), no prices, no invented metrics.
-// `published: false` keeps the detail page noindex until claims/permissions are approved.
+// `published: true` = approved by Bhanu; set false to keep a detail page noindex.
 
 export const caseStudyDetails = {
   payautomation: {
-    published: false,
+    published: true,
     facts: [
       { label: 'Engagement', value: 'Product build, from February 2026' },
       { label: 'Delivery', value: 'Web platform, AI engine, Azure infrastructure, CI/CD' },
@@ -41,7 +41,7 @@ export const caseStudyDetails = {
   },
 
   virilocity: {
-    published: false,
+    published: true,
     facts: [
       { label: 'Engagement', value: 'Roughly three to four months of build' },
       { label: 'Delivery', value: 'Multi-tenant SaaS platform' },
@@ -78,7 +78,7 @@ export const caseStudyDetails = {
   },
 
   woundmedix: {
-    published: false,
+    published: true,
     facts: [
       { label: 'Domain', value: 'Home-based clinical care operations' },
       { label: 'Languages', value: 'English and Spanish voice intake' },
@@ -115,7 +115,7 @@ export const caseStudyDetails = {
   },
 
   'medical-documentation': {
-    published: false,
+    published: true,
     facts: [
       { label: 'Engagement', value: 'March to July 2024' },
       { label: 'Platforms', value: 'Web application and iOS app' },
@@ -150,7 +150,7 @@ export const caseStudyDetails = {
   },
 
   'rag-pipeline': {
-    published: false,
+    published: true,
     facts: [
       { label: 'Engagement', value: 'March 2025 to March 2026' },
       { label: 'Focus', value: 'Retrieval, orchestration and generation' },
@@ -183,7 +183,7 @@ export const caseStudyDetails = {
   },
 
   'travel-data-ai': {
-    published: false,
+    published: true,
     facts: [
       { label: 'Engagement', value: 'Long-running, from January 2026' },
       { label: 'Cloud AI', value: 'Azure OpenAI and Document Intelligence' },
@@ -216,7 +216,7 @@ export const caseStudyDetails = {
   },
 
   landminer: {
-    published: false,
+    published: true,
     facts: [
       { label: 'Engagement', value: 'February to August 2026, fixed price' },
       { label: 'Goal', value: 'Production-ready Marketplace SaaS' },
@@ -250,7 +250,7 @@ export const caseStudyDetails = {
   },
 
   'healthcare-mobile-app': {
-    published: false,
+    published: true,
     facts: [
       { label: 'Platforms', value: 'iOS and Android' },
       { label: 'Delivery', value: 'Fixed price, milestone based' },
@@ -285,7 +285,7 @@ export const caseStudyDetails = {
   },
 
   'clinical-workforce-platform': {
-    published: false,
+    published: true,
     facts: [
       { label: 'Domain', value: 'Wound-care workforce readiness' },
       { label: 'Platform', value: 'Learning platform plus automations' },
@@ -318,7 +318,7 @@ export const caseStudyDetails = {
   },
 
   'image-to-video': {
-    published: false,
+    published: true,
     facts: [
       { label: 'Engagement', value: 'January to March 2026' },
       { label: 'Flow', value: 'Upload, prompt, generate, preview' },
@@ -351,7 +351,7 @@ export const caseStudyDetails = {
   },
 
   'connected-wellness-product': {
-    published: false,
+    published: true,
     facts: [
       { label: 'Engagement', value: 'Roughly five to six months' },
       { label: 'Delivery', value: 'Member web app and admin panel' },
@@ -383,7 +383,7 @@ export const caseStudyDetails = {
   },
 
   'dotnet-azure-modernization': {
-    published: false,
+    published: true,
     facts: [
       { label: 'Evidence', value: 'Multi-year .NET and Azure engagements' },
       { label: 'Approach', value: 'Incremental modernization' },

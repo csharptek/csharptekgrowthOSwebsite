@@ -13,10 +13,10 @@ const footerSolutions = [
 
 const socials = [
   ['LinkedIn', 'linkedin', process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN || 'https://www.linkedin.com/company/csharptek/'],
-  ['X', 'x', process.env.NEXT_PUBLIC_SOCIAL_X],
-  ['YouTube', 'youtube', process.env.NEXT_PUBLIC_SOCIAL_YOUTUBE],
+  ['X', 'x', process.env.NEXT_PUBLIC_SOCIAL_X || 'https://twitter.com/csharptek'],
+  ['YouTube', 'youtube', process.env.NEXT_PUBLIC_SOCIAL_YOUTUBE || 'https://www.youtube.com/@csharptek'],
   ['Facebook', 'facebook', process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK],
-  ['Instagram', 'instagram', process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM]
+  ['Instagram', 'instagram', process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM || 'https://instagram.com/csharptekofficial']
 ].filter(([, , url]) => url);
 
 export default function SiteFooter() {

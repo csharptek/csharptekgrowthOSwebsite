@@ -13,7 +13,14 @@ export async function generateMetadata({ params }) {
   const detail = getCaseStudyDetail(slug);
   if (!item) return {};
   const indexable = detail?.published === true;
-  return { title: item.title, description: item.summary, alternates: { canonical: `/case-studies/${slug}` }, robots: { index: indexable, follow: true } };
+  const solutionTitle = getSolution(item.solution)?.title || 'Engineering';
+  return {
+    title: item.title,
+    description: item.summary,
+    alternates: { canonical: `/case-studies/${slug}` },
+    robots: { index: indexable, follow: true },
+    openGraph: { title: item.title, description: item.summary, type: 'article', url: `/case-studies/${slug}` }
+  };
 }
 
 export default async function CaseStudyPage({ params }) {
@@ -27,7 +34,19 @@ export default async function CaseStudyPage({ params }) {
   const related = caseStudies.filter((study) => study.slug !== slug && study.solution === item.solution).slice(0, 3);
   const others = related.length ? related : caseStudies.filter((study) => study.slug !== slug).slice(0, 3);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": item.title,
+    "description": item.summary,
+    "url": `/case-studies/${slug}`,
+    "isPartOf": { "@type": "WebSite", "url": "https://csharptek.com" },
+    "author": { "@type": "Organization", "name": "Csharptek" },
+    "publisher": { "@type": "Organization", "name": "Csharptek", "logo": { "@type": "ImageObject", "url": "https://csharptek.com/csharptek-logo.png" } }
+  };
+
   return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}/>
     <section className="page-hero case-detail-hero"><div className="wrap page-hero-inner"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/case-studies">Case studies</Link><span>/</span>{item.name}</div><span className="eyebrow">{item.label}</span><h1>{item.title}</h1><p>{item.summary}</p><div className="detail-meta"><span>Engineering story</span><span>{solution?.title}</span></div></div></section>
 
     <div className="wrap"><div className="cs-facts">{detail.facts.map((fact) => <div className="cs-fact" key={fact.label}><span>{fact.label}</span><strong>{fact.value}</strong></div>)}</div></div>
