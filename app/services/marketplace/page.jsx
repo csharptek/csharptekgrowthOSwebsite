@@ -6,6 +6,7 @@ import SolutionProof from '../../../components/SolutionProof';
 import SolutionContent from '../../../components/SolutionContent';
 import { getSolution } from '../../../data/site';
 import { capabilities } from '../../../data/capabilities';
+import { createPageMetadata } from '../../../lib/seo';
 
 const solution = getSolution('microsoft-marketplace-engineering');
 const siteUrl = 'https://www.csharptek.com';
@@ -23,7 +24,7 @@ const faqs = [
   ['Can you help with certification?', 'Yes. We support the technical validation steps and the fixes that come out of Microsoft’s review.'],
   ['How long does it take?', 'It depends on the offer and your product. A short discovery clarifies scope and a realistic path before delivery begins.']
 ];
-export const metadata = { title: solution.title, description: solution.description, alternates: { canonical: '/services/marketplace' }, openGraph: { title: `${solution.title} | Csharptek`, description: solution.description, images: ['/opengraph-image'] }, twitter: { card: 'summary_large_image', title: `${solution.title} | Csharptek`, description: solution.description, images: ['/opengraph-image'] } };
+export const metadata = createPageMetadata({ title: solution.title, description: solution.description, path: '/services/marketplace', image: '/images/brand/social-marketplace.png' });
 
 export default function MarketplacePage() {
   const relatedCapabilities = capabilities.filter((item) => item.solution === solution.slug);

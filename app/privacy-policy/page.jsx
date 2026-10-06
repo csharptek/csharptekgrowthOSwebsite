@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
-export const metadata = { title: 'Privacy Policy', description: 'How Csharptek collects, uses and protects the information you submit through its website, including contact forms, job applications and analytics.', alternates: { canonical: '/privacy-policy' } };
+import { createPageMetadata } from '../../lib/seo';
+
+export const metadata = createPageMetadata({ title: 'Csharptek Privacy Policy', description: 'How Csharptek handles information submitted through website contact forms, job applications, cookies and analytics.', path: '/privacy-policy' });
 
 const sections = [
   ['Information you provide', 'When you contact us, we receive the name, work email, company, role, initiative type, timeline and message you choose to submit. When you apply for a role, we receive the information and resume you provide, including contact, location and experience details.'],

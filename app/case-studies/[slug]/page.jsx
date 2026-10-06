@@ -5,6 +5,7 @@ import Icon from '../../../components/Icon';
 import { caseStudies, getSolution, solutionHref } from '../../../data/site';
 import { getCaseStudyDetail } from '../../../data/caseStudies';
 import '../case-study.css';
+import { createPageMetadata } from '../../../lib/seo';
 
 const siteUrl = 'https://www.csharptek.com';
 const indexingEnabled = process.env.SITE_INDEXING_ENABLED === 'true';
@@ -18,13 +19,7 @@ export async function generateMetadata({ params }) {
   if (!item) return {};
   const indexable = indexingEnabled && detail?.published === true;
   const solutionTitle = getSolution(item.solution)?.title || 'Engineering';
-  return {
-    title: item.title,
-    description: item.summary,
-    alternates: { canonical: `/case-studies/${slug}` },
-    robots: { index: indexable, follow: indexingEnabled },
-    openGraph: { title: item.title, description: item.summary, type: 'article', url: `/case-studies/${slug}` }
-  };
+  return { ...createPageMetadata({ title: item.title, description: item.summary, path: `/case-studies/${slug}`, image: `/images/brand/case-${slug}.png`, type: 'article' }), robots: { index: indexable, follow: indexingEnabled } };
 }
 
 export default async function CaseStudyPage({ params }) {
@@ -50,7 +45,7 @@ export default async function CaseStudyPage({ params }) {
   };
 
   return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}/>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }}/>
     <section className="page-hero case-detail-hero"><div className="wrap page-hero-art-inner"><div className="page-hero-inner"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/case-studies">Case studies</Link><span>/</span>{item.name}</div><span className="eyebrow">{item.label}</span><h1>{item.title}</h1><p>{item.summary}</p><div className="detail-meta"><span>Engineering story</span><span>{solution?.title}</span></div></div><figure className="brand-artwork"><Image src={`/images/brand/case-${item.slug}.png`} alt={`Illustrative artwork representing ${item.name} engineering work.`} width={1152} height={896} sizes="(max-width: 760px) 100vw, 42vw" priority/></figure></div></section>
 
     <div className="wrap"><div className="cs-facts">{detail.facts.map((fact) => <div className="cs-fact" key={fact.label}><span>{fact.label}</span><strong>{fact.value}</strong></div>)}</div></div>

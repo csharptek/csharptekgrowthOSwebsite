@@ -5,6 +5,7 @@ import { products } from '../../../data/products';
 import { capabilities } from '../../../data/capabilities';
 import { solutionHref, getSolution } from '../../../data/site';
 import RelatedStories from '../../../components/RelatedStories';
+import { createPageMetadata } from '../../../lib/seo';
 
 const siteUrl = 'https://www.csharptek.com';
 
@@ -12,7 +13,7 @@ export function generateStaticParams() { return products.map(({ slug }) => ({ sl
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const product = products.find((item) => item.slug === slug);
-  return product ? { title: product.name, description: product.description, alternates: { canonical: `/products/${slug}` }, openGraph: { title: `${product.name} | Csharptek`, description: product.description, type: 'website' } } : {};
+  return product ? createPageMetadata({ title: product.name, description: product.description, path: `/products/${slug}` }) : {};
 }
 
 export default async function ProductPage({ params }) {

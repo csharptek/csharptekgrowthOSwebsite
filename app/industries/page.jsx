@@ -2,8 +2,9 @@ import Link from 'next/link';
 import Icon from '../../components/Icon';
 import RelatedStories from '../../components/RelatedStories';
 import BrandArtwork from '../../components/BrandArtwork';
+import { createPageMetadata } from '../../lib/seo';
 
-export const metadata = { title: 'Industries', description: 'Csharptek engineering for healthcare and technology companies, from clinical workflow automation to AI product and SaaS marketplace delivery.', alternates: { canonical: '/industries' } };
+export const metadata = createPageMetadata({ title: 'Healthcare and Technology Industry Engineering', description: 'Csharptek supports healthcare and SaaS companies with clinical workflow automation, AI product engineering, platform integrations and Marketplace delivery.', path: '/industries' });
 
 export default function IndustriesPage() {
   return <>

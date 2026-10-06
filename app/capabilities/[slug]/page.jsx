@@ -5,6 +5,7 @@ import BrandArtwork from '../../../components/BrandArtwork';
 import RelatedStories from '../../../components/RelatedStories';
 import { capabilities } from '../../../data/capabilities';
 import { solutionHref as getSolutionHref, getSolution } from '../../../data/site';
+import { createPageMetadata } from '../../../lib/seo';
 
 const siteUrl = 'https://www.csharptek.com';
 
@@ -12,7 +13,7 @@ export function generateStaticParams() { return capabilities.map(({ slug }) => (
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const item = capabilities.find((capability) => capability.slug === slug);
-  return item ? { title: item.title, description: item.description, alternates: { canonical: `/capabilities/${slug}` }, openGraph: { title: `${item.title} | Csharptek`, description: item.description, type: 'website' } } : {};
+  return item ? createPageMetadata({ title: item.title, description: item.description, path: `/capabilities/${slug}` }) : {};
 }
 
 export default async function CapabilityPage({ params }) {

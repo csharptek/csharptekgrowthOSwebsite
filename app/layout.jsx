@@ -10,8 +10,10 @@ import ConsentBanner from '../components/ConsentBanner';
 
 const siteUrl = 'https://www.csharptek.com';
 const indexingEnabled = process.env.SITE_INDEXING_ENABLED === 'true';
-const websiteSchema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Csharptek', url: siteUrl };
-const organizationSchema = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Csharptek', url: siteUrl, email: 'info@csharptek.com', logo: `${siteUrl}/icon.svg`, description: 'AI, product engineering and modernization for established companies.' };
+const siteSchema = { '@context': 'https://schema.org', '@graph': [
+  { '@type': 'WebSite', '@id': `${siteUrl}/#website`, name: 'Csharptek', url: siteUrl, publisher: { '@id': `${siteUrl}/#organization` } },
+  { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: 'Csharptek', url: siteUrl, email: 'info@csharptek.com', logo: `${siteUrl}/icon.svg`, description: 'AI, product engineering and modernization for established companies.' }
+] };
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,7 +35,6 @@ export default function RootLayout({ children }) {
     <ConsentBanner><AnalyticsScripts/></ConsentBanner>
     <BreadcrumbSchema/>
     <Tracking/>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}/>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c') }}/>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema).replace(/</g, '\\u003c') }}/>
   </body></html>;
 }

@@ -3,7 +3,9 @@ import LeadForm from '../../components/LeadForm';
 import Faq from '../../components/Faq';
 import Icon from '../../components/Icon';
 
-export const metadata = { title: 'Contact Us', description: 'Tell Csharptek what you are building. Email, WhatsApp, book a free 30-minute discovery call or send a message — we reply within 24 hours.', alternates: { canonical: '/contact' } };
+import { createPageMetadata } from '../../lib/seo';
+
+export const metadata = createPageMetadata({ title: 'Contact Csharptek About Your Initiative', description: 'Talk with Csharptek about AI product engineering, workflow automation, Azure modernization or a complex software initiative.', path: '/contact' });
 
 const channels = [
   { icon: 'mail', title: 'Email us', text: 'Best for project briefs and detailed queries', label: 'info@csharptek.com', href: 'mailto:info@csharptek.com' },

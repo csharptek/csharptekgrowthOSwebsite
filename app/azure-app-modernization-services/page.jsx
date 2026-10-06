@@ -7,6 +7,7 @@ import RelatedStories from '../../components/RelatedStories';
 import SolutionContent from '../../components/SolutionContent';
 import { getSolution } from '../../data/site';
 import { capabilities } from '../../data/capabilities';
+import { createPageMetadata } from '../../lib/seo';
 
 const solution = getSolution('application-cloud-modernization');
 const faqs = [
@@ -15,7 +16,7 @@ const faqs = [
   ['What should we assess first?', 'Start with the business goal, the systems involved, the main reliability or delivery constraints, and the integrations that must keep working.'],
   ['Can cloud and application work be handled together?', 'Yes. Application architecture, Azure services, identity, integrations and deployment practices can be considered together when they affect the same initiative.']
 ];
-export const metadata = { title: solution.title, description: solution.description, alternates: { canonical: '/azure-app-modernization-services' }, openGraph: { title: `${solution.title} | Csharptek`, description: solution.description, images: ['/opengraph-image'] }, twitter: { card: 'summary_large_image', title: `${solution.title} | Csharptek`, description: solution.description, images: ['/opengraph-image'] } };
+export const metadata = createPageMetadata({ title: solution.title, description: solution.description, path: '/azure-app-modernization-services', image: '/images/brand/solution-modernization.png' });
 
 export default function ModernizationPage() {
   const relatedCapabilities = capabilities.filter((item) => item.solution === solution.slug);

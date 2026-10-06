@@ -2,8 +2,9 @@ import Link from 'next/link';
 import Icon from '../../components/Icon';
 import BrandArtwork from '../../components/BrandArtwork';
 import { capabilities } from '../../data/capabilities';
+import { createPageMetadata } from '../../lib/seo';
 
-export const metadata = { title: 'Engineering Capabilities', description: 'Csharptek engineering capabilities across AI and LLMs, product engineering, Azure, .NET, cloud and DevOps, data and system integrations.', alternates: { canonical: '/capabilities' } };
+export const metadata = createPageMetadata({ title: 'AI, Azure and .NET Engineering Capabilities', description: 'Explore Csharptek capabilities in AI and LLM engineering, software product development, Azure cloud, .NET modernization, DevOps, data and integrations.', path: '/capabilities' });
 
 export default function CapabilitiesPage() {
   return <>

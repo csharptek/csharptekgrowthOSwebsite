@@ -1,14 +1,11 @@
 import Link from 'next/link';
 import CareersBoard from '../../components/CareersBoard';
 import { getJobs } from '../../lib/jobs';
+import { createPageMetadata } from '../../lib/seo';
 
 export const revalidate = 300;
 
-export const metadata = {
-  title: 'Careers at Csharptek',
-  description: 'Explore current opportunities to work on AI, product engineering, cloud and software initiatives at Csharptek.',
-  alternates: { canonical: '/careers' }
-};
+export const metadata = createPageMetadata({ title: 'Software Engineering Careers at Csharptek', description: 'Explore opportunities to work on AI, product engineering, cloud platforms and software initiatives with Csharptek.', path: '/careers' });
 
 export default async function CareersPage() {
   let jobs = [];

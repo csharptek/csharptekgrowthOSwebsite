@@ -3,8 +3,9 @@ import Icon from '../components/Icon';
 import HeroVisual from '../components/HeroVisual';
 import { caseStudies, solutions, trustItems } from '../data/site';
 import { products } from '../data/products';
+import { createPageMetadata } from '../lib/seo';
 
-export const metadata = { alternates: { canonical: '/' } };
+export const metadata = createPageMetadata({ title: 'AI Engineering and Product Development for Established Companies', description: 'Csharptek helps established companies put AI into production, add intelligent capabilities to products, automate complex workflows and modernize applications.', path: '/' });
 
 const intents = [
   { title: 'Put AI into production', text: 'Move AI prototypes, RAG systems and agent initiatives into reliable production systems.', slug: 'ai-production-engineering', icon: 'spark' },

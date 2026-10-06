@@ -3,7 +3,9 @@ import Icon from '../../components/Icon';
 import { products } from '../../data/products';
 import RelatedStories from '../../components/RelatedStories';
 
-export const metadata = { title: 'Csharptek Products', description: 'Explore products from Csharptek, including TekDial and TekSocial, built from our own engineering work.', alternates: { canonical: '/products' } };
+import { createPageMetadata } from '../../lib/seo';
+
+export const metadata = createPageMetadata({ title: 'Software Products by Csharptek', description: 'Explore Csharptek products including TekDial and TekSocial, shaped by our work in software engineering and connected business workflows.', path: '/products' });
 
 export default function ProductsPage() {
   return <>
