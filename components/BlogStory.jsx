@@ -19,6 +19,10 @@ const articleConnections = {
   'how-to-pick-ai-stack-startup': { solution: 'ai-production-engineering', cases: ['rag-pipeline'] }
 };
 
+const articleCtaLabels = {
+  'fax-to-ai-healthcare-automation': 'Discuss your automation'
+};
+
 function dateLabel(value) {
   if (!value) return '';
   return new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(value));
@@ -82,7 +86,7 @@ export default async function BlogStory({ params, prefix = '/blog' }) {
         if (block?.type === 'intro') return <p className="article-intro" key={index}>{text}</p>;
         if (block?.type === 'h2') return <h2 key={index}>{text}</h2>;
         if (block?.type === 'p') return <p key={index}>{text}</p>;
-        if (block?.type === 'cta' && typeof block.href === 'string' && block.href.startsWith('/') && !block.href.startsWith('//')) return <div className="article-cta" key={index}><p>{text}</p><Link className="button" href={block.href}>{block.label || 'Discuss your initiative'} <Icon name="arrow" size={15}/></Link></div>;
+        if (block?.type === 'cta' && typeof block.href === 'string' && block.href.startsWith('/') && !block.href.startsWith('//')) return <div className="article-cta" key={index}><p>{text}</p><Link className="button" href={block.href}>{articleCtaLabels[slug] || block.label || 'Discuss your initiative'} <Icon name="arrow" size={15}/></Link></div>;
         return null;
       })}</div>
       {tags.length > 0 && <div className="tag-list article-tags">{tags.filter((tag) => typeof tag === 'string').map((tag) => <span key={tag}>{tag}</span>)}</div>}
