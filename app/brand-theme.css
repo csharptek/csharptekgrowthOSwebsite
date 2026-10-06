@@ -153,3 +153,33 @@ body { background: var(--paper); color: var(--ink); }
   .hero-actions .button { padding: 11px 12px; font-size: 10px; }
   .hero-visual-wrap { height: 190px; }
 }
+
+.ecosystem-section { background: #101e25; color: #f5f7f5; }
+.ecosystem-heading { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); gap: clamp(32px, 7vw, 100px); align-items: end; margin-bottom: 42px; }
+.ecosystem-section .section-heading { margin: 0; }
+.ecosystem-section .section-heading h2 { max-width: 680px; }
+.ecosystem-section .section-heading p { color: #b7c5c8; }
+.ecosystem-section .eyebrow { color: #8dd8e7; }
+.ecosystem-note { display: grid; gap: 10px; padding: 20px 22px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.11); border-radius: 10px; }
+.ecosystem-note strong { font: 650 17px/1.3 var(--display); }
+.ecosystem-note span { color: #b7c5c8; font-size: 13px; line-height: 1.6; }
+.ecosystem-note .text-link { color: #8dd8e7; }
+.ecosystem-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.ecosystem-card { display: flex; gap: 15px; align-items: flex-start; min-height: 156px; padding: 22px 19px; background: #172832; border: 1px solid rgba(192,220,226,.12); border-radius: 10px; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.ecosystem-card:hover { transform: translateY(-3px); border-color: rgba(141,216,231,.48); background: #1b303a; }
+.ecosystem-mark { display: grid; flex: 0 0 39px; width: 39px; height: 39px; place-items: center; border-radius: 10px; background: rgba(93,195,215,.13); color: #9de3ed; font: 750 14px/1 var(--display); letter-spacing: -.04em; }
+.ecosystem-card:nth-child(2) .ecosystem-mark { color: #ffb06a; background: rgba(255,153,68,.12); }
+.ecosystem-card:nth-child(3) .ecosystem-mark { color: #a8c9ff; background: rgba(100,148,240,.15); }
+.ecosystem-card:nth-child(4) .ecosystem-mark, .ecosystem-card:nth-child(5) .ecosystem-mark { color: #d2b8ff; background: rgba(165,122,240,.14); }
+.ecosystem-card h3 { margin: 3px 0 7px; color: #f5f7f5; font: 650 17px/1.2 var(--display); }
+.ecosystem-card p { margin: 0; color: #b7c5c8; font-size: 12px; line-height: 1.55; }
+.ecosystem-relationship { color: #8dd8e7; font-size: 9px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+.ecosystem-footnote { margin: 18px 0 0; color: #96a9ad; font-size: 11px; line-height: 1.6; }
+@media (max-width: 900px) {
+  .ecosystem-heading { grid-template-columns: 1fr; gap: 24px; }
+  .ecosystem-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .ecosystem-grid { grid-template-columns: 1fr; gap: 10px; }
+  .ecosystem-card { min-height: 0; padding: 18px; }
+}
