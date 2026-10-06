@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
 
+const OLD_HOSTS = new Set(['csharptek.com', 'growthos.csharptek.com']);
+
 export function proxy(request) {
-  const url = request.nextUrl.clone();
-  if (url.hostname === 'csharptek.com') {
-    url.hostname = 'www.csharptek.com';
+  const host = (request.headers.get('host') || request.nextUrl.hostname).split(':')[0].toLowerCase();
+  if (OLD_HOSTS.has(host)) {
+    const url = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://www.csharptek.com');
     return NextResponse.redirect(url, 308);
   }
   return NextResponse.next();
