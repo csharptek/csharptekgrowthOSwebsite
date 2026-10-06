@@ -108,6 +108,9 @@ export default function SiteHeader() {
   const headerRef = useRef(null);
   const reduceMotion = useReducedMotion();
   const close = () => { setOpen(false); setActiveMenu(null); };
+  const dismissDesktopMenu = () => {
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setActiveMenu(null);
+  };
   const toggleMenu = (id) => {
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
       // Desktop hover/focus may already have opened this menu before the click.
@@ -132,7 +135,7 @@ export default function SiteHeader() {
 
   return <header ref={headerRef} className="site-header" onMouseLeave={() => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setActiveMenu(null); }}>
     <div className="header-inner wrap">
-      <Link href="/" className="brand" aria-label="Csharptek home" onClick={close}>
+      <Link href="/" className="brand" aria-label="Csharptek home" onMouseEnter={dismissDesktopMenu} onFocus={dismissDesktopMenu} onClick={close}>
         <Image src="/csharptek-logo.png" alt="" width={1024} height={191} priority className="brand-logo" />
       </Link>
       <button className="mobile-menu-toggle" type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => { setOpen(!open); setActiveMenu(null); }}>
@@ -140,13 +143,13 @@ export default function SiteHeader() {
       </button>
       <nav className={`main-nav ${open ? 'is-open' : ''}`} aria-label="Main navigation">
         <MenuGroup id="solutions" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
-        <Link href="/case-studies" onClick={close}>Case studies</Link>
+        <Link href="/case-studies" onMouseEnter={dismissDesktopMenu} onFocus={dismissDesktopMenu} onClick={close}>Case studies</Link>
         <MenuGroup id="industries" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
         <MenuGroup id="capabilities" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
-        <Link href="/blog" onClick={close}>Insights</Link>
+        <Link href="/blog" onMouseEnter={dismissDesktopMenu} onFocus={dismissDesktopMenu} onClick={close}>Insights</Link>
         <MenuGroup id="products" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
         <MenuGroup id="company" activeMenu={activeMenu} onToggle={toggleMenu} onHover={hoverMenu} close={close} reduceMotion={reduceMotion}/>
-        <Link href="/contact" className="nav-cta" onClick={close}>Discuss Your Initiative</Link>
+        <Link href="/contact" className="nav-cta" onMouseEnter={dismissDesktopMenu} onFocus={dismissDesktopMenu} onClick={close}>Discuss Your Initiative</Link>
       </nav>
     </div>
     {open && <button className="nav-backdrop" type="button" aria-label="Close navigation" onClick={close}/>}
