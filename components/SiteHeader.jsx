@@ -108,7 +108,15 @@ export default function SiteHeader() {
   const headerRef = useRef(null);
   const reduceMotion = useReducedMotion();
   const close = () => { setOpen(false); setActiveMenu(null); };
-  const toggleMenu = (id) => setActiveMenu((current) => current === id ? null : id);
+  const toggleMenu = (id) => {
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      // Desktop hover/focus may already have opened this menu before the click.
+      // Keep it open on click; pointer leave, Escape, or an outside click closes it.
+      setActiveMenu(id);
+      return;
+    }
+    setActiveMenu((current) => current === id ? null : id);
+  };
   const hoverMenu = (id) => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setActiveMenu(id); };
 
   useEffect(() => {
