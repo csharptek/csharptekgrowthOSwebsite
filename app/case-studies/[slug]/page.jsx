@@ -72,7 +72,7 @@ export default async function CaseStudyPage({ params }) {
 
       <div className="cs-cta"><div><h3>Have a similar initiative?</h3><p>Talk through the problem and the systems already in place.</p></div><Link className="button" data-track="cta" href={`/contact?initiative=${initiative}`}>Discuss Your Initiative <Icon name="arrow" size={16}/></Link></div>
 
-      <section className="cs-related"><h2>More engineering stories</h2><div className="case-grid">{others.map((study) => <article className="case-card" key={study.slug}><div className="case-body"><span className="case-label">{study.label}</span><h3>{study.title}</h3><p>{study.summary}</p><Link href={`/case-studies/${study.slug}`}>Explore the story <Icon name="arrow" size={15}/></Link></div></article>)}</div></section>
+      <section className="cs-related"><h2>More engineering stories</h2><div className="case-grid">{others.map((study) => <article className="case-card" key={study.slug}><div className="case-body"><Link className="case-label case-topic-link" href={`/case-studies/${study.slug}`}>{study.label}</Link><h3><Link className="case-title-link" href={`/case-studies/${study.slug}`}>{study.title}</Link></h3><p>{study.summary}</p><Link href={`/case-studies/${study.slug}`}>Explore the story <Icon name="arrow" size={15}/></Link></div></article>)}</div></section>
     </div>
     <div style={{height:96}}/>
   </>;

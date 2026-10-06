@@ -72,6 +72,12 @@ body { background: var(--paper); color: var(--ink); }
 .article-art { overflow: hidden; background: var(--deep, #064559); }
 .article-art:after { content: none; }
 .article-art > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.article-art-link, .case-art-link { display: block; color: inherit; }
+.article-art-link:focus-visible, .case-art-link:focus-visible { outline: 3px solid var(--sky); outline-offset: -3px; }
+.article-topic-link, .case-topic-link { display: inline-flex; text-decoration: none; }
+.article-topic-link:hover, .case-topic-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.article-card-body h3 .article-title-link, .case-body h3 .case-title-link { color: inherit; font: inherit; letter-spacing: inherit; text-decoration: none; }
+.article-card-body h3 .article-title-link:hover, .case-body h3 .case-title-link:hover { color: var(--blue); }
 .page-hero .eyebrow { color: #087f96; }
 .page-hero:has(.brand-artwork) .breadcrumb { color: #61767a; }
 .page-hero:has(.brand-artwork) .breadcrumb a { color: #315963; }

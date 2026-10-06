@@ -16,10 +16,10 @@ export default function RelatedStories({ slugs = [], title = 'Relevant engineeri
       </div>
       <div className="case-grid">
         {stories.map((story) => <article className="case-card" key={story.slug}>
-          <div className="case-art"><Image src={`/images/brand/case-${story.slug}.png`} alt={`Illustrative artwork representing ${story.name} engineering work.`} width={1152} height={896} sizes="(max-width: 760px) 50vw, 33vw"/><span className="case-art-label">{story.name}</span></div>
+          <Link className="case-art-link" href={`/case-studies/${story.slug}`} aria-label={`Read the ${story.name} story`}><div className="case-art"><Image src={`/images/brand/case-${story.slug}.png`} alt={`Illustrative artwork representing ${story.name} engineering work.`} width={1152} height={896} sizes="(max-width: 760px) 50vw, 33vw"/><span className="case-art-label">{story.name}</span></div></Link>
           <div className="case-body">
-            <span className="case-label">{story.label}</span>
-            <h3>{story.title}</h3>
+            <Link className="case-label case-topic-link" href={`/case-studies/${story.slug}`}>{story.label}</Link>
+            <h3><Link className="case-title-link" href={`/case-studies/${story.slug}`}>{story.title}</Link></h3>
             <p>{story.summary}</p>
             <Link href={`/case-studies/${story.slug}`}>Read the {story.name.toLowerCase()} story <Icon name="arrow" size={15}/></Link>
           </div>
