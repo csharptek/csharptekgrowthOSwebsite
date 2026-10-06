@@ -6,6 +6,7 @@ import SiteFooter from '../components/SiteFooter';
 import AnalyticsScripts from '../components/AnalyticsScripts';
 import Tracking from '../components/Tracking';
 import BreadcrumbSchema from '../components/BreadcrumbSchema';
+import StructuredDataDeduper from '../components/StructuredDataDeduper';
 import ConsentBanner from '../components/ConsentBanner';
 
 const siteUrl = 'https://www.csharptek.com';
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
     <SiteFooter/>
     <ConsentBanner><AnalyticsScripts/></ConsentBanner>
     <BreadcrumbSchema/>
+    <StructuredDataDeduper/>
     <Tracking/>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema).replace(/</g, '\\u003c') }}/>
   </body></html>;
