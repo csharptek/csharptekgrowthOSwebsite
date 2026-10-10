@@ -16,7 +16,11 @@ const articleConnections = {
   'fax-to-ai-healthcare-automation': { solution: 'healthcare-ai-automation', cases: ['woundmedix', 'medical-documentation'] },
   'ai-in-edtech-2025': { solution: 'ai-product-engineering', cases: ['virilocity'] },
   'pet-care-tech-rfid-ai': { solution: 'intelligent-workflow-automation', cases: [] },
-  'how-to-pick-ai-stack-startup': { solution: 'ai-production-engineering', cases: ['rag-pipeline'] }
+  'how-to-pick-ai-stack-startup': { solution: 'ai-production-engineering', cases: ['rag-pipeline'] },
+  'rag-as-a-service-build-buy-or-partner': { solution: 'ai-production-engineering', cases: ['rag-pipeline', 'travel-data-ai'] },
+  'azure-openai-on-your-data-vs-custom-rag': { solution: 'ai-production-engineering', cases: ['rag-pipeline', 'travel-data-ai'] },
+  'white-label-software-development-checklist-for-agencies': { solution: 'agency-development-partner', cases: ['virilocity', 'landminer'] },
+  'production-ready-ai-checklist': { solution: 'ai-production-engineering', cases: ['payautomation', 'rag-pipeline'] }
 };
 
 const articleCtaLabels = {
@@ -87,6 +91,8 @@ export default async function BlogStory({ params, prefix = '/blog' }) {
         if (block?.type === 'intro') return <p className="article-intro" key={index}>{text}</p>;
         if (block?.type === 'h2') return <h2 key={index}>{text}</h2>;
         if (block?.type === 'p') return <p key={index}>{text}</p>;
+        if (block?.type === 'h3') return <h3 key={index}>{text}</h3>;
+        if (block?.type === 'ul' && Array.isArray(block.items)) return <ul key={index}>{block.items.filter((item) => typeof item === 'string').map((item) => <li key={item}>{item}</li>)}</ul>;
         if (block?.type === 'cta' && typeof block.href === 'string' && block.href.startsWith('/') && !block.href.startsWith('//')) return <div className="article-cta" key={index}><p>{text}</p><Link className="button" href={block.href}>{articleCtaLabels[slug] || block.label || 'Discuss your initiative'} <Icon name="arrow" size={15}/></Link></div>;
         return null;
       })}</div>

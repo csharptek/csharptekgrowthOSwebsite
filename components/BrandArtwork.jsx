@@ -51,6 +51,15 @@ const artworkBySlug = {
   }
 };
 
+artworkBySlug['agency-development-partner'] = {
+  src: '/images/brand/about-collaboration.png',
+  alt: 'A collaborative engineering workshop table with hands arranging connected workflow pieces.'
+};
+artworkBySlug['ai-agent-development'] = {
+  src: '/images/brand/solution-workflow-automation.png',
+  alt: 'Connected agent steps with a human review checkpoint.'
+};
+
 artworkBySlug.about = {
   src: '/images/brand/about-collaboration.png',
   alt: 'A collaborative engineering workshop table with hands arranging connected workflow pieces.'

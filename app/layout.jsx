@@ -12,7 +12,7 @@ const siteUrl = 'https://www.csharptek.com';
 const indexingEnabled = process.env.SITE_INDEXING_ENABLED === 'true';
 const siteSchema = { '@context': 'https://schema.org', '@graph': [
   { '@type': 'WebSite', '@id': `${siteUrl}/#website`, name: 'Csharptek', url: siteUrl, publisher: { '@id': `${siteUrl}/#organization` } },
-  { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: 'Csharptek', url: siteUrl, email: 'info@csharptek.com', logo: `${siteUrl}/icon.svg`, description: 'AI, product engineering and modernization for established companies.' }
+  { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: 'Csharptek', url: siteUrl, email: 'info@csharptek.com', logo: `${siteUrl}/icon.svg`, description: 'Azure AI and .NET engineering partner: AI production engineering, AI products, workflow automation and application modernization.', foundingDate: '2016', founder: { '@type': 'Person', name: 'Bhanu Gupta' }, address: { '@type': 'PostalAddress', addressLocality: 'Ranchi', addressRegion: 'Jharkhand', postalCode: '834001', addressCountry: 'IN' }, sameAs: ['https://www.linkedin.com/company/csharptek/', 'https://twitter.com/csharptek', 'https://www.youtube.com/@csharptek'] }
 ] };
 
 export const metadata = {

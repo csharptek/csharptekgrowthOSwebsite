@@ -6,6 +6,7 @@ import SolutionProof from '../../../components/SolutionProof';
 import SolutionContent from '../../../components/SolutionContent';
 import { getSolution } from '../../../data/site';
 import { capabilities } from '../../../data/capabilities';
+import { solutionExtra } from '../../../data/solutionExtra';
 import { createPageMetadata } from '../../../lib/seo';
 
 const solution = getSolution('microsoft-marketplace-engineering');
@@ -18,13 +19,8 @@ const steps = [
   ['Configure and certify', 'Partner Center setup, technical configuration and support through certification.'],
   ['Launch and operate', 'Go live, monitor the subscription lifecycle and evolve the integration.']
 ];
-const faqs = [
-  ['What does Marketplace engineering involve?', 'The technical components that connect your SaaS product to Microsoft’s commerce platform: fulfillment and subscription lifecycle, metering, identity and Partner Center configuration.'],
-  ['Do we need to rebuild our product?', 'Usually not. We add the fulfillment and metering layer around your existing product architecture.'],
-  ['Can you help with certification?', 'Yes. We support the technical validation steps and the fixes that come out of Microsoft’s review.'],
-  ['How long does it take?', 'It depends on the offer and your product. A short discovery clarifies scope and a realistic path before delivery begins.']
-];
-export const metadata = createPageMetadata({ title: solution.title, description: solution.description, path: '/services/marketplace', image: '/images/brand/social-marketplace.png' });
+const faqs = solutionExtra['microsoft-marketplace-engineering'].faqs;
+export const metadata = createPageMetadata({ title: solutionExtra['microsoft-marketplace-engineering'].seoTitle, description: solutionExtra['microsoft-marketplace-engineering'].seoDescription, path: '/services/marketplace', image: '/images/brand/social-marketplace.png' });
 
 export default function MarketplacePage() {
   const relatedCapabilities = capabilities.filter((item) => item.solution === solution.slug);

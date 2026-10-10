@@ -6,6 +6,7 @@ import SolutionProof from '../../../components/SolutionProof';
 import SolutionContent from '../../../components/SolutionContent';
 import { getSolution, solutions } from '../../../data/site';
 import { capabilities } from '../../../data/capabilities';
+import { solutionExtra } from '../../../data/solutionExtra';
 
 export function generateStaticParams() {
   return solutions.filter((item) => !['application-cloud-modernization', 'microsoft-marketplace-engineering'].includes(item.slug)).map(({ slug }) => ({ slug }));
@@ -14,7 +15,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const solution = getSolution(slug);
-  return solution ? { title: solution.title, description: solution.description, alternates: { canonical: `/solutions/${slug}` }, openGraph: { title: `${solution.title} | Csharptek`, description: solution.description, images: ['/opengraph-image'] }, twitter: { card: 'summary_large_image', title: `${solution.title} | Csharptek`, description: solution.description, images: ['/opengraph-image'] } } : {};
+  const extra = solutionExtra[slug];
+  const seoTitle = extra?.seoTitle || solution?.title;
+  const seoDescription = extra?.seoDescription || solution?.description;
+  return solution ? { title: seoTitle, description: seoDescription, alternates: { canonical: `/solutions/${slug}` }, openGraph: { title: `${seoTitle} | Csharptek`, description: seoDescription, images: ['/opengraph-image'] }, twitter: { card: 'summary_large_image', title: `${seoTitle} | Csharptek`, description: seoDescription, images: ['/opengraph-image'] } } : {};
 }
 
 export default async function SolutionPage({ params }) {

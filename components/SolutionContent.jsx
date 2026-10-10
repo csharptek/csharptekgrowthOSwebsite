@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Icon from './Icon';
 import Faq from './Faq';
 import { solutionContent } from '../data/solutionContent';
+import { solutionExtra } from '../data/solutionExtra';
 
 const deliveryStages = [
   ['01', 'Understand the workflow', 'Agree on the users, business context, systems and constraints that define the initiative.'],
@@ -13,6 +14,8 @@ const deliveryStages = [
 export default function SolutionContent({ solution, capabilities = [], includeFaq = true }) {
   const content = solutionContent[solution.slug];
   if (!content) return null;
+  const extra = solutionExtra[solution.slug];
+  const faqs = extra?.faqs || content.faqs;
 
   return <>
     <section className="section section-tint">
@@ -39,6 +42,20 @@ export default function SolutionContent({ solution, capabilities = [], includeFa
       </div>
     </section>
 
+    {extra?.sections?.map((block, i) => <section className={`section${i % 2 === 0 ? ' section-tint' : ''}`} key={block.title}>
+      <div className="wrap">
+        <div className="section-heading"><span className="eyebrow">{block.eyebrow}</span><h2>{block.title}</h2><p>{block.intro}</p></div>
+        <div className="step-grid">{block.items.map(([title, text], index) => <article className="step-card" key={title}><b>{String(index + 1).padStart(2, '0')}</b><h3>{title}</h3><p>{text}</p></article>)}</div>
+      </div>
+    </section>)}
+
+    {extra?.checklist && <section className="section">
+      <div className="wrap content-grid">
+        <div><span className="eyebrow">Checklist</span><h2>{extra.checklist.title}</h2><p>{extra.checklist.intro}</p><Link className="button button-dark" href={`/contact?initiative=${encodeURIComponent(solution.title)}`}>Request an assessment <Icon name="arrow" size={15}/></Link></div>
+        <aside className="content-panel"><ul className="check-list">{extra.checklist.items.map((item) => <li key={item}><Icon name="check" size={16}/>{item}</li>)}</ul></aside>
+      </div>
+    </section>}
+
     <section className="section section-dark">
       <div className="wrap">
         <div className="section-heading"><span className="eyebrow eyebrow-light">A clear path from scope to operation</span><h2>Keep decisions connected through delivery.</h2><p>Move from a defined initiative to an operating system through focused, reviewable stages.</p></div>
@@ -47,6 +64,6 @@ export default function SolutionContent({ solution, capabilities = [], includeFa
       </div>
     </section>
 
-    {includeFaq && <Faq items={content.faqs} title={`Questions about ${solution.title.toLowerCase()}`}/>}
+    {includeFaq && <Faq items={faqs} title={`Questions about ${solution.title.toLowerCase()}`}/>}
   </>;
 }

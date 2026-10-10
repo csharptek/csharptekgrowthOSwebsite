@@ -38,6 +38,24 @@ export const solutionContent = {
       ['Can automation connect our current applications?', 'Integration can involve APIs, webhooks, queues and existing business applications. The available options depend on the systems and access in your environment.']
     ]
   },
+  'agency-development-partner': {
+    fit: 'Agencies win software projects they do not always have the capacity to deliver. A white-label partner adds senior engineers on demand, works to your process and keeps your client relationship yours. The model works when expectations, handoffs and ownership are clear from the first call.',
+    workstreams: [
+      ['Scoping with your team', 'Join pre-sales or discovery to estimate effort and risk, so what you quote matches what can be built.'],
+      ['Delivery behind your brand', 'Work in your repositories, tools and communication channels, with your project manager as the client contact.'],
+      ['Handover and support', 'Deliver documented code, deployment steps and runbooks so your agency or the client can own the result.']
+    ],
+    faqs: [['See the FAQ below','See the detailed answers on this page.']]
+  },
+  'ai-agent-development': {
+    fit: 'An agent is useful when it can take a defined action in a product or workflow and be trusted to do so. That depends on the tools it can use, the limits on what it can do, where a person approves, and how its behavior is measured. The model is one part of that system.',
+    workstreams: [
+      ['Agent and tool design', 'Define the task, the tools and APIs the agent may call, the step limits and what happens on failure.'],
+      ['Approvals and oversight', 'Place approval points where an action is costly or irreversible, and log what the agent did and why.'],
+      ['Evaluation and operations', 'Test agent behavior on real tasks, trace each run and monitor cost, latency and error rates after release.']
+    ],
+    faqs: [['See the FAQ below','See the detailed answers on this page.']]
+  },
   'application-cloud-modernization': {
     fit: 'Modernization should respond to a concrete constraint in the application or cloud environment: for example, a delivery bottleneck, an integration need or an architecture that makes change difficult. Understanding dependencies and operating requirements helps sequence work without assuming a full rewrite.',
     workstreams: [

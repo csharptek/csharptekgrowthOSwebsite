@@ -5,10 +5,12 @@ import Icon from './Icon';
 const footerSolutions = [
   ['AI production', '/solutions/ai-production-engineering'],
   ['AI product engineering', '/solutions/ai-product-engineering'],
+  ['AI agent development', '/solutions/ai-agent-development'],
   ['Workflow automation', '/solutions/intelligent-workflow-automation'],
   ['Application modernization', '/azure-app-modernization-services'],
   ['Healthcare AI', '/solutions/healthcare-ai-automation'],
-  ['Microsoft Marketplace', '/services/marketplace']
+  ['Microsoft Marketplace', '/services/marketplace'],
+  ['Agency partner', '/solutions/agency-development-partner']
 ];
 
 const socials = [

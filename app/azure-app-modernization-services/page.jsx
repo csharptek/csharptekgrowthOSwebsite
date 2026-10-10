@@ -7,16 +7,12 @@ import RelatedStories from '../../components/RelatedStories';
 import SolutionContent from '../../components/SolutionContent';
 import { getSolution } from '../../data/site';
 import { capabilities } from '../../data/capabilities';
+import { solutionExtra } from '../../data/solutionExtra';
 import { createPageMetadata } from '../../lib/seo';
 
 const solution = getSolution('application-cloud-modernization');
-const faqs = [
-  ['Does modernization mean rewriting the application?', 'Not by default. The modernization path can focus on the highest-value constraints in the current application, architecture, APIs or delivery process.'],
-  ['Can we modernize while keeping existing systems in use?', 'The work is planned around the applications and workflows your business depends on. Discovery helps identify dependencies and sequence improvements around operational needs.'],
-  ['What should we assess first?', 'Start with the business goal, the systems involved, the main reliability or delivery constraints, and the integrations that must keep working.'],
-  ['Can cloud and application work be handled together?', 'Yes. Application architecture, Azure services, identity, integrations and deployment practices can be considered together when they affect the same initiative.']
-];
-export const metadata = createPageMetadata({ title: solution.title, description: solution.description, path: '/azure-app-modernization-services', image: '/images/brand/solution-modernization.png' });
+const faqs = solutionExtra['application-cloud-modernization'].faqs;
+export const metadata = createPageMetadata({ title: solutionExtra['application-cloud-modernization'].seoTitle, description: solutionExtra['application-cloud-modernization'].seoDescription, path: '/azure-app-modernization-services', image: '/images/brand/solution-modernization.png' });
 
 export default function ModernizationPage() {
   const relatedCapabilities = capabilities.filter((item) => item.solution === solution.slug);

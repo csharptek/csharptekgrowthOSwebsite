@@ -1,7 +1,7 @@
 export const solutions = [
   {
     slug: 'ai-production-engineering',
-    h1: 'Turn AI prototypes and initiatives into production systems.',
+    h1: 'Take your AI prototype to production: RAG, agents and LLM apps that run reliably.',
     supporting: 'Move from promising AI experiments to reliable systems integrated with your data, applications and operational workflows.',
     cta: 'Discuss Your AI Initiative',
     number: '01',
@@ -16,7 +16,7 @@ export const solutions = [
   },
   {
     slug: 'ai-product-engineering',
-    h1: 'Add AI capabilities to products your customers already use.',
+    h1: 'Build an AI product, or add AI to the SaaS product your customers already use.',
     supporting: 'Design and engineer AI-powered product capabilities that fit your existing product, data, architecture and customer experience.',
     cta: 'Discuss Your Product Initiative',
     number: '02',
@@ -46,7 +46,7 @@ export const solutions = [
   },
   {
     slug: 'application-cloud-modernization',
-    h1: 'Modernize the applications your business already depends on.',
+    h1: 'Modernize .NET applications on Azure without defaulting to a rewrite.',
     supporting: 'Improve legacy applications, cloud architecture, APIs, deployment pipelines and infrastructure without treating modernization as a rewrite by default.',
     cta: 'Discuss Your Initiative',
     number: '04',
@@ -88,6 +88,38 @@ export const solutions = [
     capabilities: ['SaaS Fulfillment APIs', 'Metering and subscription lifecycle', 'Entra ID and entitlement workflows', 'Partner Center and certification', 'Provisioning and launch support'],
     proof: ['Marketplace fulfillment and metering', 'Partner Center implementation', 'SaaS subscription lifecycle engineering'],
     icon: 'grid'
+  },
+  {
+    slug: 'agency-development-partner',
+    h1: 'A white-label development partner for agencies: AI, web and Azure projects delivered behind your brand.',
+    supporting: 'Add senior engineering capacity without hiring. We work under NDA as an extension of your team and deliver to your standards, on your timeline.',
+    cta: 'Discuss an Agency Partnership',
+    number: '07',
+    eyebrow: 'For agencies and consultancies',
+    title: 'Agency Development Partner',
+    short: 'White-label engineering capacity for agencies with AI, web and Azure projects.',
+    description: 'White-label software development for agencies: senior engineers for AI, web, mobile and Azure projects, delivered under NDA behind your brand.',
+    buyer: 'For agencies and consultancies that sell software projects and need dependable delivery capacity.',
+    capabilities: ['White-label and subcontract delivery', 'AI features and agent builds for client projects', 'Web, mobile and API development', 'Azure and .NET engineering', 'Overflow capacity and dedicated teams'],
+    proof: ['AI marketing product engineering', 'Marketplace SaaS engineering', 'Product and platform engineering'],
+    icon: 'grid',
+    unlisted: true
+  },
+  {
+    slug: 'ai-agent-development',
+    h1: 'AI agent development: agents that take real actions, with the controls to trust them.',
+    supporting: 'We design, build and operate AI agents and multi-agent workflows for software teams: tools, memory, approvals, evaluation and cost control on Azure.',
+    cta: 'Discuss Your Agent Project',
+    number: '08',
+    eyebrow: 'Agents built for production',
+    title: 'AI Agent Development',
+    short: 'Build AI agents with bounded actions, approvals, evaluation and observability.',
+    description: 'AI agent development company for SaaS and software teams: single and multi-agent systems with tools, approvals, evaluation and monitoring on Azure OpenAI.',
+    buyer: 'For product and engineering teams building agents into a product or an internal workflow.',
+    capabilities: ['Single and multi-agent design', 'Tool and API integration', 'Approvals and human-in-the-loop', 'Evaluation, tracing and cost control', 'Azure OpenAI and other model providers'],
+    proof: ['Multi-agent revenue automation', 'Production-oriented RAG pipelines', 'AI marketing product engineering'],
+    icon: 'spark',
+    unlisted: true
   }
 ];
 
@@ -122,7 +154,9 @@ export const solutionCases = {
   'intelligent-workflow-automation': ['woundmedix', 'clinical-workforce-platform', 'virilocity'],
   'application-cloud-modernization': ['dotnet-azure-modernization', 'travel-data-ai', 'payautomation'],
   'healthcare-ai-automation': ['medical-documentation', 'healthcare-mobile-app', 'woundmedix'],
-  'microsoft-marketplace-engineering': ['payautomation', 'landminer', 'virilocity']
+  'microsoft-marketplace-engineering': ['payautomation', 'landminer', 'virilocity'],
+  'agency-development-partner': ['virilocity', 'landminer', 'image-to-video'],
+  'ai-agent-development': ['payautomation', 'virilocity', 'rag-pipeline']
 };
 
 export function solutionHref(slug) {

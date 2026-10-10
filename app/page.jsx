@@ -14,6 +14,12 @@ const intents = [
   { title: 'Modernize your applications', text: 'Improve the applications and cloud infrastructure your business already depends on.', href: '/azure-app-modernization-services', icon: 'orbit' }
 ];
 
+const audiences = [
+  { title: 'Agencies', text: 'A white-label development partner for AI, web and Azure projects that need senior engineers behind your brand.', href: '/solutions/agency-development-partner', icon: 'layers' },
+  { title: 'AI and SaaS teams', text: 'Take an AI prototype to production, or add AI features and agents to your product with a small senior team.', href: '/solutions/ai-production-engineering', icon: 'spark' },
+  { title: 'Microsoft-stack companies', text: 'Modernize .NET applications on Azure and add Azure OpenAI to the systems you already run.', href: '/azure-app-modernization-services', icon: 'orbit' }
+];
+
 const proof = [
   ['AI', 'Multi-agent revenue platform', 'A coordinated agent system connected to CRM, revenue workflows and SaaS commerce.'],
   ['UX', 'AI marketing product', 'An AI-enabled product with human approvals, integrations and publishing workflows.'],
@@ -28,14 +34,19 @@ export default function HomePage() {
       <div className="hero-inner wrap">
         <div className="hero-copy">
           <div className="hero-eyebrow">AI · Product Engineering · Modernization</div>
-          <h1>Turn complex technology initiatives into <em>production-ready</em> systems.</h1>
-          <p>Csharptek helps established companies put AI into production, add intelligent capabilities to existing products, automate complex workflows, and modernize applications and cloud infrastructure.</p>
+          <h1>Azure AI and .NET engineering for <em>production-ready</em> systems.</h1>
+          <p>Csharptek is an Azure AI and .NET engineering partner. We take AI prototypes to production, build AI products and agents, automate complex workflows, and modernize .NET applications on Azure for agencies, SaaS teams and Microsoft-stack companies.</p>
           <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss Your Initiative</Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore Our Work</Link></div>
         </div>
       </div>
     </section>
 
     <div className="trust-row"><div className="trust-inner wrap"><span className="trust-label">Built across a connected stack</span><div className="trust-items">{trustItems.map((item) => <span key={item}>{item}</span>)}</div></div></div>
+
+    <section className="section section-tint"><div className="wrap">
+      <div className="section-heading"><span className="eyebrow">Who we work with</span><h2>Engineering partner for three kinds of teams.</h2><p>Pick the description that fits you. Each path has its own way of working.</p></div>
+      <div className="intent-grid">{audiences.map((item, i) => <Link className="intent-card" key={item.title} href={item.href}><span className="card-index">0{i + 1} / AUDIENCE</span><span className="card-icon"><Icon name={item.icon} size={19}/></span><h3>{item.title}</h3><p>{item.text}</p><span className="card-arrow"><Icon name="arrow" size={18}/></span></Link>)}</div>
+    </div></section>
 
     <section className="section"><div className="wrap">
       <div className="section-heading"><span className="eyebrow">Start with what needs to change</span><h2>What are you trying to move forward?</h2><p>Choose the outcome you’re working toward. We’ll bring the engineering depth to make it real in your environment.</p></div>
@@ -44,7 +55,7 @@ export default function HomePage() {
 
     <section className="section section-dark"><div className="wrap proof-layout"><div className="proof-copy"><span className="eyebrow eyebrow-light">Engineering evidence</span><h2>Built for the reality after the prototype.</h2><p>Production work is the architecture, integrations, controls and operating details that make a system useful beyond the demo.</p><Link className="text-link" href="/case-studies">See how we approach the work <Icon name="arrow" size={16}/></Link></div><div className="proof-list">{proof.map(([metric, title, desc]) => <article className="proof-card" key={title}><span className="proof-symbol">{metric}</span><h3>{title}</h3><p>{desc}</p></article>)}</div></div></section>
 
-    <section className="section"><div className="wrap"><div className="section-heading"><span className="eyebrow">One accountable engineering partner</span><h2>Six ways to make important technology work harder.</h2><p>Bring us a real initiative. We’ll connect the product, AI, application and cloud decisions around the outcome you need.</p></div><div className="solution-grid">{solutions.map((solution) => <Link className="solution-card" key={solution.slug} href={solution.slug === 'application-cloud-modernization' ? '/azure-app-modernization-services' : solution.slug === 'microsoft-marketplace-engineering' ? '/services/marketplace' : `/solutions/${solution.slug}`}><div className="solution-top"><span className="solution-number">{solution.number} / SOLUTION</span><span className="solution-card-icon"><Icon name={solution.icon} size={19}/></span></div><h3>{solution.title}</h3><p>{solution.short}</p><span className="solution-link">Explore solution <Icon name="arrow" size={15}/></span></Link>)}</div></div></section>
+    <section className="section"><div className="wrap"><div className="section-heading"><span className="eyebrow">One accountable engineering partner</span><h2>Six ways to make important technology work harder.</h2><p>Bring us a real initiative. We’ll connect the product, AI, application and cloud decisions around the outcome you need.</p></div><div className="solution-grid">{solutions.filter((item) => !item.unlisted).map((solution) => <Link className="solution-card" key={solution.slug} href={solution.slug === 'application-cloud-modernization' ? '/azure-app-modernization-services' : solution.slug === 'microsoft-marketplace-engineering' ? '/services/marketplace' : `/solutions/${solution.slug}`}><div className="solution-top"><span className="solution-number">{solution.number} / SOLUTION</span><span className="solution-card-icon"><Icon name={solution.icon} size={19}/></span></div><h3>{solution.title}</h3><p>{solution.short}</p><span className="solution-link">Explore solution <Icon name="arrow" size={15}/></span></Link>)}</div></div></section>
 
     <section className="section section-tint"><div className="wrap"><div className="section-heading"><span className="eyebrow">Products shaped by delivery experience</span><h2>Product engineering applied to voice and publishing workflows.</h2><p>Explore Csharptek products built around practical communication and content workflows, then see the engineering services and experience connected to each.</p></div><div className="solution-grid">{products.map((product) => <Link className="solution-card" key={product.slug} href={`/products/${product.slug}`}><div className="solution-top"><span className="solution-number">{product.category}</span><span className="solution-card-icon"><Icon name="layers" size={19}/></span></div><h3>{product.name}</h3><p>{product.description}</p><span className="solution-link">Explore product <Icon name="arrow" size={15}/></span></Link>)}</div></div></section>
 
