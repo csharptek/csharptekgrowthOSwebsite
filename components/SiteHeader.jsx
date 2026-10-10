@@ -13,9 +13,9 @@ const groups = {
     items: [
       ['/solutions/ai-production-engineering', 'AI Production Engineering'],
       ['/solutions/ai-product-engineering', 'AI Product Engineering'],
-      ['/solutions/ai-agent-development', 'AI Agent Development'],
-      ['/solutions/intelligent-workflow-automation', 'Intelligent Workflow Automation'],
-      ['/azure-app-modernization-services', 'Application & Cloud Modernization'],
+      ['/solutions/ai-agent-development', 'Custom AI Agents'],
+      ['/solutions/intelligent-workflow-automation', 'Workflow & Process Automation'],
+      ['/azure-app-modernization-services', 'Azure & .NET Modernization'],
       ['/solutions/healthcare-ai-automation', 'Healthcare AI & Automation'],
       ['/services/marketplace', 'Microsoft Marketplace Engineering'],
       ['/solutions/agency-development-partner', 'Agency Development Partner']
