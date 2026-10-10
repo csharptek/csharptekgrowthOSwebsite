@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   if (!item) return {};
   const indexable = indexingEnabled && detail?.published === true;
   const solutionTitle = getSolution(item.solution)?.title || 'Engineering';
-  return { ...createPageMetadata({ title: item.title, description: item.summary, path: `/case-studies/${slug}`, image: `/images/brand/case-${slug}.png`, type: 'article' }), robots: { index: indexable, follow: indexingEnabled } };
+  return { ...createPageMetadata({ title: `${item.name} case study: ${solutionTitle}`, description: item.summary, path: `/case-studies/${slug}`, image: `/images/brand/case-${slug}.png`, type: 'article' }), robots: { index: indexable, follow: indexingEnabled } };
 }
 
 export default async function CaseStudyPage({ params }) {

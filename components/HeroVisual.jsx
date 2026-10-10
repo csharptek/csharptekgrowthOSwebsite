@@ -7,8 +7,9 @@ export default function HeroVisual() {
       alt=""
       fill
       sizes="100vw"
-      quality={95}
+      quality={75}
       priority
+      fetchPriority="high"
       className="hero-brand-image"
     />
   </div>;

@@ -41,12 +41,13 @@ export async function makeBlogMetadata(params, prefix = '/blog') {
   try {
     const post = await getPublishedPost(slug);
     if (!post) return { title: 'Article not found' };
+    const baseTitle = String(post.meta_title || post.title).replace(/\s*[|\-–]\s*csharptek\s*$/i, '');
     return {
-      title: post.meta_title || post.title,
+      title: baseTitle,
       description: post.meta_description || post.excerpt || '',
       alternates: { canonical: `/blog/${slug}` },
-      openGraph: { type: 'article', title: post.meta_title || post.title, description: post.meta_description || post.excerpt || '', images: [post.og_image_url || '/opengraph-image'] },
-      twitter: { card: 'summary_large_image', title: post.meta_title || post.title, description: post.meta_description || post.excerpt || '', images: [post.og_image_url || '/opengraph-image'] },
+      openGraph: { type: 'article', title: `${baseTitle} | Csharptek`, description: post.meta_description || post.excerpt || '', images: [post.og_image_url || '/opengraph-image'] },
+      twitter: { card: 'summary_large_image', title: `${baseTitle} | Csharptek`, description: post.meta_description || post.excerpt || '', images: [post.og_image_url || '/opengraph-image'] },
       ...(Array.isArray(post.tags) && post.tags.length ? { keywords: post.tags } : {})
     };
   } catch { return { title: 'Insights' }; }

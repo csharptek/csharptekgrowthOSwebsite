@@ -1,0 +1,13 @@
+# Csharptek
+
+> Csharptek is an Azure AI and .NET engineering partner. We help agencies, AI SaaS teams and mid-market Microsoft-stack companies take AI prototypes to production, add AI to products, automate workflows and modernize .NET applications on Azure.
+
+## Key pages
+- [Solutions](https://www.csharptek.com/solutions): AI production engineering, AI product engineering, workflow automation
+- [Azure app modernization](https://www.csharptek.com/azure-app-modernization-services): .NET and Azure modernization
+- [Microsoft Marketplace engineering](https://www.csharptek.com/services/marketplace): SaaS offers and co-sell readiness
+- [Capabilities](https://www.csharptek.com/capabilities): AI/LLM, Azure, .NET, cloud and DevOps, data
+- [Case studies](https://www.csharptek.com/case-studies)
+- [Products](https://www.csharptek.com/products): TekDial, TekSocial
+- [About](https://www.csharptek.com/about)
+- [Contact](https://www.csharptek.com/contact)

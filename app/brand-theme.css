@@ -86,7 +86,7 @@ body { background: var(--paper); color: var(--ink); }
 .page-hero:not(:has(.brand-artwork)) .breadcrumb a { color: #d2e9ed; }
 .feature-band { background: #e8f3f3; }
 .feature-copy p { color: #526970; }
-.feature-visual { background: #073744 url('/images/brand/service-platform-systems.png') center/cover no-repeat; }
+.feature-visual { background: #073744 url('/images/brand/service-platform-systems.webp') center/cover no-repeat; }
 .feature-visual:before, .feature-visual:after { content: none; }
 .platform-card, .feature-orbit-label { display: none; }
 .industry-strip { background: linear-gradient(120deg, #e8f3f3, #f1f6ef); }

@@ -22,7 +22,7 @@ export default async function ProductPage({ params }) {
   if (!product) notFound();
   const solution = getSolution(product.solution);
   const relatedCapabilities = (product.capabilities || []).map((capabilitySlug) => capabilities.find((item) => item.slug === capabilitySlug)).filter(Boolean);
-  const schema = { '@context': 'https://schema.org', '@type': 'Product', name: product.name, description: product.description, category: product.category, brand: { '@type': 'Brand', name: 'Csharptek' }, url: `${siteUrl}/products/${slug}` };
+  const schema = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: product.name, description: product.description, applicationCategory: 'BusinessApplication', operatingSystem: 'Web', publisher: { '@type': 'Organization', name: 'Csharptek', url: siteUrl }, url: `${siteUrl}/products/${slug}` };
 
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}/>
