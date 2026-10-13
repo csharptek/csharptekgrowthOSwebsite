@@ -8,6 +8,9 @@ const nextConfig = {
       { source: '/products/convosphere', destination: '/products', permanent: false },
       { source: '/products/interview-scheduler', destination: '/products', permanent: false },
       { source: '/portfolio', destination: '/case-studies', permanent: true },
+      // Old case studies with a matching new case study (must sit above the /casestudy catch-all).
+      { source: '/casestudy/modernize-business-with-microsoft-azure', destination: '/case-studies/dotnet-azure-modernization', permanent: true },
+      { source: '/casestudy/app-modernization-made-easier-with-azure', destination: '/case-studies/dotnet-azure-modernization', permanent: true },
       { source: '/casestudy/:slug*', destination: '/case-studies', permanent: true },
       { source: '/case-study/:slug*', destination: '/case-studies', permanent: true },
       { source: '/services/ai-integration', destination: '/solutions/ai-production-engineering', permanent: true },
@@ -90,6 +93,25 @@ const nextConfig = {
       { source: '/indian-school-digital-transformation', destination: '/industries', permanent: true },
       { source: '/retail-IT-solutions', destination: '/industries', permanent: true },
       { source: '/contact-us', destination: '/contact', permanent: true },
+      { source: '/modern-day-eCommerce-solutions', destination: '/solutions/ai-product-engineering', permanent: true },
+      { source: '/testimonials', destination: '/case-studies', permanent: true },
+      { source: '/content/:path*', destination: '/about', permanent: true },
+      // Old blog posts: send each to the closest new page (a listing page reads as a soft 404 to Google).
+      { source: '/blogs/azure-migrate-tool-for-simplifying-your-migration-needs', destination: '/azure-app-modernization-services', permanent: true },
+      { source: '/blogs/application-modernization-made-easier-with-azure', destination: '/azure-app-modernization-services', permanent: true },
+      { source: '/blogs/csharptek-kubernetes-migration-guide', destination: '/azure-app-modernization-services', permanent: true },
+      { source: '/blogs/benefits-of-azure-back-up', destination: '/capabilities/azure', permanent: true },
+      { source: '/blogs/benefits-of-azure-sql-databases', destination: '/capabilities/azure', permanent: true },
+      { source: '/blogs/key-features-of-azure-premium-storage', destination: '/capabilities/azure', permanent: true },
+      { source: '/blogs/hybrid-cloud-and-azure-stack', destination: '/capabilities/azure', permanent: true },
+      { source: '/blogs/knowing-the-importance-and-benefite-of-azure-service', destination: '/capabilities/azure', permanent: true },
+      { source: '/blogs/microsoft-silver-partnership', destination: '/about', permanent: true },
+      { source: '/blogs/check-ratings-and-reviews-by-our-clients', destination: '/case-studies', permanent: true },
+      { source: '/blogs/crucial-role-co-pilots-ed-tech-microsoft-azure-openai-service', destination: '/blog/ai-in-edtech-2025', permanent: true },
+      { source: '/blogs/transforming-businesses-azure-openai-service', destination: '/blog/azure-openai-on-your-data-vs-custom-rag', permanent: true },
+      { source: '/blogs/transforming-healthcare-cloud-computing-evolution-benefits-future-trends', destination: '/industries/healthcare', permanent: true },
+      { source: '/blogs/azure-solutions-fot-sustainable-healthcare-through-technology', destination: '/industries/healthcare', permanent: true },
+      { source: '/blogs/ms-teams-solutions', destination: '/solutions/intelligent-workflow-automation', permanent: true },
       { source: '/blogs/:slug*', destination: '/blog', permanent: true }
     ];
   }
