@@ -8,6 +8,11 @@ export function proxy(request) {
     const url = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://www.csharptek.com');
     return NextResponse.redirect(url, 308);
   }
+  // Literal template paths Google picked up from an old build (/services/[slug], /industries/[slug]).
+  let path = request.nextUrl.pathname;
+  try { path = decodeURIComponent(path); } catch {}
+  const m = path.match(/^\/(services|industries)\/\[slug\]\/?$/);
+  if (m) return NextResponse.redirect(new URL(m[1] === 'services' ? '/solutions' : '/industries', 'https://www.csharptek.com'), 308);
   return NextResponse.next();
 }
 

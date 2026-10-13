@@ -12,7 +12,7 @@ const author = { author_name: 'Csharptek Engineering', author_role: 'AI and Azur
 export const blogPosts = {
   'vibe-coding-mvp-development': {
     title: 'Vibe Coding to Production: What Breaks and How to Fix It',
-    meta_title: 'Vibe Coding to Production: What Breaks and How to Fix It',
+    meta_title: 'Vibe Coding to Production: What Breaks, How to Fix',
     meta_description: 'Built an MVP with Lovable, Bolt or Cursor? Here is what breaks between a vibe-coded prototype and a production app, and the order to fix it in.',
     excerpt: 'AI coding tools get you to a working demo fast. These are the gaps that appear between the demo and a product real customers can rely on.',
     category: 'Product engineering', read_time: '8 min read', tags: ['vibe coding', 'MVP', 'prototype to production', 'AI coding tools'],
@@ -71,7 +71,7 @@ export const blogPosts = {
 
   'how-rag-pipelines-work': {
     title: 'How RAG Pipelines Work: A Practical Guide to Production RAG',
-    meta_title: 'How RAG Pipelines Work: A Practical Guide to Production RAG',
+    meta_title: 'How RAG Pipelines Work: A Production Guide',
     meta_description: 'How retrieval-augmented generation works end to end: ingestion, chunking, embeddings, hybrid search, re-ranking, citation and evaluation, and where RAG goes wrong.',
     excerpt: 'A clear walk through each stage of a RAG pipeline, with the decisions that decide whether answers are grounded or made up.',
     category: 'AI engineering', read_time: '9 min read', tags: ['RAG', 'retrieval augmented generation', 'azure openai', 'vector search'],
@@ -245,7 +245,7 @@ export const blogPosts = {
 
   'white-label-software-development-checklist-for-agencies': {
     title: 'White-Label Software Development: A Checklist for Agencies',
-    meta_title: 'White-Label Software Development: A Checklist for Agencies',
+    meta_title: 'White-Label Software Development Checklist',
     meta_description: 'Using a white-label development partner? A practical checklist for agencies: NDA and IP, communication, process, security, quality and handover.',
     excerpt: 'Settle these points before the first sprint and a white-label partnership runs smoothly.',
     category: 'Agencies', read_time: '6 min read', tags: ['white label software development', 'agency', 'outsourcing', 'subcontract'],
@@ -333,7 +333,7 @@ export const blogPosts = {
     ]
   },
   'ai-medical-scribe-azure-openai': {
-    meta_title: 'AI Medical Scribe on Azure OpenAI: Architecture and Lessons',
+    meta_title: 'AI Medical Scribe on Azure OpenAI: Architecture',
     meta_description: 'How an AI medical scribe works on Azure OpenAI and Azure Speech: pipeline, specialty prompts, FHIR and EHR integration, and how to earn physician trust.',
     excerpt: 'Clinical documentation takes up a large share of a physician\'s day. This is how an Azure OpenAI medical scribe is built, and where the real effort goes.',
     updated_at: '2026-10-10T00:00:00.000Z',
@@ -360,7 +360,7 @@ export const blogPosts = {
     ]
   },
   'hipaa-compliant-ai-healthcare-startups': {
-    meta_title: 'HIPAA-Compliant AI for Healthcare Startups: A Build Guide',
+    meta_title: 'HIPAA-Compliant AI for Healthcare Startups',
     meta_description: 'What HIPAA requires of AI systems, why a BAA is not enough, which Azure services are eligible, and how de-identification and audit logging fit in.',
     excerpt: 'HIPAA is an architecture you build in, not a feature you add late. Here is what it means for AI systems, and how to plan for it from day one.',
     updated_at: '2026-10-10T00:00:00.000Z',
@@ -434,7 +434,7 @@ export const blogPosts = {
     ]
   },
   'building-bilingual-ai-middle-east': {
-    meta_title: 'Building Bilingual AI for the Middle East: Arabic and English',
+    meta_title: 'Bilingual Arabic-English AI for the Middle East',
     meta_description: 'Lessons from a bilingual Arabic and English medical scribe: dialects, GPT-4 and Arabic, right-to-left UI design and Saudi cloud compliance.',
     excerpt: 'Lessons from building a bilingual AI medical scribe for the Saudi market: dialects, RTL design and where the data has to live.',
     updated_at: '2026-10-10T00:00:00.000Z',

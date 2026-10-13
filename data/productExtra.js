@@ -1,4 +1,7 @@
 export const productExtra = {
+  teksocial: {
+    seoTitle: 'TekSocial: AI Social Media Publishing Platform'
+  },
   tekdial: {
     seoTitle: 'TekDial: AI Voice Agent Platform',
     h1: 'TekDial: AI voice agent platform',

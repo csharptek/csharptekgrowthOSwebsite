@@ -107,7 +107,7 @@ export const solutionExtra = {
   },
   'application-cloud-modernization': {
     seoTitle: '.NET Modernization Services on Azure',
-    seoDescription: 'Csharptek modernizes .NET Framework applications on Azure: assessment, upgrade to modern .NET, App Service, containers and AKS, databases and CI/CD, with low-risk sequencing.',
+    seoDescription: 'Csharptek modernizes .NET Framework apps on Azure: assessment, upgrade to modern .NET, App Service, containers, AKS and CI/CD, with low-risk sequencing.',
     sections: [
       {
         eyebrow: '.NET modernization on Azure',
@@ -150,7 +150,7 @@ export const solutionExtra = {
   },
   'microsoft-marketplace-engineering': {
     seoTitle: 'Microsoft Marketplace SaaS Offer Development',
-    seoDescription: 'Csharptek builds the technical layer for transactable SaaS offers on Microsoft Marketplace: landing page, fulfillment API v2, webhooks, metering, Entra ID and certification.',
+    seoDescription: 'Csharptek builds transactable SaaS offers for Microsoft Marketplace: landing page, fulfillment API v2, webhooks, metering, Entra ID and certification.',
     sections: [
       {
         eyebrow: 'The publisher flow',
@@ -246,7 +246,7 @@ solutionExtra['agency-development-partner'] = {
 };
 
 solutionExtra['ai-agent-development'] = {
-  seoTitle: 'AI Agent Development Company for SaaS and Software Teams',
+  seoTitle: 'AI Agent Development Company for SaaS Teams',
   seoDescription: 'Csharptek builds AI agents and multi-agent workflows with tools, approvals, evaluation and monitoring on Azure OpenAI. Agents your team can trust in production.',
   sections: [
     {
