@@ -19,7 +19,10 @@ export async function generateMetadata({ params }) {
   if (!item) return {};
   const indexable = indexingEnabled && detail?.published === true;
   const solutionTitle = getSolution(item.solution)?.title || 'Engineering';
-  return { ...createPageMetadata({ title: `${item.name} case study: ${solutionTitle}`, description: item.summary, path: `/case-studies/${slug}`, image: `/images/brand/case-${slug}.png`, type: 'article' }), robots: { index: indexable, follow: indexingEnabled } };
+  // Keep titles under ~60 characters with the " | Csharptek" suffix; drop the solution name when too long.
+  const fullTitle = `${item.name} case study: ${solutionTitle}`;
+  const pageTitle = fullTitle.length <= 50 ? fullTitle : `${item.name} case study`;
+  return { ...createPageMetadata({ title: pageTitle, description: item.summary, path: `/case-studies/${slug}`, image: `/images/brand/case-${slug}.png`, type: 'article' }), robots: { index: indexable, follow: indexingEnabled } };
 }
 
 export default async function CaseStudyPage({ params }) {
