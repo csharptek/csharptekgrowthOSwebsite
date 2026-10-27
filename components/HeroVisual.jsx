@@ -4,7 +4,7 @@ export default function HeroVisual() {
   return <div className="hero-visual-wrap" aria-hidden="true">
     <Image
       src="/images/brand/hero-connected-c.png"
-      alt=""
+      alt="Csharptek connected engineering artwork: Azure, AI and .NET systems linked by a teal path"
       fill
       sizes="100vw"
       quality={75}
