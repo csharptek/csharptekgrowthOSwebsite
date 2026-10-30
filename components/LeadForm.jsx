@@ -33,6 +33,7 @@ export default function LeadForm({ defaultInitiative = '', defaultReason = '' })
       const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.success) throw new Error(result.message || 'Your message could not be sent. Please try again.');
       window.dataLayer?.push({ event: 'form_submit', form_name: 'contact', contact_reason: data.reason, initiative_type: data.initiativeType || '' });
+      if (data.reason !== 'Career / Job Application') window.dataLayer?.push({ event: 'generate_lead', form_name: 'contact', contact_reason: data.reason, initiative_type: data.initiativeType || '' });
       setOk(true);
       setStatus('Thanks — your message is with our team. We reply within 24 hours on business days.');
       form.reset();
