@@ -236,6 +236,28 @@ solutionExtra['agency-development-partner'] = {
         ['Integrations and automation', 'CRM, payment, messaging and workflow integrations that clients depend on.'],
         ['Azure and cloud work', 'Hosting, migration, CI/CD and security for client systems.']
       ]
+    },
+    {
+      eyebrow: 'Choosing a delivery model',
+      title: 'White-label partner, freelancers or hiring?',
+      intro: 'Agencies usually weigh three ways to deliver a software project they have sold. Each fits a different situation.',
+      items: [
+        ['Freelancers', 'Flexible and quick to start for small, well-defined tasks. Harder to manage for larger builds, and continuity depends on one person.'],
+        ['Hiring in-house', 'Best when the work is steady and core to your agency. Slow to start, and fixed cost when the pipeline dips.'],
+        ['White-label development company', 'A managed team with senior engineers, project discipline and cover for leave or turnover. Suited to project peaks, specialist work and clients you cannot afford to let down.']
+      ]
+    },
+    {
+      eyebrow: 'How an engagement starts',
+      title: 'From first call to first sprint.',
+      intro: 'Most agencies want to see how we work on a real project before committing to more. This is the usual path.',
+      items: [
+        ['Intro call', 'Your services, typical clients and the project or capacity gap you need to fill.'],
+        ['NDA and scope review', 'We sign an NDA, review the brief or client requirements and flag risks and open questions.'],
+        ['Estimate and team proposal', 'Effort, team shape and delivery plan, written so you can price and present it under your brand.'],
+        ['Onboarding', 'Access to your repositories, tools and channels, and agreement on rituals, reviews and reporting.'],
+        ['First sprint', 'Working software in the first iteration, reviewed with your project lead before anything reaches the client.']
+      ]
     }
   ],
   checklist: {
@@ -260,7 +282,10 @@ solutionExtra['agency-development-partner'] = {
     ['What kinds of projects do you take on?', 'AI features and agents, web and mobile applications, integrations, and Azure and .NET work. We tell you early if a project is a poor fit.'],
     ['Can we start with a small project?', 'Yes. A small scoped project is a good way to test fit before a larger or ongoing arrangement.'],
     ['Do you offer a dedicated team?', 'Yes. We can assign a stable group of engineers for ongoing work, sized to your needs.'],
-    ['How do you handle time zones?', 'We are based in India and agree a daily overlap window with your team for stand-ups and reviews.']
+    ['How do you handle time zones?', 'We are based in India and agree a daily overlap window with your team for stand-ups and reviews.'],
+    ['What is a white-label development company?', 'A software development company that builds projects for agencies and consultancies which then deliver them to their own clients under their brand. The development company stays in the background and the agency keeps the client relationship.'],
+    ['How are white-label development services priced?', 'Usually as a fixed price for a defined scope, or as a monthly rate for dedicated engineers. We agree the model per engagement so you can set your own margin and client pricing.'],
+    ['Can you join calls with our client as part of our team?', 'Yes, if you want that. Our engineers can attend client calls under your agency’s name, or stay fully behind the scenes.']
   ]
 };
 
