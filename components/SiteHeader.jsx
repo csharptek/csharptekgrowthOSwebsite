@@ -12,7 +12,7 @@ const groups = {
     href: '/solutions',
     items: [
       ['/solutions/ai-production-engineering', 'Production AI & RAG Systems'],
-      ['/solutions/ai-product-engineering', 'AI Features for SaaS Products'],
+      ['/solutions/ai-product-engineering', 'Custom AI Software & Products'],
       ['/solutions/ai-agent-development', 'Custom AI Agents'],
       ['/solutions/intelligent-workflow-automation', 'Workflow & Process Automation'],
       ['/azure-app-modernization-services', 'Azure & .NET Modernization'],

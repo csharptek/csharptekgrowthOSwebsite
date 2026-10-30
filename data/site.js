@@ -16,14 +16,14 @@ export const solutions = [
   },
   {
     slug: 'ai-product-engineering',
-    h1: 'Build an AI product, or add AI to the SaaS product your customers already use.',
+    h1: 'Custom AI software development: build an AI product, or add AI to the software your customers already use.',
     supporting: 'Design and engineer AI-powered product capabilities that fit your existing product, data, architecture and customer experience.',
     cta: 'Discuss Your Product Initiative',
     number: '02',
     eyebrow: 'Make your product more useful',
     title: 'AI Product Engineering',
     short: 'Add thoughtful AI capabilities to products customers already rely on.',
-    description: 'Design and engineer AI-powered product experiences that fit your existing architecture, data, customer journey and operating model.',
+    description: 'Custom AI software development and AI product engineering: AI applications, assistants, document processing, RAG and agents that fit your architecture, data and users.',
     buyer: 'For product and engineering teams extending an established product.',
     capabilities: ['AI assistants and intelligent search', 'Recommendations and document intelligence', 'Voice and multimodal experiences', 'Product architecture and APIs', 'Prototype-to-production delivery'],
     proof: ['AI marketing product engineering', 'Image-to-video product workflows', 'Healthcare product experiences'],
@@ -120,6 +120,22 @@ export const solutions = [
     proof: ['Multi-agent revenue automation', 'Production-oriented RAG pipelines', 'AI marketing product engineering'],
     icon: 'spark',
     unlisted: true
+  },
+  {
+    slug: 'rag-development',
+    h1: 'RAG development services: AI answers grounded in your own data, with sources your team can check.',
+    supporting: 'We design, build and operate retrieval-augmented generation systems on Azure OpenAI and Azure AI Search: ingestion, permission-aware retrieval, citations and evaluation.',
+    cta: 'Discuss Your RAG Project',
+    number: '09',
+    eyebrow: 'Retrieval-augmented generation',
+    title: 'RAG Development',
+    short: 'Build RAG systems that answer from your private data, cite sources and respect permissions.',
+    description: 'RAG development services for software teams and enterprises: ingestion, hybrid search, permission-aware retrieval, citations and evaluation on Azure OpenAI.',
+    buyer: 'For product and technology leaders who need AI answers grounded in company documents, records or product data.',
+    capabilities: ['Document and data ingestion', 'Hybrid vector and keyword search', 'Permission-aware retrieval', 'Answers with citations', 'Evaluation and monitoring'],
+    proof: ['Production-oriented RAG pipelines', 'Multi-agent revenue automation', 'Azure AI engineering in existing systems'],
+    icon: 'spark',
+    unlisted: true
   }
 ];
 
@@ -156,7 +172,8 @@ export const solutionCases = {
   'healthcare-ai-automation': ['medical-documentation', 'healthcare-mobile-app', 'woundmedix'],
   'microsoft-marketplace-engineering': ['payautomation', 'landminer', 'virilocity'],
   'agency-development-partner': ['virilocity', 'landminer', 'image-to-video'],
-  'ai-agent-development': ['payautomation', 'virilocity', 'rag-pipeline']
+  'ai-agent-development': ['payautomation', 'virilocity', 'rag-pipeline'],
+  'rag-development': ['rag-pipeline', 'travel-data-ai', 'payautomation']
 };
 
 export function solutionHref(slug) {

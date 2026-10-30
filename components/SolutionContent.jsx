@@ -44,7 +44,7 @@ export default function SolutionContent({ solution, capabilities = [], includeFa
 
     {extra?.sections?.map((block, i) => <section className={`section${i % 2 === 0 ? ' section-tint' : ''}`} key={block.title}>
       <div className="wrap">
-        <div className="section-heading"><span className="eyebrow">{block.eyebrow}</span><h2>{block.title}</h2><p>{block.intro}</p></div>
+        <div className="section-heading"><span className="eyebrow">{block.eyebrow}</span><h2>{block.title}</h2><p>{block.intro}</p>{block.link && <p><Link className="text-link" href={block.link[0]}>{block.link[1]} <Icon name="arrow" size={15}/></Link></p>}</div>
         <div className="step-grid">{block.items.map(([title, text], index) => <article className="step-card" key={title}><b>{String(index + 1).padStart(2, '0')}</b><h3>{title}</h3><p>{text}</p></article>)}</div>
       </div>
     </section>)}

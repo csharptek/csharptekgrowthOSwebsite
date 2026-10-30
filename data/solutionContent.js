@@ -1,4 +1,13 @@
 export const solutionContent = {
+  'rag-development': {
+    fit: 'A RAG system is only as good as the content it retrieves. Before choosing models or vector stores, we map the questions users actually ask, the sources that hold the answers, who is allowed to see what, and how answers will be checked.',
+    workstreams: [
+      ['Sources and ingestion', 'Connect documents, databases and SaaS systems, clean and chunk content, and keep the index current as sources change.'],
+      ['Retrieval and answering', 'Combine vector and keyword search, re-rank results, enforce permissions and return answers with the passages behind them.'],
+      ['Evaluation and operations', 'Score answers against real questions, track cost and latency, and review failures so quality improves after launch.']
+    ],
+    faqs: [['See the FAQ below','See the detailed answers on this page.']]
+  },
   'ai-production-engineering': {
     fit: 'A prototype becomes production software only when it can work with approved data, fit the existing application and be operated with predictable behavior. The first step is to define the users, decisions and tasks the AI should support, then identify where model output needs grounding, evaluation or human review.',
     workstreams: [

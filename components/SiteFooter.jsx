@@ -4,8 +4,9 @@ import Icon from './Icon';
 
 const footerSolutions = [
   ['Production AI & RAG', '/solutions/ai-production-engineering'],
-  ['AI for SaaS products', '/solutions/ai-product-engineering'],
+  ['Custom AI software', '/solutions/ai-product-engineering'],
   ['AI agent development', '/solutions/ai-agent-development'],
+  ['RAG development', '/solutions/rag-development'],
   ['Workflow automation', '/solutions/intelligent-workflow-automation'],
   ['Application modernization', '/azure-app-modernization-services'],
   ['Healthcare AI', '/solutions/healthcare-ai-automation'],

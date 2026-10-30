@@ -60,6 +60,11 @@ artworkBySlug['ai-agent-development'] = {
   alt: 'Connected agent steps with a human review checkpoint.'
 };
 
+artworkBySlug['rag-development'] = {
+  src: '/images/brand/solution-ai-production.png',
+  alt: 'Translucent architecture modules linked by a connector, representing retrieval and grounded answers.'
+};
+
 artworkBySlug.about = {
   src: '/images/brand/about-collaboration.png',
   alt: 'A collaborative engineering workshop table with hands arranging connected workflow pieces.'

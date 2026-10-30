@@ -19,6 +19,7 @@ const nextConfig = {
       { source: '/services/web-mobile', destination: '/solutions/ai-product-engineering', permanent: true },
       { source: '/services/mvp-vibe', destination: '/solutions/ai-product-engineering', permanent: true },
       { source: '/services/crm-productivity', destination: '/solutions/intelligent-workflow-automation', permanent: true },
+      { source: '/solutions/custom-ai-software-development', destination: '/solutions/ai-product-engineering', permanent: true },
       { source: '/services/cloud-devops', destination: '/azure-app-modernization-services', permanent: true },
       { source: '/services/support', destination: '/contact', permanent: true },
       { source: '/services', destination: '/solutions', permanent: true },

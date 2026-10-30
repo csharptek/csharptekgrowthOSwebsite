@@ -1,7 +1,7 @@
 // SEO depth content per solution. sections render as card grids; checklist renders as a list panel.
 export const solutionExtra = {
   'ai-production-engineering': {
-    seoTitle: 'Prototype to Production AI: RAG, Agents, LLM Apps',
+    seoTitle: 'Prototype to Production AI Engineering for LLM Apps',
     seoDescription: 'Csharptek takes AI prototypes, RAG systems and agent projects to production on Azure: auth, tenancy, evaluation, cost control and observability.',
     sections: [
       {
@@ -20,6 +20,7 @@ export const solutionExtra = {
       {
         eyebrow: 'RAG and LLM application engineering',
         title: 'RAG development services built for private data.',
+        link: ['/solutions/rag-development', 'See our RAG development services'],
         intro: 'Retrieval-augmented generation is the most common pattern we build. We design the full pipeline, not only the prompt: ingestion, chunking, embeddings, vector and keyword search, orchestration, citation and review. Azure OpenAI and Azure AI Search are typical components, and we work with other model providers when the requirement calls for it.',
         items: [
           ['Ingestion and indexing', 'Connect documents, databases and SaaS sources, keep the index current as content changes and preserve the access rules of the source system.'],
@@ -56,8 +57,8 @@ export const solutionExtra = {
     ]
   },
   'ai-product-engineering': {
-    seoTitle: 'Build an AI MVP or Add AI to Your SaaS Product',
-    seoDescription: 'Csharptek engineers AI products and agent features for SaaS teams: AI MVPs, assistants, search, RAG and agents on Azure OpenAI, with a small senior team.',
+    seoTitle: 'Custom AI Software Development and AI Product Engineering',
+    seoDescription: 'Custom AI software development: AI applications, AI MVPs, assistants, document processing, RAG and agents on Azure OpenAI, built by a small senior team.',
     sections: [
       {
         eyebrow: 'What we build',
@@ -68,7 +69,10 @@ export const solutionExtra = {
           ['AI agents', 'Agents that take bounded actions in your product or in connected systems, with step limits, logging and human approval where it matters.'],
           ['Intelligent search and recommendations', 'Semantic and hybrid search, recommendations and classification built on your data and your architecture.'],
           ['Document and voice experiences', 'Extraction, summarisation, transcription and voice workflows connected to product records.'],
-          ['AI MVPs', 'A first version of an AI product, scoped to prove the core value quickly and built so it can grow into production.']
+          ['AI MVPs', 'A first version of an AI product, scoped to prove the core value quickly and built so it can grow into production.'],
+          ['Custom AI applications', 'New applications with AI at the core, such as research tools, planning assistants or decision-support systems built for one team’s process.'],
+          ['Document and data processing', 'Extract, classify and validate information from forms, contracts, invoices, emails and reports, with a person reviewing exceptions.'],
+          ['Knowledge assistants (RAG)', 'Answers grounded in company documents and records, with citations and access control.']
         ]
       },
       {
@@ -79,6 +83,18 @@ export const solutionExtra = {
           ['Scope the user problem', 'Define the user, the task, the data it depends on and the review the user needs. This sets a scope the team can build and judge.'],
           ['Build the thin slice', 'Ship a working end-to-end slice early: interface, API, retrieval or model call, and error states. Learn from real use.'],
           ['Harden and extend', 'Add evaluation, monitoring, permissions and cost controls, then extend to the next capability.']
+        ]
+      },
+      {
+        eyebrow: 'Technology',
+        title: 'A Microsoft-first stack, with room for other tools.',
+        intro: 'Azure is our usual foundation because it fits the security, identity and procurement needs of most established companies. We use other providers where they serve the project better.',
+        items: [
+          ['AI and models', 'Azure OpenAI, Azure AI Foundry, Azure AI Search, Azure AI Document Intelligence and other model providers when needed.'],
+          ['Application engineering', '.NET and C#, Node.js, Python, React and Next.js, React Native for mobile.'],
+          ['Data and integration', 'Azure SQL, PostgreSQL, Blob Storage, Microsoft Graph, REST APIs, webhooks and queues.'],
+          ['Identity and security', 'Microsoft Entra ID, role-based access, Key Vault for secrets and audit logging.'],
+          ['Delivery and operations', 'GitHub and Azure DevOps pipelines, containers, App Service, Functions and monitoring.']
         ]
       }
     ],
@@ -95,6 +111,9 @@ export const solutionExtra = {
       ]
     },
     faqs: [
+      ['What is custom AI software development?', 'It is the design and engineering of AI applications built for a specific business process, data set and set of users, rather than buying a general-purpose AI tool. It usually combines language models with your data, business rules and existing systems.'],
+      ['Do we need a lot of data to start?', 'Usually not. Most modern AI software uses pre-trained language models with your documents and records supplied at run time. What matters is that the right content is available and accessible, not a large training data set.'],
+      ['How do you keep our data secure?', 'By keeping data within your Azure environment where possible, enforcing access control at the data layer, managing secrets in Key Vault, logging access and agreeing data-handling rules with your security team.'],
       ['Can you help us build an AI MVP?', 'Yes. We scope the smallest version that proves the core user value, build it end to end on a production-capable foundation, and plan the path from MVP to a hardened product.'],
       ['Can you add AI to our existing SaaS product without a rewrite?', 'Yes. Most AI features extend the current product and architecture. The right approach depends on where the feature belongs and which data and services it should use.'],
       ['Do you build AI agents?', 'Yes. We build agents with defined tools, bounded steps, logging and approval points, and connect them to your product and the systems they need to act on.'],
@@ -299,3 +318,73 @@ solutionExtra['ai-agent-development'] = {
     ['How long does it take to build an agent?', 'It depends on the task and integrations. A short discovery defines scope and a realistic plan before build work is committed.']
   ]
 };
+
+solutionExtra['rag-development'] = {
+  seoTitle: 'RAG Development Services on Azure OpenAI',
+  seoDescription: 'Csharptek provides RAG development services: ingestion, hybrid search, permission-aware retrieval, citations and evaluation on Azure OpenAI and Azure AI Search.',
+  sections: [
+    {
+      eyebrow: 'What we build',
+      title: 'RAG systems for real documents, real users and real permissions.',
+      intro: 'Retrieval-augmented generation lets a language model answer from your own content instead of its training data. The model is the easy part. Most of the engineering is in getting the right content to the model, for the right user, and proving the answer is correct.',
+      items: [
+        ['Internal knowledge assistants', 'Answer staff questions from policies, procedures, contracts, tickets and wiki pages, with links to the source passage.'],
+        ['Customer-facing product search', 'Add natural-language search and answers to a SaaS product, scoped to each customer’s own data.'],
+        ['Document question answering', 'Ask questions across large sets of PDFs, scanned files and spreadsheets, including tables and structured fields.'],
+        ['Support and service copilots', 'Draft replies grounded in product documentation and past cases, with a person approving what is sent.'],
+        ['RAG inside agents', 'Give agents a reliable retrieval tool so the actions they take are based on current, approved information.'],
+        ['Rescue of an existing RAG prototype', 'Review a RAG system that answers inconsistently, find where retrieval fails and fix the pipeline.']
+      ]
+    },
+    {
+      eyebrow: 'The RAG pipeline',
+      title: 'Every stage that decides answer quality.',
+      intro: 'Poor answers usually come from one weak stage in the pipeline, not from the model. We engineer and test each stage separately so problems can be found and fixed.',
+      items: [
+        ['Ingestion', 'Connectors for SharePoint, file storage, databases and SaaS APIs. Parsing for PDFs, Office files, HTML and scanned images, with change detection to keep the index current.'],
+        ['Chunking and metadata', 'Chunk size and structure chosen per document type, with titles, sections, dates, owners and access labels stored alongside each chunk.'],
+        ['Embeddings and indexing', 'Embedding model selection, vector and keyword indexes in Azure AI Search or another store, and re-indexing when models change.'],
+        ['Retrieval', 'Hybrid vector and keyword search, filters on metadata, re-ranking and query rewriting, so the most relevant passages reach the model.'],
+        ['Permission-aware access', 'Retrieval filtered by the signed-in user’s rights, typically mapped from Microsoft Entra ID groups or your application roles, so nobody sees content they should not.'],
+        ['Generation and citation', 'Prompts that keep the model to the retrieved content, answers with citations, and a clear “I don’t know” or hand-off when the sources do not cover the question.']
+      ]
+    },
+    {
+      eyebrow: 'Quality and operations',
+      title: 'How we know the answers are right.',
+      intro: 'A RAG demo can look correct on ten documents and fail on ten thousand. We measure quality before launch and keep measuring after it.',
+      items: [
+        ['Evaluation sets', 'A set of real questions with expected answers and sources, built with your subject experts.'],
+        ['Retrieval and answer scoring', 'Separate scores for whether the right passages were found and whether the answer used them correctly.'],
+        ['Regression checks', 'The evaluation set runs on every change to prompts, models, chunking or retrieval settings.'],
+        ['Cost and latency tracking', 'Tokens, search calls and response time measured per question, with budgets and alerts.'],
+        ['Feedback loops', 'User ratings and flagged answers routed back for review and used to improve the index and prompts.']
+      ]
+    }
+  ],
+  checklist: {
+    title: 'RAG readiness checklist',
+    intro: 'Use these questions to judge whether a RAG project is ready to build, or why an existing one is underperforming.',
+    items: [
+      'You know the top questions users need answered, with examples',
+      'The sources that hold the answers are identified and accessible',
+      'Access rules for each source are known and can be enforced at retrieval time',
+      'Documents are current, or there is a plan to keep the index current',
+      'Answers must cite their sources and users can open them',
+      'There is an evaluation set of real questions and expected answers',
+      'Cost per question and response-time targets are agreed',
+      'Someone owns content quality after launch'
+    ]
+  },
+  faqs: [
+    ['What are RAG development services?', 'RAG development services cover the design and engineering of retrieval-augmented generation systems: connecting your content sources, indexing and searching them, passing the right passages to a language model, returning answers with citations and measuring quality. The goal is AI answers grounded in your data rather than the model’s general knowledge.'],
+    ['When should we use RAG instead of fine-tuning?', 'Use RAG when answers must come from content that changes, must be cited, or must respect user permissions. Fine-tuning changes how a model writes or behaves, but it is a poor way to keep facts current. Many production systems use RAG alone; some combine both.'],
+    ['Do you build RAG on Azure OpenAI?', 'Yes. Azure OpenAI with Azure AI Search is our most common foundation, together with Microsoft Entra ID for access control and Azure storage and functions for ingestion. We can use other model providers or vector stores when there is a reason to.'],
+    ['Can a RAG system respect who is allowed to see which documents?', 'Yes, and it should. We store access information with each chunk and filter retrieval by the signed-in user’s groups or roles, so the model never receives content that user is not allowed to see.'],
+    ['How do you reduce hallucinations in RAG?', 'By improving retrieval first, keeping the model to the retrieved passages, requiring citations, returning “not found” when sources do not cover a question, and measuring answer accuracy against an evaluation set on every change.'],
+    ['Can you fix our existing RAG system?', 'Yes. We start by testing it against real questions, find whether failures come from ingestion, chunking, retrieval, permissions or the prompt, and fix the weakest stages first. A rebuild is rarely the first step.'],
+    ['What content can a RAG system use?', 'Most text-based content: PDFs, Office documents, web pages, wikis, tickets, emails, database records and SaaS data through APIs. Scanned documents and tables need extra processing, which we plan for during discovery.'],
+    ['How long does a RAG project take?', 'It depends on the number of sources, access rules and integrations. A short discovery defines the scope, the evaluation set and a realistic delivery plan before build work begins.']
+  ]
+};
+
