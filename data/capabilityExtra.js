@@ -1,6 +1,6 @@
 export const capabilityExtra = {
   azure: {
-    seoTitle: 'Azure AI Consulting and Engineering',
+    seoTitle: 'Azure AI Consulting Services and Engineering',
     seoDescription: 'Azure AI consulting from Csharptek: Azure OpenAI, AI Foundry, AI Search, Entra ID, App Service, Functions and AKS, engineered into your applications.',
     h1: 'Azure AI consulting and engineering',
     sections: [

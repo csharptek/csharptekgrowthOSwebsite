@@ -223,7 +223,7 @@ export const blogPosts = {
 
   'azure-openai-on-your-data-vs-custom-rag': {
     title: 'Azure OpenAI On Your Data vs a Custom RAG Pipeline',
-    meta_title: 'Azure OpenAI On Your Data vs a Custom RAG Pipeline',
+    meta_title: 'Azure OpenAI on Custom Data: On Your Data vs Custom RAG',
     meta_description: 'Azure OpenAI On Your Data is the quick route to chat over your documents. When it is enough, and when a custom RAG pipeline on Azure AI Search is the better choice.',
     excerpt: 'Use the built-in route when it fits, and build a custom pipeline when quality, permissions or control demand it.',
     category: 'Azure', read_time: '9 min read', tags: ['azure openai on your data', 'azure ai search', 'RAG', 'azure openai'],
@@ -325,7 +325,7 @@ export const blogPosts = {
 
   'production-ready-ai-checklist': {
     title: 'What Production-Ready AI Means: A 12-Point Checklist',
-    meta_title: 'What Production-Ready AI Means: A 12-Point Checklist',
+    meta_title: 'Production-Ready AI: A 12-Point Checklist for LLM Apps',
     meta_description: 'A 12-point checklist for production-ready AI: access control, data isolation, retrieval quality, evaluation, cost, latency, monitoring, security and ownership.',
     excerpt: 'Use this checklist to see how far an AI prototype is from production.',
     category: 'AI engineering', read_time: '10 min read', tags: ['production AI', 'AI engineering', 'LLM operations', 'checklist'],
@@ -413,7 +413,7 @@ export const blogPosts = {
     ]
   },
   'hipaa-compliant-ai-healthcare-startups': {
-    meta_title: 'HIPAA-Compliant AI for Healthcare Startups',
+    meta_title: 'HIPAA-Compliant AI and LLMs: A Guide for Healthcare Startups',
     meta_description: 'What HIPAA requires of AI systems, why a BAA is not enough, which Azure services are eligible, and how de-identification and audit logging fit in.',
     excerpt: 'HIPAA is an architecture you build in, not a feature you add late. Here is what it means for AI systems, and how to plan for it from day one.',
     updated_at: '2026-10-10T00:00:00.000Z',

@@ -1,8 +1,8 @@
 // SEO depth content per solution. sections render as card grids; checklist renders as a list panel.
 export const solutionExtra = {
   'ai-production-engineering': {
-    seoTitle: 'Prototype to Production AI Engineering for LLM Apps',
-    seoDescription: 'Csharptek takes AI prototypes, RAG systems and agent projects to production on Azure: auth, tenancy, evaluation, cost control and observability.',
+    seoTitle: 'AI Agents and LLM Apps from Prototype to Production',
+    seoDescription: 'Take AI agents, RAG systems and LLM apps from prototype to production on Azure: auth, tenancy, evaluation, cost control and observability, by Csharptek.',
     sections: [
       {
         eyebrow: 'What breaks after the prototype',
@@ -183,8 +183,8 @@ export const solutionExtra = {
     ]
   },
   'microsoft-marketplace-engineering': {
-    seoTitle: 'Microsoft Marketplace SaaS Offer Development',
-    seoDescription: 'Csharptek builds transactable SaaS offers for Microsoft Marketplace: landing page, fulfillment API v2, webhooks, metering, Entra ID and certification.',
+    seoTitle: 'Azure Marketplace Integration and Transactable SaaS Offers',
+    seoDescription: 'Sell on the Microsoft cloud marketplace: listing setup, transactable SaaS offers and Azure Marketplace integration with fulfillment API v2, webhooks, metering and Entra ID.',
     sections: [
       {
         eyebrow: 'The publisher flow',
@@ -305,8 +305,8 @@ solutionExtra['agency-development-partner'] = {
 };
 
 solutionExtra['ai-agent-development'] = {
-  seoTitle: 'AI Agent Development Company for SaaS Teams',
-  seoDescription: 'Csharptek builds AI agents and multi-agent workflows with tools, approvals, evaluation and monitoring on Azure OpenAI. Agents your team can trust in production.',
+  seoTitle: 'AI Agent and Multi-Agent System Development for SaaS',
+  seoDescription: 'Custom AI agent and multi-agent system development: agents embedded in your SaaS product, with tools, approvals, evaluation and monitoring on Azure OpenAI.',
   sections: [
     {
       eyebrow: 'What we build',

@@ -54,7 +54,7 @@ export default async function ContactPage({ searchParams }) {
         </div>
         <div className="contact-card">
           <h3><Icon name="pin" size={18}/> Office</h3>
-          <p><strong>Ranchi, India</strong><br/>Headquarters &amp; Engineering<br/>Jharkhand 834001</p>
+          <p><strong>Ranchi, India</strong><br/>Headquarters &amp; Engineering<br/>199/A, First Floor, Panchwati Garden Lane<br/>Bariatu, Ranchi, Jharkhand 834009<br/><a href="tel:+919229069558">+91 92290 69558</a></p>
         </div>
       </aside>
       <div className="contact-form-col"><LeadForm defaultInitiative={initiative}/></div>
