@@ -7,7 +7,7 @@ import Faq from '../../components/Faq';
 
 import { createPageMetadata } from '../../lib/seo';
 
-export const metadata = createPageMetadata({ title: 'About Csharptek: Azure, AI and .NET Engineering', description: 'Csharptek is an Azure, AI and .NET engineering company founded in 2016 in Ranchi, India, working with agencies, SaaS teams and Microsoft-stack companies worldwide.', path: '/about' });
+export const metadata = createPageMetadata({ title: 'About Csharptek: Azure, AI and .NET Engineering', description: 'Csharptek is an Azure, AI and .NET software development company founded in 2016 in Ranchi, Jharkhand, working with agencies, SaaS teams and Microsoft-stack companies worldwide.', path: '/about' });
 
 const ecosystem = [
   ['Microsoft', 'Solutions Partner', 'Azure, Microsoft 365 and AI services.', 'MS'],
@@ -34,7 +34,7 @@ const engagement = [
 ];
 
 const aboutFaqs = [
-  ['Where is Csharptek based?', 'Our engineering team is based in Ranchi, Jharkhand, India. We work with clients in the US, UK, Australia and other regions, with agreed overlapping hours for daily contact.'],
+  ['Where is Csharptek based?', 'Csharptek is a software development and IT company headquartered in Ranchi, Jharkhand, India, where our engineering team works. We work with clients in the US, UK, Australia and other regions, with agreed overlapping hours for daily contact.'],
   ['What does Csharptek specialise in?', 'Azure, AI and .NET engineering: taking AI prototypes to production, building AI agents and RAG systems, adding AI capabilities to SaaS products, modernizing .NET applications on Azure and automating complex workflows.'],
   ['Do you work as a white-label partner for agencies?', 'Yes. We deliver projects behind an agency’s brand under NDA, work in the agency’s tools and repositories, and assign intellectual property to the agency or its client.'],
   ['How does a first engagement usually start?', 'With a short discovery call, then a scoped sprint of two to four weeks with clear acceptance criteria. That sprint shows quality and communication before a larger commitment.'],

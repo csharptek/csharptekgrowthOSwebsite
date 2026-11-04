@@ -125,9 +125,22 @@ export const solutionExtra = {
     ]
   },
   'application-cloud-modernization': {
-    seoTitle: '.NET Modernization Services on Azure',
-    seoDescription: 'Csharptek modernizes .NET Framework apps on Azure: assessment, upgrade to modern .NET, App Service, containers, AKS and CI/CD, with low-risk sequencing.',
+    seoTitle: 'Azure App Development & .NET Modernization Services',
+    seoDescription: 'Azure application development and cloud modernization: new apps on App Service, Functions and AKS, .NET Framework upgrades, Azure SQL and CI/CD, delivered in low-risk stages.',
     sections: [
+      {
+        eyebrow: 'Azure application development',
+        title: 'Build new applications on Azure, designed to run well from day one.',
+        intro: 'Not every initiative starts with legacy code. We also design and build new web applications, APIs and internal tools on Azure, using the same architecture, identity and delivery practices we bring to modernization work.',
+        items: [
+          ['Web apps and APIs', 'ASP.NET Core and Node.js applications on Azure App Service or Azure Container Apps, with clear service boundaries and versioned APIs.'],
+          ['Event-driven services', 'Azure Functions, Service Bus and Event Grid for background processing, integrations and scheduled jobs.'],
+          ['Data on Azure', 'Azure SQL, Cosmos DB and Blob Storage chosen around the workload, with backup, retention and access designed in.'],
+          ['Identity and security', 'Microsoft Entra ID sign-in, role-based access, Key Vault for secrets and network rules that match the risk of the application.'],
+          ['AI-ready architecture', 'Room for Azure OpenAI and Azure AI Search where they add value, without coupling the core application to a single model.'],
+          ['Operate and observe', 'Application Insights, alerts, dashboards and release pipelines so the team can run what we build.']
+        ]
+      },
       {
         eyebrow: '.NET modernization on Azure',
         title: 'Move legacy .NET forward without a big-bang rewrite.',
@@ -157,6 +170,8 @@ export const solutionExtra = {
       ]
     },
     faqs: [
+      ['Do you build new applications on Azure, or only modernize existing ones?', 'Both. We build new web applications, APIs and internal tools on Azure App Service, Azure Functions and Azure Container Apps, and we modernize existing .NET applications in stages.'],
+      ['What does Azure cloud modernization include?', 'Assessment of the current estate, upgrades to modern .NET, moving workloads to suitable Azure hosting, data migration to Azure SQL, identity through Microsoft Entra ID and CI/CD with infrastructure as code.'],
       ['Does modernization mean rewriting the application?', 'Not by default. Work can target the highest-value constraints in the current application, architecture, APIs or delivery process, and move in stages.'],
       ['Can you migrate .NET Framework applications to modern .NET?', 'Yes. We assess the application, replace unsupported dependencies, upgrade in stages to a supported modern .NET version and add tests around the workflows that matter.'],
       ['Which Azure services do you use for hosting?', 'It depends on the workload: Azure App Service for web apps and APIs, Azure Functions for event-driven work, Azure Container Apps or AKS for container workloads, and virtual machines for what must remain as is.'],

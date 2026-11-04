@@ -5,7 +5,7 @@ import Icon from '../../components/Icon';
 
 import { createPageMetadata } from '../../lib/seo';
 
-export const metadata = createPageMetadata({ title: 'Contact Csharptek: Azure AI and .NET Engineering', description: 'Talk with Csharptek about AI product engineering, workflow automation, Azure modernization or a complex software initiative.', path: '/contact' });
+export const metadata = createPageMetadata({ title: 'Contact Csharptek: Azure AI and .NET Engineering', description: 'Talk with Csharptek, a software development company in Ranchi, India, about AI product engineering, workflow automation, Azure app development or modernization.', path: '/contact' });
 
 const channels = [
   { icon: 'mail', title: 'Email us', text: 'Best for project briefs and detailed queries', label: 'info@csharptek.com', href: 'mailto:info@csharptek.com' },

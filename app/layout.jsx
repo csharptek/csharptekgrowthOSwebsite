@@ -1,3 +1,4 @@
+import localFont from 'next/font/local';
 import './globals.css';
 import './design-refresh.css';
 import './brand-theme.css';
@@ -8,11 +9,14 @@ import Tracking from '../components/Tracking';
 import BreadcrumbSchema from '../components/BreadcrumbSchema';
 import ConsentBanner from '../components/ConsentBanner';
 
+const manrope = localFont({ src: './fonts/manrope-latin-wght-normal.woff2', weight: '200 800', display: 'swap', variable: '--font-manrope', fallback: ['system-ui', 'sans-serif'] });
+const dmSans = localFont({ src: './fonts/dm-sans-latin-wght-normal.woff2', weight: '100 1000', display: 'swap', variable: '--font-dm-sans', fallback: ['system-ui', 'sans-serif'] });
+
 const siteUrl = 'https://www.csharptek.com';
 const indexingEnabled = process.env.SITE_INDEXING_ENABLED === 'true';
 const siteSchema = { '@context': 'https://schema.org', '@graph': [
   { '@type': 'WebSite', '@id': `${siteUrl}/#website`, name: 'Csharptek', url: siteUrl, publisher: { '@id': `${siteUrl}/#organization` } },
-  { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: 'Csharptek', url: siteUrl, email: 'info@csharptek.com', logo: `${siteUrl}/icon.svg`, description: 'Azure AI and .NET engineering partner: AI production engineering, AI products, workflow automation and application modernization.', foundingDate: '2016', founder: { '@type': 'Person', name: 'Bhanu Gupta' }, address: { '@type': 'PostalAddress', addressLocality: 'Ranchi', addressRegion: 'Jharkhand', postalCode: '834001', addressCountry: 'IN' }, sameAs: ['https://www.linkedin.com/company/csharptek/', 'https://twitter.com/csharptek', 'https://www.youtube.com/@csharptek'] }
+  { '@type': ['Organization', 'ProfessionalService'], '@id': `${siteUrl}/#organization`, name: 'Csharptek', url: siteUrl, email: 'info@csharptek.com', telephone: '+91-92290-69558', image: `${siteUrl}/csharptek-logo.png`, areaServed: ['IN', 'US', 'GB', 'AU', 'AE'], knowsAbout: ['Azure application development', '.NET modernization', 'AI production engineering', 'RAG development', 'AI agent development', 'Microsoft Marketplace SaaS'], logo: `${siteUrl}/icon.svg`, description: 'Azure AI and .NET engineering partner: AI production engineering, AI products, workflow automation and application modernization.', foundingDate: '2016', founder: { '@type': 'Person', name: 'Bhanu Gupta' }, address: { '@type': 'PostalAddress', addressLocality: 'Ranchi', addressRegion: 'Jharkhand', postalCode: '834001', addressCountry: 'IN' }, sameAs: ['https://www.linkedin.com/company/csharptek/', 'https://twitter.com/csharptek', 'https://www.youtube.com/@csharptek'] }
 ] };
 
 export const metadata = {
@@ -26,7 +30,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-  return <html lang="en"><body>
+  return <html lang="en" className={`${manrope.variable} ${dmSans.variable}`}><body>
     {gtmId && <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} title="Google Tag Manager"/></noscript>}
     <a className="skip-link" href="#main">Skip to content</a>
     <SiteHeader/>

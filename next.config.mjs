@@ -3,6 +3,12 @@ const nextConfig = {
   images: {
     qualities: [75, 95],
   },
+  async headers() {
+    return [
+      { source: '/images/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=2592000, stale-while-revalidate=86400' }] },
+      { source: '/:file(csharptek-logo.png|icon-512.png|llms.txt)', headers: [{ key: 'Cache-Control', value: 'public, max-age=604800' }] }
+    ];
+  },
   async redirects() {
     return [
       { source: '/products/convosphere', destination: '/products', permanent: false },

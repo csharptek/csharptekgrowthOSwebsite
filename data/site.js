@@ -46,8 +46,8 @@ export const solutions = [
   },
   {
     slug: 'application-cloud-modernization',
-    h1: 'Modernize .NET applications on Azure without defaulting to a rewrite.',
-    supporting: 'Improve legacy applications, cloud architecture, APIs, deployment pipelines and infrastructure without treating modernization as a rewrite by default.',
+    h1: 'Azure application development and .NET modernization, without defaulting to a rewrite.',
+    supporting: 'Build new applications on Azure, or improve legacy applications, cloud architecture, APIs, deployment pipelines and infrastructure without treating modernization as a rewrite by default.',
     cta: 'Discuss Your Initiative',
     number: '04',
     eyebrow: 'Improve the systems you already depend on',
