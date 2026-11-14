@@ -6,12 +6,13 @@ export const dynamic = 'force-dynamic';
 const siteUrl = 'https://www.csharptek.com';
 const staticPaths = [
   '/', '/solutions', '/case-studies', '/industries', '/industries/healthcare', '/industries/technology-saas',
-  '/about', '/leadership', '/careers', '/contact', '/blog', '/privacy-policy', '/services/marketplace', '/azure-app-modernization-services', '/capabilities', '/products'
+  '/about', '/leadership', '/careers', '/contact', '/blog', '/privacy-policy', '/services/marketplace', '/azure-app-modernization-services', '/capabilities', '/products', '/software-company-ranchi'
 ];
 
 // Last real content change per path. Update the date when a page's content changes.
 const pageUpdated = {
-  '/about': '2026-10-28'
+  '/about': '2026-10-28',
+  '/software-company-ranchi': '2026-11-14'
 };
 const baseline = '2026-10-10';
 

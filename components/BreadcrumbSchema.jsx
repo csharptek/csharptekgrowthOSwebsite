@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 
-const labels = { 'azure-app-modernization-services': 'Azure application modernization', 'case-studies': 'Case studies', 'technology-saas': 'Technology & SaaS', 'privacy-policy': 'Privacy policy', blog: 'Insights', services: 'Services' };
+const labels = { 'azure-app-modernization-services': 'Azure application modernization', 'case-studies': 'Case studies', 'technology-saas': 'Technology & SaaS', 'privacy-policy': 'Privacy policy', blog: 'Insights', 'software-company-ranchi': 'Software company in Ranchi', services: 'Services' };
 const titleCase = (s) => labels[s] || s.replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
 
 export default function BreadcrumbSchema() {

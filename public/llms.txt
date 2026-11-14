@@ -10,4 +10,6 @@
 - [Case studies](https://www.csharptek.com/case-studies)
 - [Products](https://www.csharptek.com/products): TekDial, TekSocial
 - [About](https://www.csharptek.com/about)
+- [Ranchi office](https://www.csharptek.com/software-company-ranchi): software development company in Ranchi, Jharkhand
+- [Insights](https://www.csharptek.com/blog): Azure OpenAI, RAG, AI agents, .NET modernization guides
 - [Contact](https://www.csharptek.com/contact)
