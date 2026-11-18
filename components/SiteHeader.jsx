@@ -14,11 +14,14 @@ const groups = {
       ['/solutions/ai-production-engineering', 'Production AI & RAG Systems'],
       ['/solutions/ai-product-engineering', 'Custom AI Software & Products'],
       ['/solutions/ai-agent-development', 'Custom AI Agents'],
+      ['/solutions/microsoft-365-copilot-readiness', 'Microsoft 365 Copilot Readiness'],
+      ['/solutions/ai-agent-governance', 'AI Agent Governance'],
       ['/solutions/intelligent-workflow-automation', 'Workflow & Process Automation'],
       ['/azure-app-modernization-services', 'Azure & .NET Modernization'],
       ['/solutions/healthcare-ai-automation', 'Healthcare AI & Automation'],
       ['/services/marketplace', 'Microsoft Marketplace Engineering'],
-      ['/solutions/agency-development-partner', 'Agency Development Partner']
+      ['/solutions/agency-development-partner', 'Agency Development Partner'],
+      ['/solutions/msp-white-label-partner', 'White-label for MSPs']
     ]
   },
   industries: {

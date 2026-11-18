@@ -7,11 +7,14 @@ const footerSolutions = [
   ['Custom AI software', '/solutions/ai-product-engineering'],
   ['AI agent development', '/solutions/ai-agent-development'],
   ['RAG development', '/solutions/rag-development'],
+  ['Copilot readiness', '/solutions/microsoft-365-copilot-readiness'],
+  ['AI agent governance', '/solutions/ai-agent-governance'],
   ['Workflow automation', '/solutions/intelligent-workflow-automation'],
   ['Application modernization', '/azure-app-modernization-services'],
   ['Healthcare AI', '/solutions/healthcare-ai-automation'],
   ['Microsoft Marketplace', '/services/marketplace'],
-  ['Agency partner', '/solutions/agency-development-partner']
+  ['Agency partner', '/solutions/agency-development-partner'],
+  ['White-label for MSPs', '/solutions/msp-white-label-partner']
 ];
 
 const socials = [

@@ -1,4 +1,31 @@
 export const solutionContent = {
+  'microsoft-365-copilot-readiness': {
+    fit: 'Copilot answers from whatever a user can already open in Microsoft 365. If SharePoint sites, Teams and OneDrive files are shared too widely, Copilot will surface that content in seconds. Readiness means fixing access and labelling the sensitive data first, then rolling out to the people and use cases where Copilot earns its licence.',
+    workstreams: [
+      ['Tenant and access review', 'Review Entra ID, guest access, groups and SharePoint and Teams sharing to find content that is open to more people than it should be.'],
+      ['Data protection', 'Plan Purview sensitivity labels, DLP and retention for the data Copilot must not expose, starting with the highest-risk sites.'],
+      ['Pilot and adoption', 'Pick the first users and use cases, run a measured pilot and turn what works into a rollout plan, including the first Copilot agents.']
+    ],
+    faqs: [['See the FAQ below', 'See the detailed answers on this page.']]
+  },
+  'ai-agent-governance': {
+    fit: 'AI agents now act inside Microsoft 365 and Azure: Copilot Studio agents, custom agents built on Azure AI Foundry and agents added by vendors. Each one is an identity that can read data and take actions. Governance starts with knowing which agents exist, who owns them and what they can reach.',
+    workstreams: [
+      ['Inventory and ownership', 'Find every agent in the tenant, record its owner, purpose, data sources and actions, and retire the ones nobody owns.'],
+      ['Identity and access', 'Give agents their own identities with Entra Agent ID, least-privilege permissions and Conditional Access policies.'],
+      ['Data controls and monitoring', 'Apply Purview labels and DLP to agent prompts and responses, and monitor agent activity with audit logs and alerts.']
+    ],
+    faqs: [['See the FAQ below', 'See the detailed answers on this page.']]
+  },
+  'msp-white-label-partner': {
+    fit: 'Clients of managed service providers are asking for Copilot, AI agents and small custom apps. Most MSPs run Microsoft 365 well but have no development team to build them. A white-label partner lets the MSP say yes, keep the client relationship and earn on the build and the ongoing support.',
+    workstreams: [
+      ['Scoping with you', 'Join pre-sales calls under your brand if you want, turn the client request into a fixed scope and give you a price to mark up.'],
+      ['Build and test', 'Build the agent, app or integration in the client tenant or yours, with reviews at each stage.'],
+      ['Handover and support', 'Hand over documentation and admin guides so your team can support it, with optional monthly support behind you.']
+    ],
+    faqs: [['See the FAQ below', 'See the detailed answers on this page.']]
+  },
   'rag-development': {
     fit: 'A RAG system is only as good as the content it retrieves. Before choosing models or vector stores, we map the questions users actually ask, the sources that hold the answers, who is allowed to see what, and how answers will be checked.',
     workstreams: [

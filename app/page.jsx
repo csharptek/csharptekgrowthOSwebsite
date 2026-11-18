@@ -5,7 +5,7 @@ import { caseStudies, solutions, trustItems } from '../data/site';
 import { products } from '../data/products';
 import { createPageMetadata } from '../lib/seo';
 
-export const metadata = createPageMetadata({ title: 'Csharptek | Azure AI and .NET Engineering Partner', description: 'Csharptek helps established companies put AI into production, add intelligent capabilities to products, automate complex workflows and modernize applications.', path: '/' });
+export const metadata = createPageMetadata({ title: 'Csharptek | Azure AI and .NET Engineering Partner', description: 'Csharptek is a Microsoft Solutions Partner for Copilot readiness, AI agents and governance, production AI and .NET modernization on Azure.', path: '/' });
 
 const intents = [
   { title: 'Put AI into production', text: 'Move AI prototypes, RAG systems and agent initiatives into reliable production systems.', slug: 'ai-production-engineering', icon: 'spark' },
@@ -17,7 +17,8 @@ const intents = [
 const audiences = [
   { title: 'Agencies', text: 'A white-label development partner for AI, web and Azure projects that need senior engineers behind your brand.', href: '/solutions/agency-development-partner', icon: 'layers' },
   { title: 'AI and SaaS teams', text: 'Take an AI prototype to production, or add AI features and agents to your product with a small senior team.', href: '/solutions/ai-production-engineering', icon: 'spark' },
-  { title: 'Microsoft-stack companies', text: 'Modernize .NET applications on Azure and add Azure OpenAI to the systems you already run.', href: '/azure-app-modernization-services', icon: 'orbit' }
+  { title: 'Microsoft-stack companies', text: 'Get Microsoft 365 ready for Copilot, govern AI agents, and modernize the .NET applications you already run on Azure.', href: '/solutions/microsoft-365-copilot-readiness', icon: 'orbit' },
+  { title: 'MSPs and Microsoft partners', text: 'White-label Copilot Studio agents, Power Platform apps and Azure AI builds for the clients you already manage.', href: '/solutions/msp-white-label-partner', icon: 'grid' }
 ];
 
 const proof = [
@@ -35,7 +36,7 @@ export default function HomePage() {
         <div className="hero-copy">
           <div className="hero-eyebrow">AI · Product Engineering · Modernization</div>
           <h1>Azure AI and .NET engineering for <em>production-ready</em> systems.</h1>
-          <p>Csharptek is an Azure AI and .NET engineering partner. We take AI prototypes to production, build AI products and agents, automate complex workflows, and modernize .NET applications on Azure for agencies, SaaS teams and Microsoft-stack companies.</p>
+          <p>Csharptek is an Azure AI and .NET engineering partner. We get Microsoft 365 ready for Copilot, build and govern AI agents, take AI prototypes to production, automate complex workflows, and modernize .NET applications on Azure for Microsoft-stack companies, MSPs, agencies and SaaS teams.</p>
           <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss Your Initiative</Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore Our Work</Link></div>
         </div>
       </div>

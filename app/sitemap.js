@@ -12,7 +12,14 @@ const staticPaths = [
 // Last real content change per path. Update the date when a page's content changes.
 const pageUpdated = {
   '/about': '2026-10-28',
-  '/software-company-ranchi': '2026-11-14'
+  '/software-company-ranchi': '2026-11-14',
+  '/': '2026-11-18',
+  '/solutions': '2026-11-18',
+  '/solutions/microsoft-365-copilot-readiness': '2026-11-18',
+  '/solutions/ai-agent-governance': '2026-11-18',
+  '/solutions/msp-white-label-partner': '2026-11-18',
+  '/solutions/ai-agent-development': '2026-11-18',
+  '/solutions/agency-development-partner': '2026-11-18'
 };
 const baseline = '2026-10-10';
 

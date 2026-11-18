@@ -3,6 +3,9 @@ import Image from 'next/image';
 const artwork = {
   'agency-development-partner': ['/images/brand/about-collaboration.png', 'A collaborative engineering workshop with connected workflow pieces'],
   'ai-agent-development': ['/images/brand/solution-workflow-automation.png', 'Connected agent steps with a human review checkpoint'],
+  'microsoft-365-copilot-readiness': ['/images/brand/service-cloud-architecture.png', 'A cloud architecture model with a readiness checkpoint'],
+  'ai-agent-governance': ['/images/brand/solution-workflow-automation.png', 'Agent steps passing through access and review checkpoints'],
+  'msp-white-label-partner': ['/images/brand/about-collaboration.png', 'A partner workshop arranging connected workflow pieces'],
   'rag-development': ['/images/brand/solution-ai-production.png', 'Connected retrieval modules for grounded AI answers'],
   'ai-production-engineering': ['/images/brand/solution-ai-production.png', 'AI system architecture modules connected through a quality checkpoint'],
   'ai-product-engineering': ['/images/brand/solution-ai-product.png', 'A product object linked to a companion interface'],

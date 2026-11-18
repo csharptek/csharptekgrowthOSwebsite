@@ -65,6 +65,19 @@ artworkBySlug['rag-development'] = {
   alt: 'Translucent architecture modules linked by a connector, representing retrieval and grounded answers.'
 };
 
+artworkBySlug['microsoft-365-copilot-readiness'] = {
+  src: '/images/brand/service-cloud-architecture.png',
+  alt: 'A layered cloud architecture model with a checkpoint before rollout.'
+};
+artworkBySlug['ai-agent-governance'] = {
+  src: '/images/brand/solution-workflow-automation.png',
+  alt: 'Connected agent steps passing through access and review checkpoints.'
+};
+artworkBySlug['msp-white-label-partner'] = {
+  src: '/images/brand/about-collaboration.png',
+  alt: 'A partner workshop table with hands arranging connected workflow pieces.'
+};
+
 artworkBySlug.about = {
   src: '/images/brand/about-collaboration.png',
   alt: 'A collaborative engineering workshop table with hands arranging connected workflow pieces.'

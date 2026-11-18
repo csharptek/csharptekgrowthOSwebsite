@@ -1,9 +1,13 @@
 # Csharptek
 
-> Csharptek is an Azure AI and .NET engineering partner. We help agencies, AI SaaS teams and mid-market Microsoft-stack companies take AI prototypes to production, add AI to products, automate workflows and modernize .NET applications on Azure.
+> Csharptek is a Microsoft Solutions Partner for Azure AI and .NET engineering. We help Microsoft-stack companies get Microsoft 365 ready for Copilot, build and govern AI agents, take AI to production, automate workflows and modernize .NET applications on Azure, and we deliver white-label Microsoft AI builds for MSPs and agencies.
 
 ## Key pages
 - [Solutions](https://www.csharptek.com/solutions): AI production engineering, AI product engineering, workflow automation
+- [Microsoft 365 Copilot readiness](https://www.csharptek.com/solutions/microsoft-365-copilot-readiness): two-week readiness assessment, oversharing, Entra ID, Purview, rollout plan
+- [AI agent governance](https://www.csharptek.com/solutions/ai-agent-governance): Agent 365, Entra Agent ID, Conditional Access, Purview DLP for Copilot and AI agents
+- [White-label Microsoft AI for MSPs](https://www.csharptek.com/solutions/msp-white-label-partner): Copilot Studio, Power Platform and Azure AI builds under the MSP's brand
+- [AI agent development](https://www.csharptek.com/solutions/ai-agent-development): custom and multi-agent systems on Azure OpenAI
 - [Azure app modernization](https://www.csharptek.com/azure-app-modernization-services): .NET and Azure modernization
 - [Microsoft Marketplace engineering](https://www.csharptek.com/services/marketplace): SaaS offers and co-sell readiness
 - [Capabilities](https://www.csharptek.com/capabilities): AI/LLM, Azure, .NET, cloud and DevOps, data

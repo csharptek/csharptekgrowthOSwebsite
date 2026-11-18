@@ -136,6 +136,54 @@ export const solutions = [
     proof: ['Production-oriented RAG pipelines', 'Multi-agent revenue automation', 'Azure AI engineering in existing systems'],
     icon: 'spark',
     unlisted: true
+  },
+  {
+    slug: 'microsoft-365-copilot-readiness',
+    h1: 'Microsoft 365 Copilot readiness assessment: get your tenant, data and people ready before you roll out Copilot.',
+    supporting: 'A fixed-scope, two-week Copilot readiness assessment for Microsoft 365: Entra ID access, SharePoint and Teams oversharing, Purview labels, licensing and the first use cases, with a written rollout plan.',
+    cta: 'Request a Copilot Readiness Assessment',
+    number: '10',
+    eyebrow: 'Copilot readiness and rollout',
+    title: 'Microsoft 365 Copilot Readiness',
+    short: 'Check permissions, data, licensing and use cases before Copilot reaches every user.',
+    description: 'Microsoft 365 Copilot readiness assessment and rollout support: Entra ID, SharePoint and Teams oversharing, Purview sensitivity labels, licensing and first use cases.',
+    buyer: 'For IT directors and operations leaders preparing a Microsoft 365 Copilot rollout.',
+    capabilities: ['Copilot readiness assessment', 'SharePoint and Teams oversharing review', 'Entra ID and access clean-up', 'Purview sensitivity labels and DLP', 'Pilot, adoption and first Copilot agents'],
+    proof: ['Microsoft 365 and Entra ID administration', 'Azure architecture and identity', 'Copilot Studio and Azure AI agents'],
+    icon: 'spark',
+    unlisted: true
+  },
+  {
+    slug: 'ai-agent-governance',
+    h1: 'AI agent governance for Microsoft 365 and Azure: control what Copilot and your AI agents can see and do.',
+    supporting: 'We set up Microsoft Agent 365, Entra Agent ID, Conditional Access and Purview data controls so Copilot, Copilot Studio agents and custom Azure agents only reach the data and actions they should.',
+    cta: 'Discuss AI Agent Governance',
+    number: '11',
+    eyebrow: 'Govern Copilot and AI agents',
+    title: 'AI Agent Governance',
+    short: 'Inventory, identity, access and data controls for Copilot and every AI agent in your tenant.',
+    description: 'AI agent governance on Microsoft 365 and Azure: agent inventory, Entra Agent ID, Conditional Access, Purview DLP for AI, Agent 365 setup and monitoring.',
+    buyer: 'For IT and security leaders who need Copilot and AI agents under control before they spread.',
+    capabilities: ['AI agent inventory and ownership', 'Entra Agent ID and Conditional Access', 'Purview DLP and labels for AI', 'Microsoft Agent 365 setup', 'Monitoring, audit and managed governance'],
+    proof: ['Microsoft 365 and Entra ID administration', 'AI agent engineering with approvals and audit', 'Azure architecture and identity'],
+    icon: 'grid',
+    unlisted: true
+  },
+  {
+    slug: 'msp-white-label-partner',
+    h1: 'White-label Microsoft AI development for MSPs and Microsoft partners.',
+    supporting: 'Sell Copilot Studio agents, Power Platform apps and Azure AI builds to the clients you already manage. We deliver under your brand, you keep the client and the margin.',
+    cta: 'Discuss a White-label Partnership',
+    number: '12',
+    eyebrow: 'For MSPs and Microsoft partners',
+    title: 'White-label Microsoft AI for MSPs',
+    short: 'Copilot Studio agents, Power Platform and Azure AI builds delivered under your MSP brand.',
+    description: 'White-label Copilot Studio, Power Platform and Azure AI development for managed service providers and Microsoft partners: delivered under your brand, scoped per project or monthly.',
+    buyer: 'For MSPs, IT support firms and Microsoft partners whose clients ask for AI and custom builds.',
+    capabilities: ['Copilot Studio agents', 'Power Platform apps and flows', 'Azure OpenAI and AI Foundry builds', 'SharePoint and Microsoft 365 integrations', 'White-label delivery and handover'],
+    proof: ['Copilot Studio and Azure AI agents', 'Microsoft 365 and Entra ID administration', 'Agency white-label delivery'],
+    icon: 'layers',
+    unlisted: true
   }
 ];
 
@@ -173,7 +221,10 @@ export const solutionCases = {
   'microsoft-marketplace-engineering': ['payautomation', 'landminer', 'virilocity'],
   'agency-development-partner': ['virilocity', 'landminer', 'image-to-video'],
   'ai-agent-development': ['payautomation', 'virilocity', 'rag-pipeline'],
-  'rag-development': ['rag-pipeline', 'travel-data-ai', 'payautomation']
+  'rag-development': ['rag-pipeline', 'travel-data-ai', 'payautomation'],
+  'microsoft-365-copilot-readiness': ['dotnet-azure-modernization', 'payautomation', 'rag-pipeline'],
+  'ai-agent-governance': ['payautomation', 'rag-pipeline', 'dotnet-azure-modernization'],
+  'msp-white-label-partner': ['virilocity', 'payautomation', 'dotnet-azure-modernization']
 };
 
 export function solutionHref(slug) {

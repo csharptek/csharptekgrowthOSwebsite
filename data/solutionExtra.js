@@ -232,6 +232,7 @@ solutionExtra['agency-development-partner'] = {
       eyebrow: 'How the partnership works',
       title: 'Your client, your brand, our engineering.',
       intro: 'We act as a white-label or subcontract development team. You own the client relationship and the commercial terms. We deliver the engineering to your standards and stay out of sight.',
+      link: ['/solutions/msp-white-label-partner', 'Run an MSP or Microsoft partner? See white-label Microsoft AI for MSPs'],
       items: [
         ['White-label delivery', 'We work under NDA, use your naming and communication channels, and never contact your client unless you ask us to.'],
         ['Subcontract projects', 'Hand us a defined project, such as an AI feature, a web or mobile build or an Azure migration, and we deliver it against an agreed scope.'],
@@ -324,6 +325,7 @@ solutionExtra['ai-agent-development'] = {
       eyebrow: 'What makes an agent trustworthy',
       title: 'The engineering around the model.',
       intro: 'Agents fail in ways a chatbot does not: they act on wrong information, loop, or take actions nobody approved. These controls are part of every agent we build.',
+      link: ['/solutions/ai-agent-governance', 'Governing Copilot and agents across Microsoft 365? See AI agent governance'],
       items: [
         ['Bounded tools and permissions', 'The agent can only call the tools it needs, with the permissions of the user or role it acts for.'],
         ['Approval points', 'Costly or irreversible actions pause for a person to approve.'],
@@ -428,3 +430,169 @@ solutionExtra['rag-development'] = {
   ]
 };
 
+solutionExtra['microsoft-365-copilot-readiness'] = {
+  seoTitle: 'Microsoft 365 Copilot Readiness Assessment and Rollout',
+  seoDescription: 'Fixed-scope Microsoft 365 Copilot readiness assessment: Entra ID access, SharePoint and Teams oversharing, Purview labels, licensing and a rollout plan in two weeks.',
+  sections: [
+    {
+      eyebrow: 'What the assessment covers',
+      title: 'Everything that decides whether Copilot is safe and useful.',
+      intro: 'The assessment runs in your tenant with your IT team over about two weeks. You get findings, a prioritised fix list and a rollout plan you can act on.',
+      items: [
+        ['Oversharing review', 'SharePoint sites, Teams, OneDrive and links shared with everyone or with external users, ranked by the sensitivity of what they hold.'],
+        ['Entra ID and access', 'Groups, guest accounts, stale users, admin roles and Conditional Access that affect what Copilot can reach.'],
+        ['Purview readiness', 'Sensitivity labels, DLP and retention policies in place today and the minimum set needed before rollout.'],
+        ['Licensing and settings', 'Copilot and Microsoft 365 licences, web grounding, plugin and agent settings, and who should get Copilot first.'],
+        ['Use cases', 'The top three use cases by department, with a simple way to measure time saved in the pilot.'],
+        ['Rollout plan', 'A phased plan: fixes first, then pilot, then wider rollout and the first Copilot Studio agents.']
+      ],
+      link: ['/solutions/ai-agent-governance', 'Next step: AI agent governance']
+    },
+    {
+      eyebrow: 'After the assessment',
+      title: 'From findings to a working rollout.',
+      intro: 'We can carry out the fixes with your team, run the pilot and build the first agents, or hand the plan to your IT team or MSP.',
+      items: [
+        ['Fix oversharing', 'Restrict site and file sharing, clean up groups and guests, and apply restricted content discovery where needed.'],
+        ['Label sensitive data', 'Roll out Purview sensitivity labels and DLP for the sites and data types that matter most.'],
+        ['Pilot and train', 'Run a measured pilot with prompts and guidance for each department.'],
+        ['First Copilot agents', 'Build Copilot Studio agents for one repeatable task, such as answering policy questions or preparing reports.']
+      ],
+      link: ['/solutions/intelligent-workflow-automation', 'See workflow automation with AI agents']
+    }
+  ],
+  checklist: {
+    title: 'Copilot readiness checklist',
+    intro: 'If you cannot tick most of these, fix them before Copilot reaches every user.',
+    items: [
+      'You know which SharePoint sites and Teams are shared with everyone',
+      'Guest and external sharing is reviewed and limited',
+      'Sensitive data has Purview labels or a plan to label it',
+      'Admin roles and stale accounts are cleaned up in Entra ID',
+      'Copilot licences go to people with clear use cases',
+      'There is a pilot group and a way to measure time saved',
+      'Someone owns Copilot and agent settings after rollout'
+    ]
+  },
+  faqs: [
+    ['What is a Microsoft 365 Copilot readiness assessment?', 'A review of your Microsoft 365 tenant before Copilot rollout: who can access what in SharePoint, Teams and OneDrive, how sensitive data is labelled and protected, licensing and settings, and which use cases to start with. It ends with a prioritised fix list and a rollout plan.'],
+    ['Why does oversharing matter for Copilot?', 'Copilot can use any content the signed-in user already has access to. Files that were technically open but hard to find become easy to surface, so access that was too broad becomes a real exposure.'],
+    ['How long does the assessment take?', 'Usually about two weeks for a small or mid-sized tenant, depending on the number of sites, users and policies to review.'],
+    ['Do you need admin access to our tenant?', 'We work with your IT team. Most checks use admin reports and read-only roles; changes are made only with your approval.'],
+    ['Can you carry out the fixes as well?', 'Yes. We can restrict sharing, clean up Entra ID, set up Purview labels and DLP, run the pilot and build the first Copilot Studio agents, or hand the plan to your team.'],
+    ['Is Copilot readiness only about security?', 'No. Security and data protection come first, but the assessment also covers licensing, settings, use cases and adoption so the rollout pays for itself.'],
+    ['Do you work with companies outside India?', 'Yes. Most of our clients are in the US, UK, Europe and the Middle East. We agree working hours that overlap with your team.'],
+    ['What comes after Copilot readiness?', 'Usually governance for Copilot and AI agents, and custom Copilot Studio or Azure agents for specific workflows.']
+  ]
+};
+
+solutionExtra['ai-agent-governance'] = {
+  seoTitle: 'AI Agent Governance for Microsoft 365 Copilot and Azure',
+  seoDescription: 'AI agent and Copilot governance on Microsoft 365 and Azure: agent inventory, Entra Agent ID, Conditional Access, Purview DLP for AI and Microsoft Agent 365 setup.',
+  sections: [
+    {
+      eyebrow: 'What we set up',
+      title: 'Controls for every agent in your tenant.',
+      intro: 'Microsoft now ships the tools: Agent 365, Entra Agent ID, Purview for AI and Defender for AI. They still need policies, configuration and owners. We set them up around how your business uses agents.',
+      items: [
+        ['Agent inventory', 'A register of Copilot Studio agents, custom Azure agents and third-party agents, with owners, data sources and allowed actions.'],
+        ['Agent identities', 'Entra Agent ID so each agent has its own identity and lifecycle instead of borrowing a user or a shared service account.'],
+        ['Access policies', 'Least-privilege permissions and Conditional Access for agents, including which data and connectors each one may use.'],
+        ['Data protection for AI', 'Purview sensitivity labels, DLP for prompts and responses, and blocking sensitive data from untrusted AI services.'],
+        ['Agent 365 and monitoring', 'Microsoft Agent 365 configured for central visibility, with audit logs, alerts and a review routine.'],
+        ['Policies people can follow', 'A short AI use and agent creation policy: who may build agents, how they are approved and when they are retired.']
+      ],
+      link: ['/solutions/microsoft-365-copilot-readiness', 'Start with a Copilot readiness assessment']
+    },
+    {
+      eyebrow: 'Ongoing governance',
+      title: 'Governance that keeps up as agents multiply.',
+      intro: 'New agents appear every month. A monthly governance service keeps the register, access and policies current.',
+      items: [
+        ['New agent reviews', 'Review and approve new agents before they reach production data.'],
+        ['Access recertification', 'Regular checks that agents still need the access they have.'],
+        ['Incident response', 'Investigate unusual agent activity and data exposure alerts with your security team.'],
+        ['Reporting', 'A monthly summary of agents, usage, risks and changes for IT and leadership.']
+      ],
+      link: ['/solutions/ai-agent-development', 'Building your own agents? See AI agent development']
+    }
+  ],
+  checklist: {
+    title: 'AI agent governance checklist',
+    intro: 'Use this to see where your Copilot and agent controls stand today.',
+    items: [
+      'You have a list of every AI agent in the tenant and who owns it',
+      'Agents have their own identities, not shared user accounts',
+      'Each agent has only the permissions and connectors it needs',
+      'Sensitive data is labelled and DLP covers AI prompts and responses',
+      'Agent activity is logged and someone reviews it',
+      'There is a rule for who may create and publish agents',
+      'Unused agents are retired'
+    ]
+  },
+  faqs: [
+    ['What is AI agent governance?', 'The policies and technical controls that decide which AI agents exist in your organization, who owns them, what data and systems they can reach, and how their activity is monitored and audited.'],
+    ['Why do AI agents need their own identities?', 'An agent that runs under a person’s account or a shared service account inherits too much access and is hard to audit. A dedicated agent identity in Microsoft Entra lets you limit, monitor and retire each agent separately.'],
+    ['What is Microsoft Agent 365?', 'Microsoft’s central place to see and manage AI agents across Microsoft 365, working with Entra for identity, Purview for data protection and Defender for threat detection.'],
+    ['Does governance cover Microsoft 365 Copilot too?', 'Yes. The same identity, access and Purview controls decide what Copilot can surface, so Copilot and custom agents are governed together.'],
+    ['Can you govern agents we built ourselves or bought from vendors?', 'Yes. Inventory, identity and data controls apply to Copilot Studio agents, custom Azure AI agents and third-party agents connected to your tenant.'],
+    ['Is this a one-off project or a service?', 'Either. The initial setup is a fixed-scope project; monthly governance keeps the register, access reviews and policies current.'],
+    ['Do we need Microsoft E5 licences?', 'Some controls need specific Microsoft licences. We review what you have and recommend the smallest set that covers your risks.'],
+    ['How does this relate to Copilot readiness?', 'Readiness prepares your tenant before Copilot rollout. Governance keeps Copilot and every agent under control after rollout.']
+  ]
+};
+
+solutionExtra['msp-white-label-partner'] = {
+  seoTitle: 'White-label Copilot Studio & Azure AI for MSPs',
+  seoDescription: 'White-label Copilot Studio agents, Power Platform apps and Azure AI builds for MSPs and Microsoft partners. Delivered under your brand, priced so you keep the margin.',
+  sections: [
+    {
+      eyebrow: 'What we build for your clients',
+      title: 'The AI and custom work your clients ask you for.',
+      intro: 'Your clients already trust you with Microsoft 365. These are the projects they ask for next, which we build behind your brand.',
+      items: [
+        ['Copilot Studio agents', 'Agents that answer from client documents, handle requests or prepare reports inside Teams and Microsoft 365.'],
+        ['Power Platform apps and flows', 'Power Apps and Power Automate solutions that replace spreadsheets, emails and paper forms.'],
+        ['Azure AI builds', 'Azure OpenAI and AI Foundry solutions such as document processing, knowledge search and custom agents.'],
+        ['SharePoint and Microsoft 365 integrations', 'Intranets, document workflows and connections between Microsoft 365 and line-of-business systems.'],
+        ['Copilot readiness and governance', 'Readiness assessments and agent governance delivered as your service.'],
+        ['.NET and Azure app work', 'Fixes, upgrades and modernization of client applications built on .NET and Azure.']
+      ],
+      link: ['/solutions/microsoft-365-copilot-readiness', 'See the Copilot readiness assessment']
+    },
+    {
+      eyebrow: 'How the partnership works',
+      title: 'Your brand, your client, our engineers.',
+      intro: 'We work as an extension of your team. Clients see your name; you set the price and keep the relationship.',
+      items: [
+        ['White-label by default', 'We work under your brand and email domain if you want, or stay fully behind the scenes.'],
+        ['Fixed scope or monthly', 'Fixed price per project, or a monthly team when you have steady demand.'],
+        ['Pre-sales support', 'Help with discovery calls, scoping and estimates so you can quote with confidence.'],
+        ['Documentation and handover', 'Admin guides and runbooks so your support desk can look after what we build.']
+      ],
+      link: ['/solutions/agency-development-partner', 'Agency instead of an MSP? See our agency partner model']
+    }
+  ],
+  checklist: {
+    title: 'Is a white-label partner right for your MSP?',
+    intro: 'A white-label development partner usually makes sense when several of these are true.',
+    items: [
+      'Clients ask for Copilot, AI agents or custom apps',
+      'You run Microsoft 365 well but have no developers',
+      'You turn down or refer out project work today',
+      'You want project revenue without hiring a dev team',
+      'You want to keep the client relationship yourself',
+      'You need someone to support what gets built'
+    ]
+  },
+  faqs: [
+    ['What is white-label development for MSPs?', 'A development company builds apps, agents and integrations for an MSP’s clients, delivered under the MSP’s brand. The MSP keeps the client relationship and sets the price.'],
+    ['What kind of projects can you deliver for our clients?', 'Copilot Studio agents, Power Platform apps and flows, Azure OpenAI and AI Foundry solutions, SharePoint and Microsoft 365 work, Copilot readiness and governance, and .NET and Azure application work.'],
+    ['Will our clients know you are involved?', 'Only if you want them to. We can work under your brand and email domain or stay fully behind the scenes.'],
+    ['How is pricing handled?', 'We quote you a fixed price per project or a monthly rate for a dedicated team. You set your own client price and margin.'],
+    ['Can you join client calls?', 'Yes, as part of your team if you prefer, or we can brief your account manager before each call.'],
+    ['Who supports the solution after go-live?', 'Your team, with our documentation and admin guides. We can also provide monthly third-line support behind you.'],
+    ['Do you sell to our clients directly?', 'No. Clients you bring stay your clients.'],
+    ['Are you a Microsoft partner?', 'Yes. Csharptek is a Microsoft Solutions Partner with long experience across Azure, .NET, Microsoft 365, Entra ID, Intune, Power Platform and SharePoint.']
+  ]
+};
