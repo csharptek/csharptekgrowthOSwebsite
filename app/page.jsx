@@ -36,7 +36,7 @@ export default function HomePage() {
         <div className="hero-copy">
           <div className="hero-eyebrow">AI · Product Engineering · Modernization</div>
           <h1>Azure AI and .NET engineering for <em>production-ready</em> systems.</h1>
-          <p>Csharptek is an Azure AI and .NET engineering partner. We get Microsoft 365 ready for Copilot, build and govern AI agents, take AI prototypes to production, automate complex workflows, and modernize .NET applications on Azure for Microsoft-stack companies, MSPs, agencies and SaaS teams.</p>
+          <p>Csharptek is an Azure AI and .NET engineering partner. We get Microsoft 365 ready for Copilot, build and govern AI agents, and modernize .NET applications on Azure.</p>
           <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss Your Initiative</Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore Our Work</Link></div>
         </div>
       </div>
