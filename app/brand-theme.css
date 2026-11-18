@@ -104,7 +104,7 @@ body { background: var(--paper); color: var(--ink); }
 .hero-copy > p { margin-left: 0; margin-right: 0; }
 .hero-actions { justify-content: flex-start; }
 .hero h1 { max-width: 650px; font-size: clamp(42px, 3.45vw, 66px); text-shadow: none; }
-.hero-copy > p { text-shadow: none; max-width: clamp(320px, 27vw, 520px); }
+.hero-copy > p { text-shadow: none; max-width: clamp(320px, 24vw, 480px); }
 .hero-visual-wrap { position: absolute; z-index: 0; inset: 0; width: auto; height: auto; max-width: none; margin: 0; padding: 0; overflow: hidden; border: 0; border-radius: 0; background: #f5f0e6; box-shadow: none; }
 .hero-brand-image { object-fit: contain; object-position: center; animation: none; }
 .case-card, .solution-card, .intent-card { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
