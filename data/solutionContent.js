@@ -1,4 +1,22 @@
 export const solutionContent = {
+  'microsoft-365-security': {
+    fit: 'Many companies pay for Microsoft 365 Business Premium or E3/E5 but run with most security features switched off: no Conditional Access, laptops without device management, Defender not onboarded and no data loss rules. At the same time staff paste customer data and contracts into ChatGPT and other public AI tools. A security check shows what is missing; the fixes use the licences you already have.',
+    workstreams: [
+      ['Security check', 'Read-only review of Secure Score, Entra ID, devices, email, data protection and AI usage, with a prioritised findings report.'],
+      ['Fix and harden', 'Conditional Access, MFA, Intune enrolment, BitLocker, Defender onboarding, attack surface reduction rules, update rings and DLP, rolled out in stages.'],
+      ['Control AI and manage', 'Block or allow AI tools, protect sensitive data in prompts, and keep the tenant secure with monthly reviews and alert handling.']
+    ],
+    faqs: [['See the FAQ below', 'See the detailed answers on this page.']]
+  },
+  'private-ai-workspace': {
+    fit: 'Banning ChatGPT rarely works: people use it on their phones and personal laptops instead. A private AI workspace gives staff a capable assistant that signs in with their work account, answers from approved company documents and keeps prompts and files inside your Azure tenant, so you can then block public AI sites with confidence.',
+    workstreams: [
+      ['Design and deploy', 'Choose models and regions, deploy the chat application and Azure OpenAI in your subscription, and connect Entra ID groups.'],
+      ['Connect company knowledge', 'Index approved SharePoint libraries and documents with permission-aware search so answers cite their sources.'],
+      ['Lock down and monitor', 'Block public AI sites on managed devices, log usage, set cost limits and review adoption with each department.']
+    ],
+    faqs: [['See the FAQ below', 'See the detailed answers on this page.']]
+  },
   'microsoft-365-copilot-readiness': {
     fit: 'Copilot answers from whatever a user can already open in Microsoft 365. If SharePoint sites, Teams and OneDrive files are shared too widely, Copilot will surface that content in seconds. Readiness means fixing access and labelling the sensitive data first, then rolling out to the people and use cases where Copilot earns its licence.',
     workstreams: [

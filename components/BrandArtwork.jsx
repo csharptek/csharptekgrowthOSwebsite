@@ -78,6 +78,15 @@ artworkBySlug['msp-white-label-partner'] = {
   alt: 'A partner workshop table with hands arranging connected workflow pieces.'
 };
 
+artworkBySlug['microsoft-365-security'] = {
+  src: '/images/brand/service-platform-systems.png',
+  alt: 'Connected platform systems protected by layered access and device checkpoints.'
+};
+artworkBySlug['private-ai-workspace'] = {
+  src: '/images/brand/solution-ai-production.png',
+  alt: 'Private AI modules connected inside a secured cloud boundary.'
+};
+
 artworkBySlug.about = {
   src: '/images/brand/about-collaboration.png',
   alt: 'A collaborative engineering workshop table with hands arranging connected workflow pieces.'

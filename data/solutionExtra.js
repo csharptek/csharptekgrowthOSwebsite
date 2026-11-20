@@ -596,3 +596,162 @@ solutionExtra['msp-white-label-partner'] = {
     ['Are you a Microsoft partner?', 'Yes. Csharptek is a Microsoft Solutions Partner with long experience across Azure, .NET, Microsoft 365, Entra ID, Intune, Power Platform and SharePoint.']
   ]
 };
+
+solutionExtra['microsoft-365-security'] = {
+  seoTitle: 'Microsoft 365 Security Audit, Hardening and AI Control',
+  seoDescription: 'Microsoft 365 security audit and fixes: Conditional Access, Intune, Defender for Business, Purview DLP and control of ChatGPT and other AI tools on company devices.',
+  sections: [
+    {
+      eyebrow: 'The problem',
+      title: 'You bought the licences. The security is still switched off.',
+      intro: 'Microsoft 365 Business Premium, E3 and E5 include strong security tools, but very little is enabled by default. Most tenants we review share the same gaps.',
+      items: [
+        ['No Conditional Access', 'Sign-ins are not checked for device, location or risk, so a stolen password is often enough to get in.'],
+        ['Unmanaged laptops', 'Devices are not enrolled in Intune, disks are not encrypted with BitLocker and updates are left to users.'],
+        ['Defender not onboarded', 'Defender for Business or Defender for Endpoint is licensed but not deployed, so attacks on devices go unseen.'],
+        ['No data loss rules', 'Nothing stops customer data, financial files or contracts from being emailed out or uploaded to personal storage.'],
+        ['Shadow AI', 'Staff paste company data into ChatGPT, Gemini and other public AI tools with no policy, no logging and no limits.'],
+        ['Nobody owns it', 'Alerts and Secure Score recommendations pile up because no one is responsible for acting on them.']
+      ]
+    },
+    {
+      eyebrow: 'How the security check works',
+      title: 'Read-only access, a clear report in days.',
+      intro: 'The check is done with read-only Global Reader access, so nothing in your tenant changes during the review. You get a prioritised report written for both management and IT.',
+      items: [
+        ['Read-only access', 'You grant a Global Reader role for the review and can remove it the moment the report is delivered.'],
+        ['What we review', 'Secure Score, Entra ID and MFA, Conditional Access, devices and Intune, Defender, email protection, sharing, Purview and AI usage.'],
+        ['The report', 'Findings ranked by risk, what each one means for the business, and the exact fix, delivered within three to five working days.'],
+        ['Walkthrough', 'A call to go through the findings with your team and agree what to fix first.']
+      ]
+    },
+    {
+      eyebrow: 'What we fix',
+      title: 'Hands-on hardening with the licences you already own.',
+      intro: 'We roll changes out in stages, starting with a pilot group, so staff are not locked out and work is not interrupted.',
+      items: [
+        ['Identity', 'MFA for everyone, Conditional Access baseline policies, admin role clean-up and removal of stale accounts and guests.'],
+        ['Devices', 'Intune enrolment, compliance policies, BitLocker, Windows update rings and attack surface reduction rules.'],
+        ['Threat protection', 'Defender onboarding for laptops and servers, email protection policies and alert routing.'],
+        ['Data protection', 'Purview sensitivity labels, DLP policies and limits on external sharing in SharePoint, OneDrive and Teams.'],
+        ['AI control', 'Block, allow or monitor ChatGPT and other AI tools on managed devices, and stop sensitive data from being pasted into them where your licence supports it.'],
+        ['Documentation', 'A record of every policy and setting so your team, auditors or insurers can see what is in place.']
+      ],
+      link: ['/solutions/private-ai-workspace', 'Want to give staff a safe AI tool instead? See the private AI workspace']
+    },
+    {
+      eyebrow: 'Compliance support',
+      title: 'Technical controls that support your compliance work.',
+      intro: 'We do not issue certifications. We help you put the Microsoft 365 controls in place that auditors, regulators and cyber insurers ask about, and document them.',
+      items: [
+        ['ISO 27001 and SOC 2', 'Access control, device security, logging and data protection controls mapped to the requirements you are working towards.'],
+        ['GDPR and data protection laws', 'Data discovery, labels, retention and DLP for personal data, including local data protection rules such as the DPDP Act.'],
+        ['Log retention and incident rules', 'Audit and sign-in log retention, alerting and incident records for rules such as CERT-In directions and SEBI and RBI cyber security frameworks.'],
+        ['Cyber insurance', 'MFA, endpoint protection, backups and admin controls that insurers check before issuing or renewing cover.']
+      ]
+    },
+    {
+      eyebrow: 'After the fixes',
+      title: 'Keep it secure every month.',
+      intro: 'Security drifts as people join, leave and install new apps. Monthly management keeps the tenant where you left it.',
+      items: [
+        ['Monthly review', 'Secure Score, new risks, policy changes and device compliance, with a short report.'],
+        ['Alert handling', 'Business-hours review of Defender and sign-in alerts with escalation to your team.'],
+        ['Joiners and leavers', 'Account, device and licence changes handled correctly and quickly.'],
+        ['New Microsoft features', 'Advice on new security and AI controls as Microsoft releases them, with preview features clearly marked.']
+      ]
+    }
+  ],
+  checklist: {
+    title: 'Microsoft 365 security quick check',
+    intro: 'If you cannot answer yes to most of these, your tenant needs attention.',
+    items: [
+      'Every user signs in with MFA, including admins',
+      'Conditional Access policies block risky and legacy sign-ins',
+      'All company laptops are enrolled in Intune and encrypted',
+      'Defender is deployed and someone reads the alerts',
+      'Sharing outside the company is limited and reviewed',
+      'Sensitive data has labels or DLP rules',
+      'There is a written rule for ChatGPT and other AI tools, and it is enforced',
+      'Audit logs are kept long enough for an investigation'
+    ]
+  },
+  faqs: [
+    ['What is a Microsoft 365 security audit?', 'A review of your tenant’s identity, device, email, data and AI settings against Microsoft’s recommended baselines, with a prioritised list of risks and the fix for each one.'],
+    ['Do you need admin access for the security check?', 'No. The check uses the read-only Global Reader role, so nothing can be changed during the review. You can remove the access as soon as the report is delivered.'],
+    ['How long does the security check take?', 'Usually three to five working days from access being granted, followed by a walkthrough call.'],
+    ['Which Microsoft 365 plans do you work with?', 'Business Basic, Standard and Premium, and E3 and E5. The report shows what your current plan can do and where an add-on or upgrade would close a real gap.'],
+    ['Can you block ChatGPT on company laptops?', 'Yes. On managed devices we can block or allow AI sites and apps, and with the right licence we can stop sensitive data being pasted into them while still allowing approved tools.'],
+    ['Will the changes disrupt our staff?', 'Changes go to a pilot group first, then roll out in stages with clear messages to users, so people are not locked out.'],
+    ['Do you help with ISO 27001, SOC 2 or data protection laws?', 'We put in place and document the Microsoft 365 technical controls those frameworks ask for. We do not certify you; your auditor does.'],
+    ['Can you work with our existing IT provider or MSP?', 'Yes. We can deliver the check and fixes alongside your IT team or MSP, or white-label the work for an MSP to resell.']
+  ]
+};
+
+solutionExtra['private-ai-workspace'] = {
+  seoTitle: 'Private ChatGPT on Azure OpenAI for Your Company',
+  seoDescription: 'A private ChatGPT-style assistant on Azure OpenAI in your own tenant: Entra ID sign-in, search over company documents, public AI sites blocked, usage and cost monitoring.',
+  sections: [
+    {
+      eyebrow: 'Why private AI',
+      title: 'Your staff already use AI. Give them one you control.',
+      intro: 'Public AI tools are useful, which is why people use them with company data. A private workspace keeps the usefulness and removes the guesswork about where your data goes.',
+      items: [
+        ['Data stays in your tenant', 'Prompts, files and answers are processed by Azure OpenAI in your own Azure subscription and region.'],
+        ['Work sign-in', 'Staff sign in with their Microsoft 365 account; leavers lose access automatically.'],
+        ['Company knowledge', 'Answers can come from approved SharePoint libraries and documents, with links to the source.'],
+        ['Public AI blocked', 'Once the private tool is live, public AI sites can be blocked on managed devices with a clear alternative in place.'],
+        ['Visible usage', 'See who uses it, for what kind of work and at what cost, without reading individual conversations unless your policy requires it.'],
+        ['Choice of models', 'Use current OpenAI models on Azure, and add other models where your policy allows.']
+      ]
+    },
+    {
+      eyebrow: 'What we deploy',
+      title: 'A complete, supported setup in your Azure subscription.',
+      intro: 'Everything runs in your subscription, so you own the data, the bill and the configuration.',
+      items: [
+        ['Chat application', 'A web chat interface with conversation history, file upload and shared prompts for each team.'],
+        ['Azure OpenAI', 'Model deployments with content filtering, quotas and regional choice.'],
+        ['Document search', 'Permission-aware search over approved content so people only get answers from files they can already open.'],
+        ['Identity and access', 'Entra ID single sign-on, access by group and Conditional Access.'],
+        ['Device controls', 'Policies that block public AI sites and apps on Intune-managed devices.'],
+        ['Monitoring', 'Usage dashboards, audit logs, budgets and alerts on spend.']
+      ],
+      link: ['/solutions/microsoft-365-security', 'Start with a Microsoft 365 security and AI usage check']
+    },
+    {
+      eyebrow: 'For MSPs',
+      title: 'Offer private AI to every client, under your brand.',
+      intro: 'We build and maintain a repeatable private AI deployment that MSPs can roll out per client tenant, with their own branding, pricing and support.',
+      items: [
+        ['Per-client deployment', 'A standard deployment for each client tenant, set up the same way every time.'],
+        ['Your brand', 'Your logo, name and support contacts in the chat interface and documentation.'],
+        ['Central monitoring', 'Usage and cost visibility across clients so you can bill and support them.'],
+        ['Behind-the-scenes support', 'We handle updates, new models and technical issues; you keep the client relationship.']
+      ],
+      link: ['/solutions/msp-white-label-partner', 'See our white-label partnership for MSPs']
+    }
+  ],
+  checklist: {
+    title: 'Is a private AI workspace right for you?',
+    intro: 'It usually is if several of these are true.',
+    items: [
+      'Staff use ChatGPT, Gemini or Claude for work today',
+      'Some of that work involves customer, financial or legal information',
+      'You use Microsoft 365 and Entra ID for sign-in',
+      'You have, or can create, an Azure subscription',
+      'You want to block public AI tools without taking AI away from staff',
+      'You need to know what AI costs and who uses it'
+    ]
+  },
+  faqs: [
+    ['What is a private ChatGPT?', 'A ChatGPT-style assistant that runs on Azure OpenAI in your own Azure subscription, signs users in with their work account and keeps prompts and files inside your tenant.'],
+    ['Is our data used to train the models?', 'No. Azure OpenAI does not use your prompts or files to train the models. Your data stays in your subscription and region.'],
+    ['Can it answer questions from our documents?', 'Yes. We connect approved SharePoint libraries and documents with permission-aware search, so answers come with sources and respect who can open what.'],
+    ['How do you block ChatGPT and other public AI sites?', 'On Intune-managed devices we apply web and app policies that block public AI sites, with exceptions for approved tools, once the private workspace is available.'],
+    ['What does it cost to run?', 'You pay Azure directly for hosting and model usage, which depends on the number of users and how much they use it. We set budgets and alerts so there are no surprises.'],
+    ['How long does deployment take?', 'A standard deployment with single sign-on usually takes two to four weeks; document search and device policies can follow in phases.'],
+    ['Can MSPs resell it?', 'Yes. We offer a white-label version that MSPs deploy per client under their own brand and support model.'],
+    ['Do we need Microsoft 365 Copilot as well?', 'Not necessarily. Copilot works inside Office apps; a private workspace is a general assistant with your own controls. Many companies use both, or start with one.']
+  ]
+};

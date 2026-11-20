@@ -28,6 +28,8 @@ export default function LeadForm({ defaultInitiative = '', defaultReason = '' })
     setOk(false);
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    try { data.utm = JSON.parse(sessionStorage.getItem('ct_utm') || 'null'); } catch { data.utm = null; }
+    data.page = window.location.pathname;
     try {
       const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       const result = await response.json().catch(() => ({}));

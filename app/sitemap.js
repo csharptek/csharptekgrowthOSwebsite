@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 const siteUrl = 'https://www.csharptek.com';
 const staticPaths = [
   '/', '/solutions', '/case-studies', '/industries', '/industries/healthcare', '/industries/technology-saas',
-  '/about', '/leadership', '/careers', '/contact', '/blog', '/privacy-policy', '/services/marketplace', '/azure-app-modernization-services', '/capabilities', '/products', '/software-company-ranchi'
+  '/about', '/leadership', '/careers', '/contact', '/blog', '/privacy-policy', '/services/marketplace', '/azure-app-modernization-services', '/capabilities', '/products', '/software-company-ranchi', '/resources/microsoft-365-ai-security-checklist'
 ];
 
 // Last real content change per path. Update the date when a page's content changes.
@@ -19,7 +19,10 @@ const pageUpdated = {
   '/solutions/ai-agent-governance': '2026-11-18',
   '/solutions/msp-white-label-partner': '2026-11-18',
   '/solutions/ai-agent-development': '2026-11-18',
-  '/solutions/agency-development-partner': '2026-11-18'
+  '/solutions/agency-development-partner': '2026-11-18',
+  '/solutions/microsoft-365-security': '2026-11-20',
+  '/solutions/private-ai-workspace': '2026-11-20',
+  '/resources/microsoft-365-ai-security-checklist': '2026-11-20'
 };
 const baseline = '2026-10-10';
 

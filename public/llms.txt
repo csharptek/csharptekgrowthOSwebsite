@@ -4,6 +4,9 @@
 
 ## Key pages
 - [Solutions](https://www.csharptek.com/solutions): AI production engineering, AI product engineering, workflow automation
+- [Microsoft 365 security and AI control](https://www.csharptek.com/solutions/microsoft-365-security): Microsoft 365 security check with read-only access, Conditional Access, Intune, Defender, Purview DLP, control of ChatGPT and other AI tools, monthly management
+- [Private AI workspace](https://www.csharptek.com/solutions/private-ai-workspace): private ChatGPT-style assistant on Azure OpenAI in the customer's own tenant, Entra ID sign-in, public AI sites blocked, white-label for MSPs
+- [Microsoft 365 and AI security checklist](https://www.csharptek.com/resources/microsoft-365-ai-security-checklist): 40-point checklist for identity, devices, data, AI tools and logging
 - [Microsoft 365 Copilot readiness](https://www.csharptek.com/solutions/microsoft-365-copilot-readiness): two-week readiness assessment, oversharing, Entra ID, Purview, rollout plan
 - [AI agent governance](https://www.csharptek.com/solutions/ai-agent-governance): Agent 365, Entra Agent ID, Conditional Access, Purview DLP for Copilot and AI agents
 - [White-label Microsoft AI for MSPs](https://www.csharptek.com/solutions/msp-white-label-partner): Copilot Studio, Power Platform and Azure AI builds under the MSP's brand

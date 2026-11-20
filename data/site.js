@@ -184,6 +184,38 @@ export const solutions = [
     proof: ['Copilot Studio and Azure AI agents', 'Microsoft 365 and Entra ID administration', 'Agency white-label delivery'],
     icon: 'layers',
     unlisted: true
+  },
+  {
+    slug: 'microsoft-365-security',
+    h1: 'Microsoft 365 security and AI control: switch on the protection you already pay for, and keep company data out of public AI tools.',
+    supporting: 'A Microsoft 365 security check with read-only access, then hands-on fixes for Intune, Defender, Entra ID and Purview, controls on ChatGPT and other AI tools, and optional monthly management.',
+    cta: 'Request a Microsoft 365 Security Check',
+    number: '13',
+    eyebrow: 'Microsoft 365 security and AI control',
+    title: 'Microsoft 365 Security & AI Control',
+    short: 'Security check, fixes and AI usage control for companies running Microsoft 365.',
+    description: 'Microsoft 365 security audit and hardening: Entra ID and Conditional Access, Intune device management, Defender for Business, Purview DLP, shadow AI control and monthly managed security.',
+    buyer: 'For business owners, IT heads and finance leaders at companies with 10 to 1,000 staff on Microsoft 365.',
+    capabilities: ['Microsoft 365 security check', 'Entra ID, MFA and Conditional Access', 'Intune device management and BitLocker', 'Defender for Business and Defender for Endpoint', 'Purview DLP and control of ChatGPT and other AI tools'],
+    proof: ['Microsoft 365 and Entra ID administration', 'Intune and Defender deployment', 'Azure architecture and identity'],
+    icon: 'grid',
+    unlisted: true
+  },
+  {
+    slug: 'private-ai-workspace',
+    h1: 'A private AI workspace in your own Azure: ChatGPT-style AI for your staff, with your data kept inside your tenant.',
+    supporting: 'We deploy a private chat assistant on Azure OpenAI in your subscription, connect it to Entra ID and approved company documents, block public AI sites on managed devices and monitor usage. Also available white-label for MSPs.',
+    cta: 'Discuss a Private AI Workspace',
+    number: '14',
+    eyebrow: 'Private AI on Azure',
+    title: 'Private AI Workspace',
+    short: 'Your own ChatGPT-style assistant on Azure OpenAI, with public AI sites blocked and usage monitored.',
+    description: 'Private ChatGPT alternative on Azure OpenAI in your own tenant: Entra ID sign-in, company document search, public AI sites blocked on managed devices, usage logs and cost controls.',
+    buyer: 'For companies whose staff already use ChatGPT, Claude or Gemini at work, and for MSPs who want to offer private AI to their clients.',
+    capabilities: ['Private chat assistant on Azure OpenAI', 'Entra ID single sign-on and access groups', 'Search over approved company documents', 'Public AI sites blocked on managed devices', 'Usage, cost and audit monitoring'],
+    proof: ['Azure OpenAI and RAG engineering', 'Microsoft 365 and Entra ID administration', 'Azure architecture and identity'],
+    icon: 'spark',
+    unlisted: true
   }
 ];
 
@@ -224,7 +256,9 @@ export const solutionCases = {
   'rag-development': ['rag-pipeline', 'travel-data-ai', 'payautomation'],
   'microsoft-365-copilot-readiness': ['dotnet-azure-modernization', 'payautomation', 'rag-pipeline'],
   'ai-agent-governance': ['payautomation', 'rag-pipeline', 'dotnet-azure-modernization'],
-  'msp-white-label-partner': ['virilocity', 'payautomation', 'dotnet-azure-modernization']
+  'msp-white-label-partner': ['virilocity', 'payautomation', 'dotnet-azure-modernization'],
+  'microsoft-365-security': ['dotnet-azure-modernization', 'payautomation', 'rag-pipeline'],
+  'private-ai-workspace': ['rag-pipeline', 'payautomation', 'dotnet-azure-modernization']
 };
 
 export function solutionHref(slug) {

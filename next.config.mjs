@@ -11,6 +11,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/service-microsoft-teams', destination: '/solutions/microsoft-365-copilot-readiness', permanent: true },
+      { source: '/resources', destination: '/blog', permanent: false },
+      { source: '/microsoft-365-security', destination: '/solutions/microsoft-365-security', permanent: true },
       { source: '/products/convosphere', destination: '/products', permanent: false },
       { source: '/products/interview-scheduler', destination: '/products', permanent: false },
       { source: '/portfolio', destination: '/case-studies', permanent: true },
