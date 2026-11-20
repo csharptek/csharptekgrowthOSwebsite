@@ -276,3 +276,5 @@ body { background: var(--paper); color: var(--ink); }
 .form-status.is-error { background: #fdeeea; color: #8a3520; }
 @media (max-width: 960px) { .contact-layout { grid-template-columns: 1fr; gap: 36px; } .contact-form-col { position: static; order: -1; } }
 @media (max-width: 520px) { .contact-channels { grid-template-columns: 1fr; } }
+.article-faq { margin-top: 32px; display: grid; gap: 10px; }
+.article-faq h2 { margin-bottom: 6px; }
