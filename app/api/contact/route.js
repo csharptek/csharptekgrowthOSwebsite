@@ -54,15 +54,18 @@ export async function POST(request) {
   const topic = reason || initiative;
   if (!name || !validEmail(email) || !topic || !message) return NextResponse.json({ success: false, message: 'Please complete the required fields with a valid email.' }, { status: 400 });
   const page = clean(body.page, 300);
+  const whatsappOptIn = body.whatsappOptIn === true && !!phone;
+  const r = /^[A-Za-z0-9]{4,16}$/.test(clean(body.r, 16)) ? clean(body.r, 16) : '';
   const utm = body.utm && typeof body.utm === 'object' ? Object.fromEntries(Object.entries(body.utm).slice(0, 8).map(([k, v]) => [clean(k, 30), clean(String(v), 120)])) : null;
   const details = [
     `Name: ${name}`, `Email: ${email}`, `Company: ${company || 'Not provided'}`, `Phone: ${phone || 'Not provided'}`,
     `Reason: ${reason || 'Not provided'}`, `Initiative: ${initiative || 'Not provided'}`,
+    `WhatsApp opt-in: ${whatsappOptIn ? 'Yes' : 'No'}`,
     ...(role ? [`Role: ${role}`] : []), ...(timeline ? [`Timeline: ${timeline}`] : []),
     ...(page ? [`Page: ${page}`] : []), ...(utm ? [`Source: ${Object.entries(utm).map(([k, v]) => `${k}=${v}`).join(' ')}`] : []),
     '', 'Message:', message
   ].join('\n');
-  const lead = { name, email, company, phone, role, reason, initiativeType: initiative || reason, timeline, message, page, utm, source: 'website-contact-form', submittedAt: new Date().toISOString() };
+  const lead = { name, email, company, phone, role, reason, initiativeType: initiative || reason, timeline, message, page, utm, whatsappOptIn, r, source: 'website-contact-form', submittedAt: new Date().toISOString() };
 
   // Mail and TekGrowth are independent: the visitor succeeds if either one received the inquiry.
   const [mailed, stored] = await Promise.all([

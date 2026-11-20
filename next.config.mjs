@@ -11,6 +11,14 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Solutions 14 → 9 (20 Nov 2026): merged pages, 301.
+      { source: '/solutions/rag-development', destination: '/solutions/ai-production-engineering', statusCode: 301 },
+      { source: '/solutions/ai-agent-governance', destination: '/solutions/microsoft-365-copilot-readiness', statusCode: 301 },
+      { source: '/solutions/msp-white-label-partner', destination: '/solutions/agency-development-partner', statusCode: 301 },
+      { source: '/solutions/application-cloud-modernization', destination: '/azure-app-modernization-services', statusCode: 301 },
+      { source: '/solutions/microsoft-marketplace-engineering', destination: '/services/marketplace', statusCode: 301 },
+      { source: '/fde', destination: '/forward-deployed-engineers', statusCode: 301 },
+      { source: '/book', destination: '/book-a-call', statusCode: 301 },
       { source: '/service-microsoft-teams', destination: '/solutions/microsoft-365-copilot-readiness', permanent: true },
       { source: '/resources', destination: '/blog', permanent: false },
       { source: '/microsoft-365-security', destination: '/solutions/microsoft-365-security', permanent: true },

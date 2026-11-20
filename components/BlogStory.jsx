@@ -11,14 +11,14 @@ const articleConnections = {
   'vibe-coding-mvp-development': { solution: 'ai-product-engineering', cases: ['image-to-video', 'virilocity'] },
   'hipaa-compliant-ai-healthcare-startups': { solution: 'healthcare-ai-automation', cases: ['medical-documentation', 'healthcare-mobile-app'] },
   'ai-voice-agents-vs-call-centres': { solution: 'intelligent-workflow-automation', cases: ['woundmedix'] },
-  'how-rag-pipelines-work': { solution: 'rag-development', cases: ['rag-pipeline', 'travel-data-ai'] },
+  'how-rag-pipelines-work': { solution: 'ai-production-engineering', cases: ['rag-pipeline', 'travel-data-ai'] },
   'building-bilingual-ai-middle-east': { solution: 'ai-production-engineering', cases: ['travel-data-ai'] },
   'fax-to-ai-healthcare-automation': { solution: 'healthcare-ai-automation', cases: ['woundmedix', 'medical-documentation'] },
   'ai-in-edtech-2025': { solution: 'ai-product-engineering', cases: ['virilocity'] },
   'pet-care-tech-rfid-ai': { solution: 'intelligent-workflow-automation', cases: [] },
   'how-to-pick-ai-stack-startup': { solution: 'ai-production-engineering', cases: ['rag-pipeline'] },
-  'rag-as-a-service-build-buy-or-partner': { solution: 'rag-development', cases: ['rag-pipeline', 'travel-data-ai'] },
-  'azure-openai-on-your-data-vs-custom-rag': { solution: 'rag-development', cases: ['rag-pipeline', 'travel-data-ai'] },
+  'rag-as-a-service-build-buy-or-partner': { solution: 'ai-production-engineering', cases: ['rag-pipeline', 'travel-data-ai'] },
+  'azure-openai-on-your-data-vs-custom-rag': { solution: 'ai-production-engineering', cases: ['rag-pipeline', 'travel-data-ai'] },
   'white-label-software-development-checklist-for-agencies': { solution: 'agency-development-partner', cases: ['virilocity', 'landminer'] },
   'production-ready-ai-checklist': { solution: 'ai-production-engineering', cases: ['payautomation', 'rag-pipeline'] }
 };

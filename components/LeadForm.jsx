@@ -3,12 +3,14 @@
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Icon from './Icon';
+import { savedRefCode } from './Tracking';
 
 export const CONTACT_REASONS = [
   'General Enquiry',
   'Project Consultation (Free)',
   'Career / Job Application',
   'Partnership / Collaboration',
+  'Book a Call',
   'Support / Existing Client',
   'Other'
 ];
@@ -30,6 +32,8 @@ export default function LeadForm({ defaultInitiative = '', defaultReason = '' })
     const data = Object.fromEntries(new FormData(form).entries());
     try { data.utm = JSON.parse(sessionStorage.getItem('ct_utm') || 'null'); } catch { data.utm = null; }
     data.page = window.location.pathname;
+    data.whatsappOptIn = data.whatsappOptIn === 'on';
+    data.r = savedRefCode();
     try {
       const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       const result = await response.json().catch(() => ({}));
@@ -54,6 +58,7 @@ export default function LeadForm({ defaultInitiative = '', defaultReason = '' })
     <div className="field"><label htmlFor="lead-email">Email *</label><input id="lead-email" type="email" name="email" autoComplete="email" required maxLength={254} placeholder="you@company.com"/></div>
     <div className="field"><label htmlFor="lead-company">Company</label><input id="lead-company" name="company" autoComplete="organization" maxLength={160} placeholder="Company name"/></div>
     <div className="field"><label htmlFor="lead-phone">Phone</label><input id="lead-phone" type="tel" name="phone" autoComplete="tel" maxLength={40} placeholder="+1 555 000 0000"/></div>
+    <div className="field field-full lead-optin"><label htmlFor="lead-wa" style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontWeight: 400 }}><input id="lead-wa" type="checkbox" name="whatsappOptIn" style={{ width: 'auto', marginTop: 4 }}/><span>You can message me on WhatsApp about this enquiry (uses the phone number above).</span></label></div>
     <div className="field field-full"><label htmlFor="lead-reason">Reason for contact *</label><select id="lead-reason" name="reason" defaultValue={initialReason} required><option value="" disabled>Select a reason</option>{CONTACT_REASONS.map((reason) => <option key={reason}>{reason}</option>)}</select></div>
     {defaultInitiative && <p className="lead-form-context field-full">Regarding: <strong>{defaultInitiative}</strong></p>}
     <div className="field field-full"><label htmlFor="lead-message">Tell us about your project *</label><textarea id="lead-message" name="message" required maxLength={6000} placeholder="A brief description of your project, industry, rough timeline and budget range helps us give you a useful first response."/></div>

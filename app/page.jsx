@@ -18,7 +18,7 @@ const audiences = [
   { title: 'Agencies', text: 'A white-label development partner for AI, web and Azure projects that need senior engineers behind your brand.', href: '/solutions/agency-development-partner', icon: 'layers' },
   { title: 'AI and SaaS teams', text: 'Take an AI prototype to production, or add AI features and agents to your product with a small senior team.', href: '/solutions/ai-production-engineering', icon: 'spark' },
   { title: 'Microsoft 365 companies', text: 'Switch on the Microsoft 365 security you already pay for, control ChatGPT and other AI tools, and get ready for Copilot.', href: '/solutions/microsoft-365-security', icon: 'orbit' },
-  { title: 'MSPs and Microsoft partners', text: 'White-label Copilot Studio agents, Power Platform apps and Azure AI builds for the clients you already manage.', href: '/solutions/msp-white-label-partner', icon: 'grid' }
+  { title: 'MSPs and Microsoft partners', text: 'White-label Copilot Studio agents, Power Platform apps and Azure AI builds for the clients you already manage.', href: '/solutions/agency-development-partner', icon: 'grid' }
 ];
 
 const proof = [

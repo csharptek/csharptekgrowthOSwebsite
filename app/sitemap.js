@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 const siteUrl = 'https://www.csharptek.com';
 const staticPaths = [
   '/', '/solutions', '/case-studies', '/industries', '/industries/healthcare', '/industries/technology-saas',
-  '/about', '/leadership', '/careers', '/contact', '/blog', '/privacy-policy', '/services/marketplace', '/azure-app-modernization-services', '/capabilities', '/products', '/software-company-ranchi', '/resources/microsoft-365-ai-security-checklist'
+  '/about', '/leadership', '/careers', '/contact', '/blog', '/privacy-policy', '/services/marketplace', '/azure-app-modernization-services', '/capabilities', '/products', '/software-company-ranchi', '/resources/microsoft-365-ai-security-checklist', '/forward-deployed-engineers', '/book-a-call'
 ];
 
 // Last real content change per path. Update the date when a page's content changes.
@@ -14,12 +14,13 @@ const pageUpdated = {
   '/about': '2026-10-28',
   '/software-company-ranchi': '2026-11-14',
   '/': '2026-11-18',
-  '/solutions': '2026-11-18',
-  '/solutions/microsoft-365-copilot-readiness': '2026-11-18',
-  '/solutions/ai-agent-governance': '2026-11-18',
-  '/solutions/msp-white-label-partner': '2026-11-18',
+  '/solutions': '2026-11-20',
+  '/solutions/microsoft-365-copilot-readiness': '2026-11-20',
   '/solutions/ai-agent-development': '2026-11-18',
-  '/solutions/agency-development-partner': '2026-11-18',
+  '/solutions/agency-development-partner': '2026-11-20',
+  '/solutions/ai-production-engineering': '2026-11-20',
+  '/forward-deployed-engineers': '2026-11-20',
+  '/book-a-call': '2026-11-20',
   '/solutions/microsoft-365-security': '2026-11-20',
   '/solutions/private-ai-workspace': '2026-11-20',
   '/resources/microsoft-365-ai-security-checklist': '2026-11-20'
@@ -37,5 +38,5 @@ export default async function sitemap() {
   const casePaths = Object.entries(caseStudyDetails).filter(([, d]) => d.published === true).map(([slug]) => `/case-studies/${slug}`);
   const postDates = new Map(posts.map((post) => [`/blog/${post.slug}`, post.updated_at || post.published_at || updated]));
   const urls = [...staticPaths, ...casePaths, ...solutionPaths, ...capabilityPaths, ...productPaths, ...posts.map((post) => `/blog/${post.slug}`)];
-  return urls.map((path) => ({ url: `${siteUrl}${path}`, lastModified: new Date(postDates.get(path) || pageUpdated[path] || updated), changeFrequency: path === '/' ? 'weekly' : 'monthly', priority: path === '/' ? 1 : path.startsWith('/solutions') ? 0.9 : 0.7 }));
+  return urls.map((path) => ({ url: `${siteUrl}${path}`, lastModified: new Date(postDates.get(path) || pageUpdated[path] || updated), changeFrequency: path === '/' ? 'weekly' : 'monthly', priority: path === '/' ? 1 : path.startsWith('/solutions') || path === '/forward-deployed-engineers' ? 0.9 : 0.7 }));
 }

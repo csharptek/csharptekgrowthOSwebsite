@@ -17,13 +17,12 @@ const groups = {
       ['/solutions/microsoft-365-security', 'Microsoft 365 Security & AI Control'],
       ['/solutions/microsoft-365-copilot-readiness', 'Microsoft 365 Copilot Readiness'],
       ['/solutions/private-ai-workspace', 'Private AI Workspace'],
-      ['/solutions/ai-agent-governance', 'AI Agent Governance'],
       ['/solutions/intelligent-workflow-automation', 'Workflow & Process Automation'],
       ['/azure-app-modernization-services', 'Azure & .NET Modernization'],
       ['/solutions/healthcare-ai-automation', 'Healthcare AI & Automation'],
       ['/services/marketplace', 'Microsoft Marketplace Engineering'],
-      ['/solutions/agency-development-partner', 'Agency Development Partner'],
-      ['/solutions/msp-white-label-partner', 'White-label for MSPs']
+      ['/solutions/agency-development-partner', 'Agency & MSP Partner'],
+      ['/forward-deployed-engineers', 'Forward-Deployed Engineers']
     ]
   },
   industries: {
