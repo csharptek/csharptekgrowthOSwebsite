@@ -1,3 +1,5 @@
+import { aiProtectionContent } from './aiProtection';
+
 export const solutionContent = {
   'microsoft-365-security': {
     fit: 'Many companies pay for Microsoft 365 Business Premium or E3/E5 but run with most security features switched off: no Conditional Access, laptops without device management, Defender not onboarded and no data loss rules. At the same time staff paste customer data and contracts into ChatGPT and other public AI tools. A security check shows what is missing; the fixes use the licences you already have.',
@@ -150,3 +152,5 @@ export const solutionContent = {
     ]
   }
 };
+
+Object.assign(solutionContent, aiProtectionContent);

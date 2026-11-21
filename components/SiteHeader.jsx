@@ -14,6 +14,9 @@ const groups = {
       ['/solutions/ai-production-engineering', 'Production AI & RAG Systems'],
       ['/solutions/ai-product-engineering', 'Custom AI Software & Products'],
       ['/solutions/ai-agent-development', 'Custom AI Agents'],
+      ['/solutions/ai-data-loss-prevention', 'AI Data Leak Prevention'],
+      ['/solutions/shadow-ai-discovery', 'Shadow AI Discovery'],
+      ['/solutions/ai-governance', 'AI Governance'],
       ['/solutions/microsoft-365-security', 'Microsoft 365 Security & AI Control'],
       ['/solutions/microsoft-365-copilot-readiness', 'Microsoft 365 Copilot Readiness'],
       ['/solutions/private-ai-workspace', 'Private AI Workspace'],
@@ -29,8 +32,11 @@ const groups = {
     title: 'Industries',
     href: '/industries',
     items: [
-      ['/industries/healthcare', 'Healthcare'],
-      ['/industries/technology-saas', 'Technology & SaaS']
+      ['/industries/financial-services', 'Financial Services'],
+      ['/industries/software-companies', 'Software & IT Services'],
+      ['/industries/manufacturing', 'Manufacturing & Pharma'],
+      ['/industries/technology-saas', 'Technology & SaaS'],
+      ['/industries/healthcare', 'Healthcare']
     ]
   },
   capabilities: {

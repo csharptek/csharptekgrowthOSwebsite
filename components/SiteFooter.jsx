@@ -6,6 +6,9 @@ const footerSolutions = [
   ['Production AI & RAG', '/solutions/ai-production-engineering'],
   ['Custom AI software', '/solutions/ai-product-engineering'],
   ['AI agent development', '/solutions/ai-agent-development'],
+  ['AI data leak prevention', '/solutions/ai-data-loss-prevention'],
+  ['Shadow AI discovery', '/solutions/shadow-ai-discovery'],
+  ['AI governance', '/solutions/ai-governance'],
   ['Microsoft 365 security', '/solutions/microsoft-365-security'],
   ['Copilot readiness', '/solutions/microsoft-365-copilot-readiness'],
   ['Private AI workspace', '/solutions/private-ai-workspace'],
@@ -32,7 +35,7 @@ export default function SiteFooter() {
     <div className="footer-main wrap">
       <div className="footer-brand-col"><Link href="/" className="brand brand-footer" aria-label="Csharptek home"><Image src="/csharptek-logo.png" alt="Csharptek" width={1024} height={191} sizes="220px" className="brand-logo" /></Link><p>AI, product engineering and modernization for established teams with important work to do.</p><a className="footer-email" href="mailto:info@csharptek.com">info@csharptek.com <Icon name="arrow" size={15}/></a><address className="footer-address">Csharptek, 199/A, First Floor, Panchwati Garden Lane, Bariatu, Ranchi, Jharkhand 834009, India · <a href="tel:+919229069558">+91 92290 69558</a></address><div className="footer-social">{socials.map(([label, icon, url]) => <a key={label} href={url} target="_blank" rel="noopener noreferrer" aria-label={`Csharptek on ${label}`}><Icon name={icon} size={18}/></a>)}<a href="mailto:info@csharptek.com" aria-label="Email Csharptek"><Icon name="mail" size={18}/></a></div></div>
       <div className="footer-col"><h3>Solutions</h3>{footerSolutions.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</div>
-      <div className="footer-col"><h3>Explore</h3><Link href="/case-studies">Case studies</Link><Link href="/industries">Industries</Link><Link href="/capabilities">Capabilities</Link><Link href="/products">Products</Link><Link href="/blog">Insights</Link></div>
+      <div className="footer-col"><h3>Explore</h3><Link href="/case-studies">Case studies</Link><Link href="/industries">Industries</Link><Link href="/ai-data-risk-check">AI Data Risk Check</Link><Link href="/resources/ai-acceptable-use-policy-template">AI policy template</Link><Link href="/resources/shadow-ai-risk-assessment">Shadow AI assessment</Link><Link href="/capabilities">Capabilities</Link><Link href="/products">Products</Link><Link href="/blog">Insights</Link></div>
       <div className="footer-col"><h3>Company</h3><Link href="/about">About</Link><Link href="/leadership">Leadership</Link><Link href="/careers">Careers</Link><Link href="/software-company-ranchi">Ranchi office</Link><Link href="/contact">Contact</Link></div>
     </div>
     <div className="footer-bottom wrap"><span>© {new Date().getFullYear()} Csharptek. All rights reserved.</span><div><Link href="/privacy-policy">Privacy</Link></div><span className="footer-location">Engineering globally. Built for what’s next.</span></div>

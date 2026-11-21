@@ -1,3 +1,5 @@
+import { aiProtectionSolutions } from './aiProtection';
+
 export const solutions = [
   {
     slug: 'ai-production-engineering',
@@ -141,7 +143,8 @@ export const solutions = [
     slug: 'microsoft-365-security',
     h1: 'Microsoft 365 security and AI control: switch on the protection you already pay for, and keep company data out of public AI tools.',
     supporting: 'A Microsoft 365 security check with read-only access, then hands-on fixes for Intune, Defender, Entra ID and Purview, controls on ChatGPT and other AI tools, and optional monthly management.',
-    cta: 'Request a Microsoft 365 Security Check',
+    cta: 'Book an AI Data Risk Check',
+    ctaHref: '/ai-data-risk-check',
     number: '10',
     eyebrow: 'Microsoft 365 security and AI control',
     title: 'Microsoft 365 Security & AI Control',
@@ -155,13 +158,13 @@ export const solutions = [
   },
   {
     slug: 'private-ai-workspace',
-    h1: 'A private AI workspace in your own Azure: ChatGPT-style AI for your staff, with your data kept inside your tenant.',
+    h1: 'A safe ChatGPT for your staff: a private AI workspace in your own Azure, so company data never goes to public AI tools.',
     supporting: 'We deploy a private chat assistant on Azure OpenAI in your subscription, connect it to Entra ID and approved company documents, block public AI sites on managed devices and monitor usage. Also available white-label for MSPs.',
     cta: 'Discuss a Private AI Workspace',
     number: '11',
     eyebrow: 'Private AI on Azure',
     title: 'Private AI Workspace',
-    short: 'Your own ChatGPT-style assistant on Azure OpenAI, with public AI sites blocked and usage monitored.',
+    short: 'A safe ChatGPT for staff on Azure OpenAI, so you can block public AI tools without taking AI away.',
     description: 'Private ChatGPT alternative on Azure OpenAI in your own tenant: Entra ID sign-in, company document search, public AI sites blocked on managed devices, usage logs and cost controls.',
     buyer: 'For companies whose staff already use ChatGPT, Claude or Gemini at work, and for MSPs who want to offer private AI to their clients.',
     capabilities: ['Private chat assistant on Azure OpenAI', 'Entra ID single sign-on and access groups', 'Search over approved company documents', 'Public AI sites blocked on managed devices', 'Usage, cost and audit monitoring'],
@@ -169,6 +172,7 @@ export const solutions = [
     icon: 'spark',
     unlisted: true
   }
+  ,...aiProtectionSolutions
 ];
 
 export const caseStudies = [

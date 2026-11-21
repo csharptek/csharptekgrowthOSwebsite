@@ -6,7 +6,8 @@ export const dynamic = 'force-dynamic';
 const siteUrl = 'https://www.csharptek.com';
 const staticPaths = [
   '/', '/solutions', '/case-studies', '/industries', '/industries/healthcare', '/industries/technology-saas',
-  '/about', '/leadership', '/careers', '/contact', '/blog', '/privacy-policy', '/services/marketplace', '/azure-app-modernization-services', '/capabilities', '/products', '/software-company-ranchi', '/resources/microsoft-365-ai-security-checklist', '/forward-deployed-engineers', '/book-a-call'
+  '/about', '/leadership', '/careers', '/contact', '/blog', '/privacy-policy', '/services/marketplace', '/azure-app-modernization-services', '/capabilities', '/products', '/software-company-ranchi', '/resources/microsoft-365-ai-security-checklist', '/forward-deployed-engineers', '/book-a-call',
+  '/ai-data-risk-check', '/industries/financial-services', '/industries/software-companies', '/industries/manufacturing', '/resources/ai-acceptable-use-policy-template', '/resources/shadow-ai-risk-assessment'
 ];
 
 // Last real content change per path. Update the date when a page's content changes.
@@ -21,9 +22,19 @@ const pageUpdated = {
   '/solutions/ai-production-engineering': '2026-11-20',
   '/forward-deployed-engineers': '2026-11-20',
   '/book-a-call': '2026-11-20',
-  '/solutions/microsoft-365-security': '2026-11-20',
-  '/solutions/private-ai-workspace': '2026-11-20',
-  '/resources/microsoft-365-ai-security-checklist': '2026-11-20'
+  '/solutions/microsoft-365-security': '2026-11-21',
+  '/solutions/private-ai-workspace': '2026-11-21',
+  '/resources/microsoft-365-ai-security-checklist': '2026-11-21',
+  '/solutions/ai-data-loss-prevention': '2026-11-21',
+  '/solutions/shadow-ai-discovery': '2026-11-21',
+  '/solutions/ai-governance': '2026-11-21',
+  '/ai-data-risk-check': '2026-11-21',
+  '/industries': '2026-11-21',
+  '/industries/financial-services': '2026-11-21',
+  '/industries/software-companies': '2026-11-21',
+  '/industries/manufacturing': '2026-11-21',
+  '/resources/ai-acceptable-use-policy-template': '2026-11-21',
+  '/resources/shadow-ai-risk-assessment': '2026-11-21'
 };
 const baseline = '2026-10-10';
 
@@ -38,5 +49,5 @@ export default async function sitemap() {
   const casePaths = Object.entries(caseStudyDetails).filter(([, d]) => d.published === true).map(([slug]) => `/case-studies/${slug}`);
   const postDates = new Map(posts.map((post) => [`/blog/${post.slug}`, post.updated_at || post.published_at || updated]));
   const urls = [...staticPaths, ...casePaths, ...solutionPaths, ...capabilityPaths, ...productPaths, ...posts.map((post) => `/blog/${post.slug}`)];
-  return urls.map((path) => ({ url: `${siteUrl}${path}`, lastModified: new Date(postDates.get(path) || pageUpdated[path] || updated), changeFrequency: path === '/' ? 'weekly' : 'monthly', priority: path === '/' ? 1 : path.startsWith('/solutions') || path === '/forward-deployed-engineers' ? 0.9 : 0.7 }));
+  return urls.map((path) => ({ url: `${siteUrl}${path}`, lastModified: new Date(postDates.get(path) || pageUpdated[path] || updated), changeFrequency: path === '/' ? 'weekly' : 'monthly', priority: path === '/' ? 1 : path.startsWith('/solutions') || path === '/forward-deployed-engineers' || path === '/ai-data-risk-check' ? 0.9 : 0.7 }));
 }

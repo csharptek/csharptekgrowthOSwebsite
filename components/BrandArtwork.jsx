@@ -87,6 +87,27 @@ artworkBySlug['private-ai-workspace'] = {
   alt: 'Private AI modules connected inside a secured cloud boundary.'
 };
 
+artworkBySlug['ai-data-loss-prevention'] = {
+  src: '/images/brand/service-platform-systems.png',
+  alt: 'Connected systems with a checkpoint that stops sensitive data before it leaves.'
+};
+artworkBySlug['shadow-ai-discovery'] = {
+  src: '/images/brand/service-ai-workflow.png',
+  alt: 'Layered AI workflow modules made visible along a continuous path.'
+};
+artworkBySlug['ai-governance'] = {
+  src: '/images/brand/solution-workflow-automation.png',
+  alt: 'AI tools and agents passing through ownership, access and review checkpoints.'
+};
+artworkBySlug['ai-data-risk-check'] = {
+  src: '/images/brand/service-cloud-architecture.png',
+  alt: 'A layered tenant model with a review checkpoint over data and AI use.'
+};
+artworkBySlug['industry-ai-protection'] = {
+  src: '/images/brand/service-platform-systems.png',
+  alt: 'Business systems protected by layered data and AI checkpoints.'
+};
+
 artworkBySlug.about = {
   src: '/images/brand/about-collaboration.png',
   alt: 'A collaborative engineering workshop table with hands arranging connected workflow pieces.'
