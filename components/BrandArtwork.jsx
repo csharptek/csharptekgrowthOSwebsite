@@ -108,6 +108,7 @@ artworkBySlug['industry-ai-protection'] = {
   alt: 'Business systems protected by layered data and AI checkpoints.'
 };
 
+
 artworkBySlug.about = {
   src: '/images/brand/about-collaboration.png',
   alt: 'A collaborative engineering workshop table with hands arranging connected workflow pieces.'

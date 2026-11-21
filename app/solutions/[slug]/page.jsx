@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   const extra = solutionExtra[slug];
   const seoTitle = extra?.seoTitle || solution?.title;
   const seoDescription = extra?.seoDescription || solution?.description;
-  return solution ? { title: seoTitle, description: seoDescription, alternates: { canonical: `/solutions/${slug}` }, openGraph: { title: `${seoTitle} | Csharptek`, description: seoDescription, images: ['/opengraph-image'] }, twitter: { card: 'summary_large_image', title: `${seoTitle} | Csharptek`, description: seoDescription, images: ['/opengraph-image'] } } : {};
+  return solution ? { ...(slug === 'healthcare-ai-automation' ? { robots: { index: false, follow: true } } : {}), title: seoTitle, description: seoDescription, alternates: { canonical: `/solutions/${slug}` }, openGraph: { title: `${seoTitle} | Csharptek`, description: seoDescription, images: ['/opengraph-image'] }, twitter: { card: 'summary_large_image', title: `${seoTitle} | Csharptek`, description: seoDescription, images: ['/opengraph-image'] } } : {};
 }
 
 export default async function SolutionPage({ params }) {

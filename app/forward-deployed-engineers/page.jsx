@@ -64,7 +64,7 @@ export default function FdePage() {
         <ul className="check-list">{steps.map(([t, d]) => <li key={t}><Icon name="check" size={16}/><span><strong>{t}.</strong> {d}</span></li>)}</ul>
       </div>
       <aside className="content-panel"><span className="eyebrow">Why Csharptek</span><h3>Microsoft-certified engineers, used to customer-facing work</h3>
-        <p>Our engineers have shipped Azure, .NET and AI integrations for SaaS companies, agencies and healthcare teams in the US, UK and Australia. See <Link href="/case-studies">case studies</Link> or the <Link href="/solutions/agency-development-partner">agency and MSP partner</Link> model.</p>
+        <p>Our engineers have shipped Azure, .NET and AI integrations for SaaS companies, agencies and product teams in the US, UK, Europe and the Middle East. See <Link href="/case-studies">case studies</Link> or the <Link href="/solutions/agency-development-partner">agency and MSP partner</Link> model.</p>
         <Link className="button button-dark" href="/book-a-call?topic=Forward-deployed%20engineers">Book a call <Icon name="arrow" size={15}/></Link>
       </aside>
     </div></section>

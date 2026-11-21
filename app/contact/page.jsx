@@ -16,11 +16,11 @@ const channels = [
   { icon: 'instagram', title: 'Instagram', text: 'Behind the scenes & team culture', label: '@csharptekofficial', href: 'https://instagram.com/csharptekofficial', external: true }
 ];
 
-const badges = ['HIPAA Ready', 'NDA on Request', 'US/UK Clients', 'NASSCOM Member', 'Microsoft Partner'];
+const badges = ['Microsoft Partner', 'Microsoft 365 Security', 'NDA on Request', 'US/UK Clients', 'NASSCOM Member'];
 
 const faqs = [
   ['How quickly do you respond?', 'We respond to all inquiries within 24 hours on business days. For urgent matters, WhatsApp is fastest.'],
-  ['Do you work with clients outside India?', 'Yes — we work with clients across the US, UK, Australia and the Middle East. Most of our client relationships are fully remote.'],
+  ['Do you work with clients outside India?', 'Yes — we work with clients across the US, UK, Europe and the Middle East. Most of our client relationships are fully remote.'],
   ['What information should I include in my message?', 'A brief description of your project, your industry, rough timeline and budget range helps us give you a useful first response.'],
   ['Is the first consultation really free?', 'Yes, completely. We spend 30 minutes understanding your goals and give you an honest assessment — no sales pressure.'],
   ['Do you sign NDAs before discussing project details?', 'Absolutely. We sign NDAs before any detailed technical or business discussions. Just ask.']

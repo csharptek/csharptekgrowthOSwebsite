@@ -10,22 +10,25 @@ const groups = {
   solutions: {
     title: 'Solutions',
     href: '/solutions',
-    items: [
-      ['/solutions/ai-production-engineering', 'Production AI & RAG Systems'],
-      ['/solutions/ai-product-engineering', 'Custom AI Software & Products'],
-      ['/solutions/ai-agent-development', 'Custom AI Agents'],
-      ['/solutions/ai-data-loss-prevention', 'AI Data Leak Prevention'],
-      ['/solutions/shadow-ai-discovery', 'Shadow AI Discovery'],
-      ['/solutions/ai-governance', 'AI Governance'],
-      ['/solutions/microsoft-365-security', 'Microsoft 365 Security & AI Control'],
-      ['/solutions/microsoft-365-copilot-readiness', 'Microsoft 365 Copilot Readiness'],
-      ['/solutions/private-ai-workspace', 'Private AI Workspace'],
-      ['/solutions/intelligent-workflow-automation', 'Workflow & Process Automation'],
-      ['/azure-app-modernization-services', 'Azure & .NET Modernization'],
-      ['/solutions/healthcare-ai-automation', 'Healthcare AI & Automation'],
-      ['/services/marketplace', 'Microsoft Marketplace Engineering'],
-      ['/solutions/agency-development-partner', 'Agency & MSP Partner'],
-      ['/forward-deployed-engineers', 'Forward-Deployed Engineers']
+    sections: [
+      ['AI data protection', [
+        ['/solutions/ai-data-loss-prevention', 'AI Data Leak Prevention'],
+        ['/solutions/shadow-ai-discovery', 'Shadow AI Discovery'],
+        ['/solutions/ai-governance', 'AI Governance'],
+        ['/solutions/microsoft-365-security', 'Microsoft 365 Security'],
+        ['/solutions/private-ai-workspace', 'Private AI Workspace'],
+        ['/ai-data-risk-check', 'AI Data Risk Check']
+      ]],
+      ['AI & engineering', [
+        ['/solutions/ai-production-engineering', 'Production AI & RAG Systems'],
+        ['/solutions/ai-product-engineering', 'Custom AI Software & Products'],
+        ['/solutions/ai-agent-development', 'Custom AI Agents'],
+        ['/solutions/microsoft-365-copilot-readiness', 'Microsoft 365 Copilot Readiness'],
+        ['/solutions/intelligent-workflow-automation', 'Workflow & Process Automation'],
+        ['/azure-app-modernization-services', 'Azure & .NET Modernization'],
+        ['/solutions/agency-development-partner', 'Agency & MSP Partner'],
+        ['/forward-deployed-engineers', 'Forward-Deployed Engineers']
+      ]]
     ]
   },
   industries: {
@@ -35,14 +38,14 @@ const groups = {
       ['/industries/financial-services', 'Financial Services'],
       ['/industries/software-companies', 'Software & IT Services'],
       ['/industries/manufacturing', 'Manufacturing & Pharma'],
-      ['/industries/technology-saas', 'Technology & SaaS'],
-      ['/industries/healthcare', 'Healthcare']
+      ['/industries/technology-saas', 'Technology & SaaS']
     ]
   },
   capabilities: {
     title: 'Capabilities',
     href: '/capabilities',
     items: [
+      ['/capabilities/microsoft-365-security', 'Microsoft 365 Security & Data Protection'],
       ['/capabilities/ai-llm', 'AI & LLM Engineering'],
       ['/capabilities/product-engineering', 'Product Engineering'],
       ['/capabilities/azure', 'Azure'],
@@ -83,11 +86,16 @@ function MenuPanel({ menu, close, reduceMotion }) {
     exit={{ opacity: 0 }}
     transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
   >
-    <div className="mega-links">
+    {data.sections ? data.sections.map(([title, items]) => <div key={title}>
+      <div className="mega-section-title">{title}</div>
+      <div className="mega-links">
+        {items.map(([href, label]) => <Link href={href} key={href} onClick={close}><span>{label}</span></Link>)}
+      </div>
+    </div>) : <div className="mega-links">
       {data.items.map(([href, label]) => <Link href={href} key={href} onClick={close}>
         <span>{label}</span>
       </Link>)}
-    </div>
+    </div>}
   </motion.div>;
 }
 

@@ -62,5 +62,31 @@ export const capabilityExtra = {
       ['Can we hire .NET and Azure engineers from you?', 'Yes. We work as an extension of your team or deliver a defined scope. The engagement model is agreed during discovery.'],
       ['Do you handle hosting and CI/CD?', 'Yes. We deploy to Azure App Service, Functions or containers, with pipelines in Azure DevOps or GitHub Actions.']
     ]
+  },
+  'microsoft-365-security': {
+    seoTitle: 'Microsoft 365 Security and Data Protection Services',
+    seoDescription: 'Microsoft 365 security and data protection: Purview DLP and AI data protection, Defender, Intune, Entra ID Conditional Access and shadow AI control, using the licences you already own.',
+    h1: 'Microsoft 365 security and data protection, including AI',
+    sections: [
+      {
+        eyebrow: 'What we configure',
+        title: 'The Microsoft security stack, switched on properly.',
+        intro: 'Most Microsoft 365 tenants already include strong security tools that are only partly configured. We set them up in stages, starting with a pilot group.',
+        items: [
+          ['Microsoft Purview', 'Sensitivity labels, data loss prevention for email, files, devices and AI tools, and audit retention.'],
+          ['Defender for Cloud Apps', 'Discovery of AI and SaaS apps, sanctioned and unsanctioned lists, and blocking of risky apps.'],
+          ['Entra ID', 'MFA, Conditional Access, admin role clean-up and work-account sign-in for approved AI.'],
+          ['Intune', 'Device enrolment, compliance, encryption and browser policies that let data controls apply.'],
+          ['Defender', 'Endpoint and email protection with alert routing to someone who acts on it.'],
+          ['Evidence', 'Documented settings and monthly reports for auditors, insurers and customers.']
+        ]
+      }
+    ],
+    faqs: [
+      ['Can you stop staff pasting company data into ChatGPT?', 'Yes, on managed devices with the right licence. Purview DLP can warn or block sensitive data in AI prompts and uploads while normal AI use continues.'],
+      ['Which Microsoft 365 plans do you work with?', 'Business Premium, E3 and E5. We confirm what your plan can do before any work starts and only recommend add-ons that close a real gap.'],
+      ['Do you need admin access?', 'The first check uses read-only access. Changes are made later with agreed admin access and a staged rollout.'],
+      ['Can you work alongside our IT provider?', 'Yes. We work with your IT team or MSP, or white-label the work for an MSP.']
+    ]
   }
 };

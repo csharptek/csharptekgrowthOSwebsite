@@ -198,7 +198,7 @@ export const legacyRedirects = [
   ['/crm-development', '/solutions/intelligent-workflow-automation']
 ];
 
-export const trustItems = ['Microsoft Solutions Partner', 'Azure', '.NET', 'AI engineering', 'Healthcare', 'International delivery'];
+export const trustItems = ['Microsoft Solutions Partner', 'Microsoft 365 security', 'Azure', '.NET', 'AI engineering', 'International delivery'];
 
 export const solutionCases = {
   'ai-production-engineering': ['payautomation', 'rag-pipeline', 'travel-data-ai'],
