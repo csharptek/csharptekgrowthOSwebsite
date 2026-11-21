@@ -194,3 +194,20 @@ body { background: var(--paper); color: var(--ink); }
 .trust-label { color: #5d6b75; }
 .footer-address { font-style: normal; font-size: 12px; line-height: 1.6; color: #9eacb8; margin: 14px 0 0; max-width: 320px; }
 .footer-address a { color: inherit; text-decoration: underline; }
+
+/* In-article links (Blog Studio internal links): visible as links, brand teal. */
+.article-prose p a,
+.article-prose li a,
+.article-prose .article-faq a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+.article-prose p a:hover,
+.article-prose li a:hover,
+.article-prose .article-faq a:hover {
+  color: var(--navy);
+  text-decoration-thickness: 2px;
+}
