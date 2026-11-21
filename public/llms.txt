@@ -1,15 +1,21 @@
 # Csharptek
 
-> Csharptek is a Microsoft Solutions Partner for Azure AI and .NET engineering. We help Microsoft-stack companies get Microsoft 365 ready for Copilot, build and govern AI agents, take AI to production, automate workflows and modernize .NET applications on Azure, and we deliver white-label Microsoft AI builds for MSPs and agencies.
+> Csharptek is a Microsoft Solutions Partner for Azure AI and .NET engineering. We help Microsoft-stack companies stop company data leaking into ChatGPT and other AI tools (AI data loss prevention, shadow AI discovery, AI governance), get Microsoft 365 ready for Copilot, build and govern AI agents, take AI to production, automate workflows and modernize .NET applications on Azure, and we deliver white-label Microsoft AI builds for MSPs and agencies.
 
 ## Key pages
 - [Solutions](https://www.csharptek.com/solutions): AI production engineering, AI product engineering, workflow automation
+- [AI data leak prevention](https://www.csharptek.com/solutions/ai-data-loss-prevention): stop employees pasting sensitive data into ChatGPT and other AI tools with Microsoft Purview DLP, Defender for Cloud Apps and Intune; warn or block, approved AI with work accounts
+- [Shadow AI discovery](https://www.csharptek.com/solutions/shadow-ai-discovery): discover AI tools employees use, personal vs work accounts, sensitive data shared with AI, ongoing AI usage monitoring
+- [AI governance program](https://www.csharptek.com/solutions/ai-governance): AI acceptable use policy, AI tool and agent register, approval flow, Copilot and AI agent governance (Entra Agent ID, Agent 365), ISO/IEC 42001 and ISO 27001 readiness mapping
+- [AI Data Risk Check](https://www.csharptek.com/ai-data-risk-check): fixed-scope, read-only review of AI usage and Microsoft 365 security with a prioritised report in 1-2 weeks
+- [AI acceptable use policy template](https://www.csharptek.com/resources/ai-acceptable-use-policy-template): free AI policy template
+- [Shadow AI risk assessment](https://www.csharptek.com/resources/shadow-ai-risk-assessment): 10-question self-assessment with score
+- [AI data protection by industry](https://www.csharptek.com/industries/financial-services): financial services, [software and IT services](https://www.csharptek.com/industries/software-companies), [manufacturing and pharma](https://www.csharptek.com/industries/manufacturing)
 - [Microsoft 365 security and AI control](https://www.csharptek.com/solutions/microsoft-365-security): Microsoft 365 security check with read-only access, Conditional Access, Intune, Defender, Purview DLP, control of ChatGPT and other AI tools, monthly management
 - [Private AI workspace](https://www.csharptek.com/solutions/private-ai-workspace): private ChatGPT-style assistant on Azure OpenAI in the customer's own tenant, Entra ID sign-in, public AI sites blocked, white-label for MSPs
 - [Microsoft 365 and AI security checklist](https://www.csharptek.com/resources/microsoft-365-ai-security-checklist): 40-point checklist for identity, devices, data, AI tools and logging
 - [Microsoft 365 Copilot readiness](https://www.csharptek.com/solutions/microsoft-365-copilot-readiness): two-week readiness assessment, oversharing, Entra ID, Purview, rollout plan
-- [AI agent governance](https://www.csharptek.com/solutions/ai-agent-governance): Agent 365, Entra Agent ID, Conditional Access, Purview DLP for Copilot and AI agents
-- [White-label Microsoft AI for MSPs](https://www.csharptek.com/solutions/msp-white-label-partner): Copilot Studio, Power Platform and Azure AI builds under the MSP's brand
+- [White-label Microsoft AI for MSPs](https://www.csharptek.com/solutions/agency-development-partner): Copilot Studio, Power Platform and Azure AI builds under the MSP's brand
 - [AI agent development](https://www.csharptek.com/solutions/ai-agent-development): custom and multi-agent systems on Azure OpenAI
 - [Azure app modernization](https://www.csharptek.com/azure-app-modernization-services): .NET and Azure modernization
 - [Microsoft Marketplace engineering](https://www.csharptek.com/services/marketplace): SaaS offers and co-sell readiness

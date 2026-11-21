@@ -1,30 +1,32 @@
 import Link from 'next/link';
 import Icon from '../components/Icon';
 import HeroVisual from '../components/HeroVisual';
-import { caseStudies, solutions, trustItems } from '../data/site';
+import { caseStudies, solutions, trustItems, solutionHref } from '../data/site';
 import { products } from '../data/products';
 import { createPageMetadata } from '../lib/seo';
 
-export const metadata = createPageMetadata({ title: 'Csharptek | Azure AI and .NET Engineering Partner', description: 'Csharptek is a Microsoft Solutions Partner for Copilot readiness, AI agents and governance, production AI and .NET modernization on Azure.', path: '/' });
+export const metadata = createPageMetadata({ title: 'Csharptek | AI Data Protection, Azure AI & .NET Engineering', description: 'Stop company data leaking into ChatGPT and other AI tools with Microsoft 365 security and governance. Production AI, AI agents and .NET modernization on Azure.', path: '/', image: false });
 
 const intents = [
+  { title: 'Stop data leaking into AI tools', text: 'Find the AI tools staff use and keep customer, financial and source-code data out of them.', slug: 'ai-data-loss-prevention', icon: 'grid' },
   { title: 'Put AI into production', text: 'Move AI prototypes, RAG systems and agent initiatives into reliable production systems.', slug: 'ai-production-engineering', icon: 'spark' },
   { title: 'Add AI to your product', text: 'Add practical AI capabilities to products your customers already use.', slug: 'ai-product-engineering', icon: 'layers' },
-  { title: 'Automate a complex workflow', text: 'Replace fragmented manual processes with connected, intelligent workflows.', slug: 'intelligent-workflow-automation', icon: 'flow' },
   { title: 'Modernize your applications', text: 'Improve the applications and cloud infrastructure your business already depends on.', href: '/azure-app-modernization-services', icon: 'orbit' }
 ];
 
 const audiences = [
   { title: 'Agencies', text: 'A white-label development partner for AI, web and Azure projects that need senior engineers behind your brand.', href: '/solutions/agency-development-partner', icon: 'layers' },
   { title: 'AI and SaaS teams', text: 'Take an AI prototype to production, or add AI features and agents to your product with a small senior team.', href: '/solutions/ai-production-engineering', icon: 'spark' },
-  { title: 'Microsoft 365 companies', text: 'Switch on the Microsoft 365 security you already pay for, control ChatGPT and other AI tools, and get ready for Copilot.', href: '/solutions/microsoft-365-security', icon: 'orbit' },
+  { title: 'Microsoft 365 companies', text: 'Stop company data leaking into ChatGPT and other AI tools, switch on the Microsoft 365 security you already pay for, and govern how AI is used.', href: '/solutions/ai-data-loss-prevention', icon: 'orbit' },
   { title: 'MSPs and Microsoft partners', text: 'White-label Copilot Studio agents, Power Platform apps and Azure AI builds for the clients you already manage.', href: '/solutions/agency-development-partner', icon: 'grid' }
 ];
+
+const HOME_SOLUTIONS = ['ai-data-loss-prevention', 'ai-governance', 'microsoft-365-security', 'ai-production-engineering', 'ai-agent-development', 'application-cloud-modernization'];
 
 const proof = [
   ['AI', 'Multi-agent revenue platform', 'A coordinated agent system connected to CRM, revenue workflows and SaaS commerce.'],
   ['UX', 'AI marketing product', 'An AI-enabled product with human approvals, integrations and publishing workflows.'],
-  ['API', 'Marketplace SaaS commerce', 'Fulfillment, metering and subscription lifecycle engineering for a SaaS offer.'],
+  ['DLP', 'AI data controls', 'Purview DLP, Defender for Cloud Apps and Intune policies that keep sensitive data out of public AI tools.'],
   ['RAG', 'Knowledge systems', 'Retrieval, vector search and agent workflows for private knowledge.']
 ];
 
@@ -34,9 +36,9 @@ export default function HomePage() {
       <HeroVisual />
       <div className="hero-inner wrap">
         <div className="hero-copy">
-          <div className="hero-eyebrow">AI · Product Engineering · Modernization</div>
-          <h1>Azure AI and .NET engineering for <em>production-ready</em> systems.</h1>
-          <p>Csharptek is an Azure AI and .NET engineering partner. We get Microsoft 365 ready for Copilot, build and govern AI agents, and modernize .NET applications on Azure.</p>
+          <div className="hero-eyebrow">AI Data Protection · AI Engineering · Modernization</div>
+          <h1>Use AI <em>without leaking data.</em> Azure AI and .NET engineering for production-ready systems.</h1>
+          <p>Csharptek is an Azure AI and .NET engineering partner. We keep company data out of public AI tools with Microsoft 365 security and governance, build production AI and agents, and modernize .NET applications on Azure.</p>
           <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss Your Initiative</Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore Our Work</Link></div>
         </div>
       </div>
@@ -44,8 +46,10 @@ export default function HomePage() {
 
     <div className="trust-row"><div className="trust-inner wrap"><span className="trust-label">Built across a connected stack</span><div className="trust-items">{trustItems.map((item) => <span key={item}>{item}</span>)}</div></div></div>
 
+    <section className="section-tight"><div className="wrap"><div className="feature-band"><div className="feature-copy"><span className="eyebrow">AI data protection</span><h2>Is your company data leaking into AI tools?</h2><p>Staff paste customer records, contracts and code into ChatGPT and other AI tools every day, often on personal accounts. Find out what is happening in your company in two minutes, or measure it properly with a read-only check.</p><div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 20 }}><Link className="button button-dark" data-track="cta" href="/ai-data-risk-check">AI Data Risk Check <Icon name="arrow" size={16}/></Link><Link className="button button-outline" data-track="cta" href="/resources/shadow-ai-risk-assessment">Take the 2-minute quiz</Link></div></div><div className="feature-visual" aria-hidden="true"><div className="platform-card"><div className="platform-head"><span>AI usage this month</span><span className="status-pill">Example</span></div><div className="platform-row"><b>AI apps in use</b><span className="platform-bar"><i style={{width:'72%'}}/></span></div><div className="platform-row"><b>Personal accounts</b><span className="platform-bar"><i style={{width:'48%'}}/></span></div><div className="platform-row"><b>Sensitive data shared</b><span className="platform-bar"><i style={{width:'31%'}}/></span></div><div className="platform-row"><b>Blocked by policy</b><span className="platform-bar"><i style={{width:'86%'}}/></span></div></div></div></div></div></section>
+
     <section className="section section-tint"><div className="wrap">
-      <div className="section-heading"><span className="eyebrow">Who we work with</span><h2>Engineering partner for three kinds of teams.</h2><p>Pick the description that fits you. Each path has its own way of working.</p></div>
+      <div className="section-heading"><span className="eyebrow">Who we work with</span><h2>Engineering partner for four kinds of teams.</h2><p>Pick the description that fits you. Each path has its own way of working.</p></div>
       <div className="intent-grid">{audiences.map((item, i) => <Link className="intent-card" key={item.title} href={item.href}><span className="card-index">0{i + 1} / AUDIENCE</span><span className="card-icon"><Icon name={item.icon} size={19}/></span><h3>{item.title}</h3><p>{item.text}</p><span className="card-arrow"><Icon name="arrow" size={18}/></span></Link>)}</div>
     </div></section>
 
@@ -56,7 +60,7 @@ export default function HomePage() {
 
     <section className="section section-dark"><div className="wrap proof-layout"><div className="proof-copy"><span className="eyebrow eyebrow-light">Engineering evidence</span><h2>Built for the reality after the prototype.</h2><p>Production work is the architecture, integrations, controls and operating details that make a system useful beyond the demo.</p><Link className="text-link" href="/case-studies">See how we approach the work <Icon name="arrow" size={16}/></Link></div><div className="proof-list">{proof.map(([metric, title, desc]) => <article className="proof-card" key={title}><span className="proof-symbol">{metric}</span><h3>{title}</h3><p>{desc}</p></article>)}</div></div></section>
 
-    <section className="section"><div className="wrap"><div className="section-heading"><span className="eyebrow">One accountable engineering partner</span><h2>Six ways to make important technology work harder.</h2><p>Bring us a real initiative. We’ll connect the product, AI, application and cloud decisions around the outcome you need.</p></div><div className="solution-grid">{solutions.filter((item) => !item.unlisted).map((solution) => <Link className="solution-card" key={solution.slug} href={solution.slug === 'application-cloud-modernization' ? '/azure-app-modernization-services' : solution.slug === 'microsoft-marketplace-engineering' ? '/services/marketplace' : `/solutions/${solution.slug}`}><div className="solution-top"><span className="solution-number">{solution.number} / SOLUTION</span><span className="solution-card-icon"><Icon name={solution.icon} size={19}/></span></div><h3>{solution.title}</h3><p>{solution.short}</p><span className="solution-link">Explore solution <Icon name="arrow" size={15}/></span></Link>)}</div></div></section>
+    <section className="section"><div className="wrap"><div className="section-heading"><span className="eyebrow">One accountable engineering partner</span><h2>Six ways to make important technology work harder.</h2><p>Bring us a real initiative. We’ll connect the product, AI, application and cloud decisions around the outcome you need.</p></div><div className="solution-grid">{HOME_SOLUTIONS.map((slug) => solutions.find((x) => x.slug === slug)).filter(Boolean).map((solution, i) => <Link className="solution-card" key={solution.slug} href={solutionHref(solution.slug)}><div className="solution-top"><span className="solution-number">0{i + 1} / SOLUTION</span><span className="solution-card-icon"><Icon name={solution.icon} size={19}/></span></div><h3>{solution.title}</h3><p>{solution.short}</p><span className="solution-link">Explore solution <Icon name="arrow" size={15}/></span></Link>)}</div></div></section>
 
     <section className="section section-tint"><div className="wrap"><div className="section-heading"><span className="eyebrow">Products shaped by delivery experience</span><h2>Product engineering applied to voice and publishing workflows.</h2><p>Explore Csharptek products built around practical communication and content workflows, then see the engineering services and experience connected to each.</p></div><div className="solution-grid">{products.map((product) => <Link className="solution-card" key={product.slug} href={`/products/${product.slug}`}><div className="solution-top"><span className="solution-number">{product.category}</span><span className="solution-card-icon"><Icon name="layers" size={19}/></span></div><h3>{product.name}</h3><p>{product.description}</p><span className="solution-link">Explore product <Icon name="arrow" size={15}/></span></Link>)}</div></div></section>
 
@@ -66,6 +70,6 @@ export default function HomePage() {
 
     <section className="section section-dark"><div className="wrap"><div className="section-heading"><span className="eyebrow eyebrow-light">A clear path from question to operation</span><h2>Move with confidence at every stage.</h2><p>Start at the point that fits your initiative. Discovery can be a focused, paid first step when the right architecture or delivery path needs to be established.</p></div><div className="process-grid">{[['01','Understand','Get clear on the business goal, constraints, users and systems involved.'],['02','Architect','Choose a practical path that balances product value, technical risk and delivery.'],['03','Build','Deliver in focused increments, integrating with the systems your teams use.'],['04','Operate & evolve','Support adoption, reliability and the next stage of the roadmap.']].map(([n,title,text])=><div className="process-step" key={n}><span className="process-dot">{n}</span><h3>{title}</h3><p>{text}</p></div>)}</div></div></section>
 
-    <section className="section-tight"><div className="wrap"><div className="industry-strip"><div><span className="eyebrow">Deep context matters</span><h2>Built for industries where the details count.</h2><p>We bring product and AI engineering to healthcare workflows and technology companies building products for demanding markets.</p></div><div className="industry-tags"><span>Healthcare</span><span>Technology & SaaS</span><span>Microsoft ecosystem</span><span>International delivery</span></div></div></div></section>
+    <section className="section-tight"><div className="wrap"><div className="industry-strip"><div><span className="eyebrow">Deep context matters</span><h2>Built for industries where the details count.</h2><p>We protect data and build AI for financial services, software and IT services, manufacturing and SaaS companies running on Microsoft.</p></div><div className="industry-tags"><Link href="/industries/financial-services">Financial services</Link><Link href="/industries/software-companies">Software & IT services</Link><Link href="/industries/manufacturing">Manufacturing & pharma</Link><Link href="/industries/technology-saas">Technology & SaaS</Link></div></div></div></section>
   </>;
 }

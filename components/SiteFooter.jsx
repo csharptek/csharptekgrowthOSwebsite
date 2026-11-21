@@ -3,20 +3,15 @@ import Image from 'next/image';
 import Icon from './Icon';
 
 const footerSolutions = [
-  ['Production AI & RAG', '/solutions/ai-production-engineering'],
-  ['Custom AI software', '/solutions/ai-product-engineering'],
-  ['AI agent development', '/solutions/ai-agent-development'],
+  ['AI data leak prevention', '/solutions/ai-data-loss-prevention'],
+  ['AI governance', '/solutions/ai-governance'],
   ['Microsoft 365 security', '/solutions/microsoft-365-security'],
-  ['Copilot readiness', '/solutions/microsoft-365-copilot-readiness'],
-  ['Private AI workspace', '/solutions/private-ai-workspace'],
-  ['Workflow automation', '/solutions/intelligent-workflow-automation'],
-  ['Application modernization', '/azure-app-modernization-services'],
-  ['Healthcare AI', '/solutions/healthcare-ai-automation'],
-  ['Microsoft Marketplace', '/services/marketplace'],
+  ['Production AI & RAG', '/solutions/ai-production-engineering'],
+  ['AI agent development', '/solutions/ai-agent-development'],
+  ['Azure & .NET modernization', '/azure-app-modernization-services'],
   ['Agency & MSP partner', '/solutions/agency-development-partner'],
-  ['Forward-deployed engineers', '/forward-deployed-engineers'],
-  ['Book a call', '/book-a-call']
-];
+  ['All solutions', '/solutions']
+]
 
 const socials = [
   ['LinkedIn', 'linkedin', process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN || 'https://www.linkedin.com/company/csharptek/'],
@@ -30,9 +25,9 @@ export default function SiteFooter() {
   return <footer className="site-footer">
     <div className="footer-cta wrap"><div><span className="eyebrow eyebrow-light">The next step starts with a conversation</span><h2>Have a technology initiative to move forward?</h2><p>Tell us what you’re building, modernizing or trying to make work better.</p></div><Link className="button button-light" href="/contact">Discuss your initiative <Icon name="arrow" size={17}/></Link></div>
     <div className="footer-main wrap">
-      <div className="footer-brand-col"><Link href="/" className="brand brand-footer" aria-label="Csharptek home"><Image src="/csharptek-logo.png" alt="Csharptek" width={1024} height={191} sizes="220px" className="brand-logo" /></Link><p>AI, product engineering and modernization for established teams with important work to do.</p><a className="footer-email" href="mailto:info@csharptek.com">info@csharptek.com <Icon name="arrow" size={15}/></a><address className="footer-address">Csharptek, 199/A, First Floor, Panchwati Garden Lane, Bariatu, Ranchi, Jharkhand 834009, India · <a href="tel:+919229069558">+91 92290 69558</a></address><div className="footer-social">{socials.map(([label, icon, url]) => <a key={label} href={url} target="_blank" rel="noopener noreferrer" aria-label={`Csharptek on ${label}`}><Icon name={icon} size={18}/></a>)}<a href="mailto:info@csharptek.com" aria-label="Email Csharptek"><Icon name="mail" size={18}/></a></div></div>
+      <div className="footer-brand-col"><Link href="/" className="brand brand-footer" aria-label="Csharptek home"><Image src="/csharptek-logo.png" alt="Csharptek" width={1024} height={191} sizes="220px" className="brand-logo" /></Link><p>AI data protection, AI engineering and modernization on Microsoft, for teams with important work to do.</p><a className="footer-email" href="mailto:info@csharptek.com">info@csharptek.com <Icon name="arrow" size={15}/></a><address className="footer-address">Csharptek, 199/A, First Floor, Panchwati Garden Lane, Bariatu, Ranchi, Jharkhand 834009, India · <a href="tel:+919229069558">+91 92290 69558</a></address><div className="footer-social">{socials.map(([label, icon, url]) => <a key={label} href={url} target="_blank" rel="noopener noreferrer" aria-label={`Csharptek on ${label}`}><Icon name={icon} size={18}/></a>)}<a href="mailto:info@csharptek.com" aria-label="Email Csharptek"><Icon name="mail" size={18}/></a></div></div>
       <div className="footer-col"><h3>Solutions</h3>{footerSolutions.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</div>
-      <div className="footer-col"><h3>Explore</h3><Link href="/case-studies">Case studies</Link><Link href="/industries">Industries</Link><Link href="/capabilities">Capabilities</Link><Link href="/products">Products</Link><Link href="/blog">Insights</Link></div>
+      <div className="footer-col"><h3>Explore</h3><Link href="/case-studies">Case studies</Link><Link href="/industries">Industries</Link><Link href="/ai-data-risk-check">AI Data Risk Check</Link><Link href="/book-a-call">Book a call</Link><Link href="/capabilities">Capabilities</Link><Link href="/products">Products</Link><Link href="/blog">Insights</Link></div>
       <div className="footer-col"><h3>Company</h3><Link href="/about">About</Link><Link href="/leadership">Leadership</Link><Link href="/careers">Careers</Link><Link href="/software-company-ranchi">Ranchi office</Link><Link href="/contact">Contact</Link></div>
     </div>
     <div className="footer-bottom wrap"><span>© {new Date().getFullYear()} Csharptek. All rights reserved.</span><div><Link href="/privacy-policy">Privacy</Link></div><span className="footer-location">Engineering globally. Built for what’s next.</span></div>

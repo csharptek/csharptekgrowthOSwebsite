@@ -1,3 +1,5 @@
+import { aiProtectionExtra } from './aiProtection';
+
 // SEO depth content per solution. sections render as card grids; checklist renders as a list panel.
 export const solutionExtra = {
   'ai-production-engineering': {
@@ -598,8 +600,8 @@ solutionExtra['msp-white-label-partner'] = {
 };
 
 solutionExtra['microsoft-365-security'] = {
-  seoTitle: 'Microsoft 365 Security Audit, Hardening and AI Control',
-  seoDescription: 'Microsoft 365 security audit and fixes: Conditional Access, Intune, Defender for Business, Purview DLP and control of ChatGPT and other AI tools on company devices.',
+  seoTitle: 'Microsoft 365 Security Audit and AI Control',
+  seoDescription: 'Microsoft 365 security audit and fixes: Conditional Access, Intune, Defender, Purview DLP and control of ChatGPT and other AI tools on company devices.',
   sections: [
     {
       eyebrow: 'The problem',
@@ -623,7 +625,8 @@ solutionExtra['microsoft-365-security'] = {
         ['What we review', 'Secure Score, Entra ID and MFA, Conditional Access, devices and Intune, Defender, email protection, sharing, Purview and AI usage.'],
         ['The report', 'Findings ranked by risk, what each one means for the business, and the exact fix, delivered within three to five working days.'],
         ['Walkthrough', 'A call to go through the findings with your team and agree what to fix first.']
-      ]
+      ],
+      link: ['/ai-data-risk-check', 'The check now includes AI usage: see the AI Data Risk Check']
     },
     {
       eyebrow: 'What we fix',
@@ -637,7 +640,7 @@ solutionExtra['microsoft-365-security'] = {
         ['AI control', 'Block, allow or monitor ChatGPT and other AI tools on managed devices, and stop sensitive data from being pasted into them where your licence supports it.'],
         ['Documentation', 'A record of every policy and setting so your team, auditors or insurers can see what is in place.']
       ],
-      link: ['/solutions/private-ai-workspace', 'Want to give staff a safe AI tool instead? See the private AI workspace']
+      link: ['/solutions/ai-data-loss-prevention', 'See how we stop data leaking into ChatGPT and other AI tools']
     },
     {
       eyebrow: 'Compliance support',
@@ -689,8 +692,8 @@ solutionExtra['microsoft-365-security'] = {
 };
 
 solutionExtra['private-ai-workspace'] = {
-  seoTitle: 'Private ChatGPT on Azure OpenAI for Your Company',
-  seoDescription: 'A private ChatGPT-style assistant on Azure OpenAI in your own tenant: Entra ID sign-in, search over company documents, public AI sites blocked, usage and cost monitoring.',
+  seoTitle: 'Private ChatGPT on Azure OpenAI for Companies',
+  seoDescription: 'A safe ChatGPT for staff on Azure OpenAI in your own tenant: Entra ID sign-in, company document search, public AI sites blocked, usage monitoring.',
   sections: [
     {
       eyebrow: 'Why private AI',
@@ -717,7 +720,7 @@ solutionExtra['private-ai-workspace'] = {
         ['Device controls', 'Policies that block public AI sites and apps on Intune-managed devices.'],
         ['Monitoring', 'Usage dashboards, audit logs, budgets and alerts on spend.']
       ],
-      link: ['/solutions/microsoft-365-security', 'Start with a Microsoft 365 security and AI usage check']
+      link: ['/ai-data-risk-check', 'Start with an AI Data Risk Check']
     },
     {
       eyebrow: 'For MSPs',
@@ -729,7 +732,7 @@ solutionExtra['private-ai-workspace'] = {
         ['Central monitoring', 'Usage and cost visibility across clients so you can bill and support them.'],
         ['Behind-the-scenes support', 'We handle updates, new models and technical issues; you keep the client relationship.']
       ],
-      link: ['/solutions/msp-white-label-partner', 'See our white-label partnership for MSPs']
+      link: ['/solutions/agency-development-partner', 'See our white-label partnership for MSPs']
     }
   ],
   checklist: {
@@ -755,3 +758,5 @@ solutionExtra['private-ai-workspace'] = {
     ['Do we need Microsoft 365 Copilot as well?', 'Not necessarily. Copilot works inside Office apps; a private workspace is a general assistant with your own controls. Many companies use both, or start with one.']
   ]
 };
+
+Object.assign(solutionExtra, aiProtectionExtra);

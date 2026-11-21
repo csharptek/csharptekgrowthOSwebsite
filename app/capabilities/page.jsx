@@ -4,7 +4,7 @@ import BrandArtwork from '../../components/BrandArtwork';
 import { capabilities } from '../../data/capabilities';
 import { createPageMetadata } from '../../lib/seo';
 
-export const metadata = createPageMetadata({ title: 'AI, Azure and .NET Engineering Capabilities', description: 'Explore Csharptek capabilities in AI and LLM engineering, software product development, Azure cloud, .NET modernization, DevOps, data and integrations.', path: '/capabilities' });
+export const metadata = createPageMetadata({ title: 'Security, AI, Azure and .NET Capabilities', description: 'Capabilities in Microsoft 365 security and data protection, AI and LLM engineering, product development, Azure, .NET, DevOps and integrations.', path: '/capabilities' });
 
 export default function CapabilitiesPage() {
   return <>

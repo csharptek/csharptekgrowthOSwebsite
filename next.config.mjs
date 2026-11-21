@@ -13,7 +13,9 @@ const nextConfig = {
     return [
       // Solutions 14 → 9 (20 Nov 2026): merged pages, 301.
       { source: '/solutions/rag-development', destination: '/solutions/ai-production-engineering', statusCode: 301 },
-      { source: '/solutions/ai-agent-governance', destination: '/solutions/microsoft-365-copilot-readiness', statusCode: 301 },
+      { source: '/solutions/ai-agent-governance', destination: '/solutions/ai-governance', statusCode: 301 },
+      { source: '/shadow-ai', destination: '/solutions/shadow-ai-discovery', statusCode: 301 },
+      { source: '/ai-dlp', destination: '/solutions/ai-data-loss-prevention', statusCode: 301 },
       { source: '/solutions/msp-white-label-partner', destination: '/solutions/agency-development-partner', statusCode: 301 },
       { source: '/solutions/application-cloud-modernization', destination: '/azure-app-modernization-services', statusCode: 301 },
       { source: '/solutions/microsoft-marketplace-engineering', destination: '/services/marketplace', statusCode: 301 },

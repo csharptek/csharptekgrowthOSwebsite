@@ -56,6 +56,9 @@ function bodyBlocks(post) {
   return typeof post.body === 'string' ? [{ type: 'p', text: post.body }] : [];
 }
 
+// Healthcare / HIPAA content kept online but out of search (no healthcare targeting, no HIPAA claims).
+const NOINDEX_POSTS = new Set(['hipaa-compliant-ai-healthcare-startups']);
+
 export async function makeBlogMetadata(params, prefix = '/blog') {
   const { slug } = await params;
   try {
@@ -68,7 +71,8 @@ export async function makeBlogMetadata(params, prefix = '/blog') {
       alternates: { canonical: `/blog/${slug}` },
       openGraph: { type: 'article', title: `${baseTitle} | Csharptek`, description: post.meta_description || post.excerpt || '', images: [post.og_image_url || '/opengraph-image'] },
       twitter: { card: 'summary_large_image', title: `${baseTitle} | Csharptek`, description: post.meta_description || post.excerpt || '', images: [post.og_image_url || '/opengraph-image'] },
-      ...(Array.isArray(post.tags) && post.tags.length ? { keywords: post.tags } : {})
+      ...(Array.isArray(post.tags) && post.tags.length ? { keywords: post.tags } : {}),
+      ...(NOINDEX_POSTS.has(slug) ? { robots: { index: false, follow: true } } : {})
     };
   } catch { return { title: 'Insights' }; }
 }
