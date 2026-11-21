@@ -23,6 +23,7 @@ export async function POST(request) {
       if (!token || token === 'no-recaptcha') return NextResponse.json({ success: false, message: 'Please complete the security check and submit again.' }, { status: 400 });
       const verification = await fetch('https://www.google.com/recaptcha/api/siteverify', {
         method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        signal: AbortSignal.timeout(8000),
         body: new URLSearchParams({ secret: process.env.RECAPTCHA_SECRET_KEY, response: token, ...(request.headers.get('x-forwarded-for') ? { remoteip: request.headers.get('x-forwarded-for').split(',')[0].trim() } : {}) })
       });
       const result = await verification.json();
@@ -31,13 +32,18 @@ export async function POST(request) {
       }
     }
     incoming.delete('recaptchaToken');
-    const response = await fetch(endpoint, { method: 'POST', body: incoming, headers: { 'User-Agent': 'CSharpTek-Website/1.0', Accept: 'application/json' }, cache: 'no-store' });
+    const response = await fetch(endpoint, { method: 'POST', body: incoming, headers: { 'User-Agent': 'CSharpTek-Website/1.0', Accept: 'application/json' }, cache: 'no-store', signal: AbortSignal.timeout(25000) });
+    const raw = await response.text();
     let result = {};
-    try { result = await response.json(); } catch {}
-    if (!response.ok || !result.success) return NextResponse.json({ success: false, message: result.message || 'Your application could not be submitted. Please try again.' }, { status: response.status || 502 });
+    try { result = JSON.parse(raw); } catch {}
+    if (!response.ok || !result.success) {
+      console.error('Application service rejected:', response.status, raw.slice(0, 500));
+      const status = response.status >= 400 && response.status < 600 ? response.status : 502;
+      return NextResponse.json({ success: false, message: result.message || 'Your application could not be submitted. Please try again, or email hr@csharptek.com.' }, { status });
+    }
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Application submission unavailable:', error.message);
+    console.error('Application submission unavailable:', error.name, error.message, error.cause?.code || '');
     return NextResponse.json({ success: false, message: 'We could not reach the application service. Please email hr@csharptek.com.' }, { status: 502 });
   }
 }

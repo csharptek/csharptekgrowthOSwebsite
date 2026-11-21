@@ -24,8 +24,12 @@ function ApplicationForm({ job, onClose }) {
       const months = Number(form.get('ExperienceMonths') || 0);
       form.set('TotalExperienceYears', parseFloat((years + months / 12).toFixed(2)).toString());
       form.set('recaptchaToken', token);
+      const resume = form.get('FormFile');
+      if (resume && resume.size > 5 * 1024 * 1024) throw new Error('Please attach a resume smaller than 5 MB.');
       const response = await fetch('/api/apply', { method: 'POST', body: form });
-      const result = await response.json();
+      const raw = await response.text();
+      let result = {};
+      try { result = JSON.parse(raw); } catch { throw new Error('Our application service is temporarily unavailable. Please email your resume to hr@csharptek.com.'); }
       if (!response.ok || !result.success) throw new Error(result.message || 'We could not submit your application.');
       setMessage('Your application was submitted. Thank you for your interest in Csharptek.');
       window.dataLayer?.push({ event: 'careers_application_submit', application_role: job?.jobTitle || 'Open application' });
