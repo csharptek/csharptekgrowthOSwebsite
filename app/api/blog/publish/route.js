@@ -61,8 +61,8 @@ export async function POST(request) {
       const mime = /^image\/(png|jpeg|webp)$/.test(body.image.mime) ? body.image.mime : 'image/png';
       const data = Buffer.from(body.image.base64, 'base64');
       if (data.length > 8 * 1024 * 1024) return NextResponse.json({ ok: false, error: 'image too large' }, { status: 413 });
-      await query('CREATE TABLE IF NOT EXISTS blog_images (id serial PRIMARY KEY, slug text NOT NULL, mime text NOT NULL, alt text, data bytea NOT NULL, created_at timestamptz DEFAULT now())');
-      const ins = await query('INSERT INTO blog_images (slug, mime, alt, data) VALUES ($1, $2, $3, $4) RETURNING id', [slug, mime, str(body.image.alt, 200), data]);
+      await query('CREATE TABLE IF NOT EXISTS tg_blog_images (id serial PRIMARY KEY, slug text NOT NULL, mime text NOT NULL, alt text, data bytea NOT NULL, created_at timestamptz DEFAULT now())');
+      const ins = await query('INSERT INTO tg_blog_images (slug, mime, alt, data) VALUES ($1, $2, $3, $4) RETURNING id', [slug, mime, str(body.image.alt, 200), data]);
       imageUrl = `${siteUrl}/blog-images/${ins.rows[0].id}-${slug}.${mime.split('/')[1].replace('jpeg', 'jpg')}`;
     }
 
@@ -73,8 +73,8 @@ export async function POST(request) {
       const mime = /^image\/(png|jpeg|webp)$/.test(im.mime) ? im.mime : 'image/png';
       const data = Buffer.from(im.base64, 'base64');
       if (data.length > 8 * 1024 * 1024) continue;
-      await query('CREATE TABLE IF NOT EXISTS blog_images (id serial PRIMARY KEY, slug text NOT NULL, mime text NOT NULL, alt text, data bytea NOT NULL, created_at timestamptz DEFAULT now())');
-      const ins = await query('INSERT INTO blog_images (slug, mime, alt, data) VALUES ($1, $2, $3, $4) RETURNING id', [slug, mime, str(im.alt, 200), data]);
+      await query('CREATE TABLE IF NOT EXISTS tg_blog_images (id serial PRIMARY KEY, slug text NOT NULL, mime text NOT NULL, alt text, data bytea NOT NULL, created_at timestamptz DEFAULT now())');
+      const ins = await query('INSERT INTO tg_blog_images (slug, mime, alt, data) VALUES ($1, $2, $3, $4) RETURNING id', [slug, mime, str(im.alt, 200), data]);
       imageUrls[im.key.slice(0, 20)] = `${siteUrl}/blog-images/${ins.rows[0].id}-${slug}.${mime.split('/')[1].replace('jpeg', 'jpg')}`;
     }
     blocks = cleanBlocks(body.blocks, imageUrls);

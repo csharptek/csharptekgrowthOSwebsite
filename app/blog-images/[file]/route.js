@@ -9,7 +9,8 @@ export async function GET(_request, { params }) {
   const id = Number(String(file).split('-')[0]);
   if (!Number.isInteger(id) || id <= 0) return new Response('Not found', { status: 404 });
   try {
-    const r = await query('SELECT mime, data FROM blog_images WHERE id = $1', [id]);
+    // TekGrowth images live in tg_blog_images (the CMS has its own blog_images table with another schema).
+    const r = await query('SELECT mime, data FROM tg_blog_images WHERE id = $1', [id]);
     if (!r.rows[0]) return new Response('Not found', { status: 404 });
     return new Response(r.rows[0].data, { headers: { 'Content-Type': r.rows[0].mime, 'Cache-Control': 'public, max-age=31536000, immutable' } });
   } catch {
