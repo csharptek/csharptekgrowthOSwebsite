@@ -86,7 +86,7 @@ export default function AiDataRiskCheckPage() {
 
     <section className="section section-tint"><div className="wrap content-grid">
       <div><span className="eyebrow">Who it is for</span><h2>Companies of 20 to 500 people on Microsoft 365.</h2><ul className="check-list">{['Staff already use ChatGPT, Gemini or other AI tools for work', 'You handle customer, financial, legal or source-code data', 'Customers or auditors have started asking about AI', 'You want facts before writing an AI policy or buying a tool'].map((x) => <li key={x}><Icon name="check" size={16}/>{x}</li>)}</ul><p>Prefer to check yourself first? Try the <Link href="/resources/shadow-ai-risk-assessment">10-question shadow AI risk assessment</Link> or the <Link href="/resources/ai-acceptable-use-policy-template">AI acceptable-use policy template</Link>.</p></div>
-      <div id="request"><LeadForm defaultInitiative="AI Data Risk Check" defaultReason="Project Consultation (Free)"/></div>
+      <div id="request"><LeadForm quick title="Request an AI Data Risk Check" submitLabel="Request the check" defaultInitiative="AI Data Risk Check" defaultReason="Project Consultation (Free)"/></div>
     </div></section>
 
     <Faq items={faqs} title="Questions about the AI Data Risk Check"/>

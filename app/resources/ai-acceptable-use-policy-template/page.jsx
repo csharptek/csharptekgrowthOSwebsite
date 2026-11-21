@@ -72,7 +72,7 @@ export default function AiPolicyTemplatePage() {
 
     <section className="section section-tint"><div className="wrap content-grid">
       <div><span className="eyebrow">Make it stick</span><h2>A policy without controls is a suggestion.</h2><p>Staff under time pressure will still paste data into the quickest tool. Pair the policy with technical controls that warn or block sensitive data in AI tools and steer people to the approved ones.</p><p><Link className="text-link" href="/solutions/ai-data-loss-prevention">Stop data leaking into AI tools <Icon name="arrow" size={15}/></Link></p><p><Link className="text-link" href="/resources/shadow-ai-risk-assessment">Take the 10-question shadow AI risk assessment <Icon name="arrow" size={15}/></Link></p></div>
-      <div id="get-template"><LeadForm defaultInitiative="AI acceptable use policy template (editable version)" defaultReason="General Enquiry"/></div>
+      <div id="get-template"><LeadForm quick title="Get the editable Word version" submitLabel="Send me the template" defaultInitiative="AI acceptable use policy template (editable version)" defaultReason="General Enquiry"/></div>
     </div></section>
 
     <Faq items={faqs} title="Questions about AI policies"/>

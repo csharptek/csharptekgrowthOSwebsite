@@ -55,7 +55,7 @@ export default function ShadowAiQuiz() {
         {fixes.length > 0 && <><h3>Fix these first</h3><ul className="check-list">{fixes.map(([[, fix, href]]) => <li key={fix}><Icon name="check" size={16}/><Link href={href}>{fix}</Link></li>)}</ul></>}
         <p><Link className="text-link" href="/ai-data-risk-check">Measure your real AI usage with the AI Data Risk Check <Icon name="arrow" size={15}/></Link></p>
       </div>
-      <div><LeadForm defaultInitiative={`Shadow AI assessment: score ${score}/100 (${level})`} defaultReason="Project Consultation (Free)"/></div>
+      <div><LeadForm quick title="Get your result and next steps by email" submitLabel="Email me my result" defaultInitiative={`Shadow AI assessment: score ${score}/100 (${level})`} defaultReason="Project Consultation (Free)"/></div>
     </div>}
   </div>;
 }

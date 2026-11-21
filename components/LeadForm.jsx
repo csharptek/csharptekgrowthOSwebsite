@@ -15,7 +15,8 @@ export const CONTACT_REASONS = [
   'Other'
 ];
 
-export default function LeadForm({ defaultInitiative = '', defaultReason = '' }) {
+/** quick: short form for lead magnets (no reason picker, message optional and pre-filled from the initiative). */
+export default function LeadForm({ defaultInitiative = '', defaultReason = '', quick = false, submitLabel = 'Send message', title = 'Send us a message' }) {
   const [status, setStatus] = useState('');
   const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -34,6 +35,7 @@ export default function LeadForm({ defaultInitiative = '', defaultReason = '' })
     data.page = window.location.pathname;
     data.whatsappOptIn = data.whatsappOptIn === 'on';
     data.r = savedRefCode();
+    if (quick) { data.reason = data.reason || initialReason || 'General Enquiry'; if (!String(data.message || '').trim()) data.message = defaultInitiative || 'Requested via website'; }
     try {
       const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       const result = await response.json().catch(() => ({}));
@@ -51,7 +53,7 @@ export default function LeadForm({ defaultInitiative = '', defaultReason = '' })
   }
 
   return <form className="lead-form" onSubmit={submit} onFocus={() => { if (!started.current) { started.current = true; window.dataLayer?.push({ event: 'form_start', form_name: 'contact' }); } }}>
-    <div className="lead-form-head field-full"><h3>Send us a message</h3><p>Fields marked * are required.</p></div>
+    <div className="lead-form-head field-full"><h3>{title}</h3><p>Fields marked * are required.</p></div>
     <div className="honeypot" aria-hidden="true"><label htmlFor="lead-website">Leave this blank</label><input id="lead-website" name="website" tabIndex={-1} autoComplete="off"/></div>
     {defaultInitiative && <input type="hidden" name="initiativeType" value={defaultInitiative}/>}
     <div className="field"><label htmlFor="lead-name">Name *</label><input id="lead-name" name="name" autoComplete="name" required maxLength={120} placeholder="Your full name"/></div>
@@ -59,10 +61,10 @@ export default function LeadForm({ defaultInitiative = '', defaultReason = '' })
     <div className="field"><label htmlFor="lead-company">Company</label><input id="lead-company" name="company" autoComplete="organization" maxLength={160} placeholder="Company name"/></div>
     <div className="field"><label htmlFor="lead-phone">Phone</label><input id="lead-phone" type="tel" name="phone" autoComplete="tel" maxLength={40} placeholder="+1 555 000 0000"/></div>
     <div className="field field-full lead-optin"><label htmlFor="lead-wa" style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontWeight: 400 }}><input id="lead-wa" type="checkbox" name="whatsappOptIn" style={{ width: 'auto', marginTop: 4 }}/><span>You can message me on WhatsApp about this enquiry (uses the phone number above).</span></label></div>
-    <div className="field field-full"><label htmlFor="lead-reason">Reason for contact *</label><select id="lead-reason" name="reason" defaultValue={initialReason} required><option value="" disabled>Select a reason</option>{CONTACT_REASONS.map((reason) => <option key={reason}>{reason}</option>)}</select></div>
+    {quick ? <input type="hidden" name="reason" value={initialReason || 'General Enquiry'}/> : <div className="field field-full"><label htmlFor="lead-reason">Reason for contact *</label><select id="lead-reason" name="reason" defaultValue={initialReason} required><option value="" disabled>Select a reason</option>{CONTACT_REASONS.map((reason) => <option key={reason}>{reason}</option>)}</select></div>}
     {defaultInitiative && <p className="lead-form-context field-full">Regarding: <strong>{defaultInitiative}</strong></p>}
-    <div className="field field-full"><label htmlFor="lead-message">Tell us about your project *</label><textarea id="lead-message" name="message" required maxLength={6000} placeholder="A brief description of your project, industry, rough timeline and budget range helps us give you a useful first response."/></div>
-    <div className="form-submit"><button className="button" type="submit" disabled={busy}>{busy ? 'Sending…' : 'Send message'} <Icon name="arrow" size={16}/></button><small>By submitting you agree to our <Link className="text-link" href="/privacy-policy">Privacy Policy</Link>. We never share your data with third parties.</small></div>
+    {quick ? <div className="field field-full"><label htmlFor="lead-message">Anything you'd like us to know? (optional)</label><textarea id="lead-message" name="message" maxLength={6000} placeholder="For example: which AI tools your team uses, or what worries you most."/></div> : <div className="field field-full"><label htmlFor="lead-message">Tell us about your project *</label><textarea id="lead-message" name="message" required maxLength={6000} placeholder="A brief description of your project, industry, rough timeline and budget range helps us give you a useful first response."/></div>}
+    <div className="form-submit"><button className="button" type="submit" disabled={busy}>{busy ? 'Sending…' : submitLabel} <Icon name="arrow" size={16}/></button><small>By submitting you agree to our <Link className="text-link" href="/privacy-policy">Privacy Policy</Link>. We never share your data with third parties.</small></div>
     {status && <p className={`form-status${ok ? ' is-success' : ' is-error'}`} role="status" aria-live="polite">{status}</p>}
   </form>;
 }
