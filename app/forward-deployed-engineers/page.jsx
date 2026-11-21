@@ -7,8 +7,8 @@ import { createPageMetadata } from '../../lib/seo';
 const siteUrl = 'https://www.csharptek.com';
 
 export const metadata = createPageMetadata({
-  title: 'Forward-Deployed Engineers and Dedicated Developers',
-  description: 'Hire a forward-deployed engineer, an FDE pod, a dedicated React/.NET/full-stack developer or a small dev team from Csharptek. Four fixed monthly packages, working inside your team.',
+  title: 'Forward-Deployed Engineers and Developers',
+  description: 'Hire a forward-deployed engineer, an FDE pod, a dedicated React, .NET or full-stack developer, or a small dev team. Fixed monthly packages, inside your team.',
   path: '/forward-deployed-engineers'
 });
 

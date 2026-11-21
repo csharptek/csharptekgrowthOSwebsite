@@ -204,7 +204,7 @@ export const aiProtectionExtra = {
           ['Blocked list', 'High-risk or unnecessary AI apps blocked on managed devices with a clear message to users.'],
           ['Monthly watch', 'New AI apps, usage changes and incidents reviewed every month.']
         ],
-        link: ['/solutions/ai-data-loss-prevention', 'Next step: stop sensitive data reaching AI tools']
+        link: ['/resources/microsoft-365-ai-security-checklist', 'Self-check first: the free Microsoft 365 and AI security checklist']
       }
     ],
     checklist: {

@@ -13,7 +13,7 @@ const topics = [
   ['Microsoft Marketplace', 'The fulfillment, metering and identity work behind SaaS commerce on Microsoft Marketplace.', '/services/marketplace']
 ];
 
-export const metadata = createPageMetadata({ title: 'AI, Product Engineering and Modernization Insights', description: 'Practical guides on production AI, AI products, workflow automation, Azure application modernization and Microsoft Marketplace engineering.', path: '/blog' });
+export const metadata = createPageMetadata({ title: 'AI, Security and Modernization Insights', description: 'Practical guides on AI data protection, Microsoft 365 security, production AI, AI agents and Azure application modernization.', path: '/blog' });
 
 export const dynamic = 'force-dynamic';
 

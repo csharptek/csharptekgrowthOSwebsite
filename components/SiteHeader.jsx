@@ -119,6 +119,7 @@ function MenuGroup({ id, activeMenu, onToggle, onHover, close, reduceMotion }) {
     <AnimatePresence initial={false} mode="wait">
       {activeMenu === id && <MenuPanel key={id} menu={id} close={close} reduceMotion={reduceMotion}/>}
     </AnimatePresence>
+    {activeMenu !== id && <div hidden>{(groups[id].sections ? groups[id].sections.flatMap(([, items]) => items) : groups[id].items).map(([href, label]) => <Link key={href} href={href} tabIndex={-1}>{label}</Link>)}</div>}
   </div>;
 }
 
