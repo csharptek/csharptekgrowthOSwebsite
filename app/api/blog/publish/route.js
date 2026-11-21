@@ -6,7 +6,7 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 const siteUrl = 'https://www.csharptek.com';
-const BLOCK_TYPES = new Set(['intro', 'p', 'h2', 'h3', 'ul', 'faq', 'cta']);
+const BLOCK_TYPES = new Set(['intro', 'p', 'h2', 'h3', 'ul', 'faq', 'cta', 'img']);
 
 function authorized(request) {
   const secret = process.env.BLOG_PUBLISH_SECRET || '';
@@ -19,9 +19,10 @@ function authorized(request) {
 
 const str = (v, n) => (typeof v === 'string' ? v.trim().slice(0, n) : '');
 
-function cleanBlocks(blocks) {
+function cleanBlocks(blocks, imageUrls = {}) {
   if (!Array.isArray(blocks)) return [];
-  return blocks.filter((b) => b && BLOCK_TYPES.has(b.type)).slice(0, 200).map((b) => {
+  return blocks.filter((b) => b && BLOCK_TYPES.has(b.type) && (b.type !== 'img' || imageUrls[b.key])).slice(0, 200).map((b) => {
+    if (b.type === 'img') return { type: 'img', src: imageUrls[b.key], alt: str(b.alt, 200), caption: str(b.caption, 240) || undefined };
     if (b.type === 'ul') return { type: 'ul', items: (Array.isArray(b.items) ? b.items : []).filter((x) => typeof x === 'string').map((x) => x.slice(0, 1200)).slice(0, 30) };
     if (b.type === 'faq') return { type: 'faq', items: (Array.isArray(b.items) ? b.items : []).filter((x) => Array.isArray(x) && x.length === 2).map(([q, a]) => [String(q).slice(0, 300), String(a).slice(0, 1500)]).slice(0, 12) };
     if (b.type === 'cta') return { type: 'cta', text: str(b.text, 400), href: typeof b.href === 'string' && b.href.startsWith('/') && !b.href.startsWith('//') ? b.href.slice(0, 200) : '/contact', label: str(b.label, 60) || undefined };
@@ -51,7 +52,7 @@ export async function POST(request) {
   try { body = await request.json(); } catch { return NextResponse.json({ ok: false, error: 'bad json' }, { status: 400 }); }
   const slug = str(body.slug, 120).toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
   const title = str(body.title, 200);
-  const blocks = cleanBlocks(body.blocks);
+  let blocks = cleanBlocks(body.blocks);
   if (!slug || !title || blocks.length < 3) return NextResponse.json({ ok: false, error: 'slug, title and blocks are required' }, { status: 400 });
 
   try {
@@ -64,6 +65,19 @@ export async function POST(request) {
       const ins = await query('INSERT INTO blog_images (slug, mime, alt, data) VALUES ($1, $2, $3, $4) RETURNING id', [slug, mime, str(body.image.alt, 200), data]);
       imageUrl = `${siteUrl}/blog-images/${ins.rows[0].id}-${slug}.${mime.split('/')[1].replace('jpeg', 'jpg')}`;
     }
+
+    // Inline images: stored like the header image; img blocks point at them by key.
+    const imageUrls = {};
+    for (const im of (Array.isArray(body.images) ? body.images : []).slice(0, 6)) {
+      if (!im || typeof im.key !== 'string' || typeof im.base64 !== 'string' || im.base64.length < 100) continue;
+      const mime = /^image\/(png|jpeg|webp)$/.test(im.mime) ? im.mime : 'image/png';
+      const data = Buffer.from(im.base64, 'base64');
+      if (data.length > 8 * 1024 * 1024) continue;
+      await query('CREATE TABLE IF NOT EXISTS blog_images (id serial PRIMARY KEY, slug text NOT NULL, mime text NOT NULL, alt text, data bytea NOT NULL, created_at timestamptz DEFAULT now())');
+      const ins = await query('INSERT INTO blog_images (slug, mime, alt, data) VALUES ($1, $2, $3, $4) RETURNING id', [slug, mime, str(im.alt, 200), data]);
+      imageUrls[im.key.slice(0, 20)] = `${siteUrl}/blog-images/${ins.rows[0].id}-${slug}.${mime.split('/')[1].replace('jpeg', 'jpg')}`;
+    }
+    blocks = cleanBlocks(body.blocks, imageUrls);
 
     const cols = await columns();
     const tags = (Array.isArray(body.tags) ? body.tags : []).filter((t) => typeof t === 'string').map((t) => t.slice(0, 40)).slice(0, 8);
@@ -107,7 +121,7 @@ export async function POST(request) {
     } else {
       await query(`INSERT INTO blog_posts (${names.join(', ')}) VALUES (${placeholders.join(', ')})`, params);
     }
-    return NextResponse.json({ ok: true, url: `${siteUrl}/blog/${slug}`, image: imageUrl });
+    return NextResponse.json({ ok: true, url: `${siteUrl}/blog/${slug}`, image: imageUrl, images: imageUrls });
   } catch (error) {
     console.error('Blog publish failed:', error.message);
     return NextResponse.json({ ok: false, error: error.message.slice(0, 300) }, { status: 500 });
