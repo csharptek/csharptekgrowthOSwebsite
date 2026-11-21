@@ -7,7 +7,7 @@ import Faq from '../../components/Faq';
 
 import { createPageMetadata } from '../../lib/seo';
 
-export const metadata = createPageMetadata({ title: 'About Csharptek: Azure, AI and .NET Engineering', description: 'Csharptek is an Azure, AI and .NET software development company founded in 2016 in Ranchi, Jharkhand, working with agencies, SaaS teams and Microsoft-stack companies worldwide.', path: '/about' });
+export const metadata = createPageMetadata({ title: 'About Csharptek: Azure, AI and .NET Engineering', description: 'Csharptek is an Azure, AI and .NET company founded in 2016 in Ranchi, working with agencies, SaaS teams and Microsoft-stack companies worldwide.', path: '/about' });
 
 const ecosystem = [
   ['Microsoft', 'Solutions Partner', 'Azure, Microsoft 365 and AI services.', 'MS'],

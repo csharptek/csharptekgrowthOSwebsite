@@ -64,7 +64,7 @@ export const capabilityExtra = {
     ]
   },
   'microsoft-365-security': {
-    seoTitle: 'Microsoft 365 Security and Data Protection Services',
+    seoTitle: 'Microsoft 365 Security and Data Protection',
     seoDescription: 'Microsoft 365 security and data protection: Purview DLP for AI, Defender, Intune, Entra ID Conditional Access and shadow AI control, with your licences.',
     h1: 'Microsoft 365 security and data protection, including AI',
     sections: [

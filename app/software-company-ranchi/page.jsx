@@ -4,8 +4,8 @@ import Faq from '../../components/Faq';
 import { createPageMetadata } from '../../lib/seo';
 
 export const metadata = createPageMetadata({
-  title: 'Software Company in Ranchi: Azure, AI and .NET Development',
-  description: 'Csharptek is a software development and IT company in Ranchi, Jharkhand. Microsoft Solutions Partner building AI, Azure, .NET, web and mobile software for clients in India, the US, UK and Middle East.',
+  title: 'Software Company in Ranchi: Azure, AI and .NET',
+  description: 'Csharptek is a software and IT company in Ranchi, Jharkhand. Microsoft Solutions Partner building AI, Azure, .NET, web and mobile software for clients worldwide.',
   path: '/software-company-ranchi'
 });
 

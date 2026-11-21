@@ -5,7 +5,7 @@ import LeadForm from '../../../components/LeadForm';
 import { createPageMetadata } from '../../../lib/seo';
 
 export const metadata = createPageMetadata({
-  title: 'Microsoft 365 and AI Security Checklist (40 Checks)',
+  title: 'Microsoft 365 and AI Security Checklist',
   description: 'A practical Microsoft 365 and AI security checklist: identity, devices, email, data, AI tools like ChatGPT, logging and backup. 40 checks any IT team can run.',
   path: '/resources/microsoft-365-ai-security-checklist'
 });

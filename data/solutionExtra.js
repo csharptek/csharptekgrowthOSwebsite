@@ -3,7 +3,7 @@ import { aiProtectionExtra } from './aiProtection';
 // SEO depth content per solution. sections render as card grids; checklist renders as a list panel.
 export const solutionExtra = {
   'ai-production-engineering': {
-    seoTitle: 'AI Agents and LLM Apps from Prototype to Production',
+    seoTitle: 'AI Agents and LLM Apps: Prototype to Production',
     seoDescription: 'Take AI agents, RAG systems and LLM apps from prototype to production on Azure: auth, tenancy, evaluation, cost control and observability, by Csharptek.',
     sections: [
       {
@@ -22,7 +22,7 @@ export const solutionExtra = {
       {
         eyebrow: 'RAG and LLM application engineering',
         title: 'RAG development services built for private data.',
-        link: ['/solutions/rag-development', 'See our RAG development services'],
+        link: ['/capabilities/ai-llm', 'See our AI and LLM engineering capability'],
         intro: 'Retrieval-augmented generation is the most common pattern we build. We design the full pipeline, not only the prompt: ingestion, chunking, embeddings, vector and keyword search, orchestration, citation and review. Azure OpenAI and Azure AI Search are typical components, and we work with other model providers when the requirement calls for it.',
         items: [
           ['Ingestion and indexing', 'Connect documents, databases and SaaS sources, keep the index current as content changes and preserve the access rules of the source system.'],
@@ -59,7 +59,7 @@ export const solutionExtra = {
     ]
   },
   'ai-product-engineering': {
-    seoTitle: 'Custom AI Software Development and AI Product Engineering',
+    seoTitle: 'Custom AI Software Development Services',
     seoDescription: 'Custom AI software development: AI applications, AI MVPs, assistants, document processing, RAG and agents on Azure OpenAI, built by a small senior team.',
     sections: [
       {
@@ -127,8 +127,8 @@ export const solutionExtra = {
     ]
   },
   'application-cloud-modernization': {
-    seoTitle: 'Azure App Development & .NET Modernization Services',
-    seoDescription: 'Azure application development and cloud modernization: new apps on App Service, Functions and AKS, .NET Framework upgrades, Azure SQL and CI/CD, delivered in low-risk stages.',
+    seoTitle: 'Azure App Development and .NET Modernization',
+    seoDescription: 'Azure app development and modernization: App Service, Functions, AKS, .NET Framework upgrades, Azure SQL and CI/CD, delivered in low-risk stages.',
     sections: [
       {
         eyebrow: 'Azure application development',
@@ -185,8 +185,8 @@ export const solutionExtra = {
     ]
   },
   'microsoft-marketplace-engineering': {
-    seoTitle: 'Azure Marketplace Integration and Transactable SaaS Offers',
-    seoDescription: 'Sell on the Microsoft cloud marketplace: listing setup, transactable SaaS offers and Azure Marketplace integration with fulfillment API v2, webhooks, metering and Entra ID.',
+    seoTitle: 'Azure Marketplace Integration and SaaS Offers',
+    seoDescription: 'Sell on Microsoft Marketplace: listing setup, transactable SaaS offers, fulfillment API v2, webhooks, metering and Entra ID integration.',
     sections: [
       {
         eyebrow: 'The publisher flow',
@@ -227,14 +227,14 @@ export const solutionExtra = {
 };
 
 solutionExtra['agency-development-partner'] = {
-  seoTitle: 'White Label Software Development Partner for Agencies',
+  seoTitle: 'White-Label Development Partner for Agencies',
   seoDescription: 'Csharptek is a white-label software development company for agencies: senior AI, web, mobile and Azure engineers, delivered under NDA behind your brand.',
   sections: [
     {
       eyebrow: 'How the partnership works',
       title: 'Your client, your brand, our engineering.',
       intro: 'We act as a white-label or subcontract development team. You own the client relationship and the commercial terms. We deliver the engineering to your standards and stay out of sight.',
-      link: ['/solutions/msp-white-label-partner', 'Run an MSP or Microsoft partner? See white-label Microsoft AI for MSPs'],
+      link: ['/solutions/microsoft-365-security', 'Run an MSP? We also white-label Microsoft 365 security and AI data protection'],
       items: [
         ['White-label delivery', 'We work under NDA, use your naming and communication channels, and never contact your client unless you ask us to.'],
         ['Subcontract projects', 'Hand us a defined project, such as an AI feature, a web or mobile build or an Azure migration, and we deliver it against an agreed scope.'],
@@ -308,7 +308,7 @@ solutionExtra['agency-development-partner'] = {
 };
 
 solutionExtra['ai-agent-development'] = {
-  seoTitle: 'AI Agent and Multi-Agent System Development for SaaS',
+  seoTitle: 'AI Agent and Multi-Agent Development for SaaS',
   seoDescription: 'Custom AI agent and multi-agent system development: agents embedded in your SaaS product, with tools, approvals, evaluation and monitoring on Azure OpenAI.',
   sections: [
     {
@@ -327,7 +327,7 @@ solutionExtra['ai-agent-development'] = {
       eyebrow: 'What makes an agent trustworthy',
       title: 'The engineering around the model.',
       intro: 'Agents fail in ways a chatbot does not: they act on wrong information, loop, or take actions nobody approved. These controls are part of every agent we build.',
-      link: ['/solutions/ai-agent-governance', 'Governing Copilot and agents across Microsoft 365? See AI agent governance'],
+      link: ['/solutions/ai-governance', 'Governing Copilot and agents across Microsoft 365? See AI governance'],
       items: [
         ['Bounded tools and permissions', 'The agent can only call the tools it needs, with the permissions of the user or role it acts for.'],
         ['Approval points', 'Costly or irreversible actions pause for a person to approve.'],
@@ -433,8 +433,8 @@ solutionExtra['rag-development'] = {
 };
 
 solutionExtra['microsoft-365-copilot-readiness'] = {
-  seoTitle: 'Microsoft 365 Copilot Readiness Assessment and Rollout',
-  seoDescription: 'Fixed-scope Microsoft 365 Copilot readiness assessment: Entra ID access, SharePoint and Teams oversharing, Purview labels, licensing and a rollout plan in two weeks.',
+  seoTitle: 'Microsoft 365 Copilot Readiness Assessment',
+  seoDescription: 'Two-week Microsoft 365 Copilot readiness assessment: Entra ID access, SharePoint and Teams oversharing, Purview labels, licensing and a rollout plan.',
   sections: [
     {
       eyebrow: 'What the assessment covers',
@@ -448,7 +448,7 @@ solutionExtra['microsoft-365-copilot-readiness'] = {
         ['Use cases', 'The top three use cases by department, with a simple way to measure time saved in the pilot.'],
         ['Rollout plan', 'A phased plan: fixes first, then pilot, then wider rollout and the first Copilot Studio agents.']
       ],
-      link: ['/solutions/ai-agent-governance', 'Next step: AI agent governance']
+      link: ['/solutions/ai-governance', 'Next step: AI governance']
     },
     {
       eyebrow: 'After the assessment',
