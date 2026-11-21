@@ -600,8 +600,8 @@ solutionExtra['msp-white-label-partner'] = {
 };
 
 solutionExtra['microsoft-365-security'] = {
-  seoTitle: 'Microsoft 365 Security Audit, Hardening and AI Control',
-  seoDescription: 'Microsoft 365 security audit and fixes: Conditional Access, Intune, Defender for Business, Purview DLP and control of ChatGPT and other AI tools on company devices.',
+  seoTitle: 'Microsoft 365 Security Audit and AI Control',
+  seoDescription: 'Microsoft 365 security audit and fixes: Conditional Access, Intune, Defender, Purview DLP and control of ChatGPT and other AI tools on company devices.',
   sections: [
     {
       eyebrow: 'The problem',
@@ -692,8 +692,8 @@ solutionExtra['microsoft-365-security'] = {
 };
 
 solutionExtra['private-ai-workspace'] = {
-  seoTitle: 'Private ChatGPT on Azure OpenAI for Your Company',
-  seoDescription: 'A private ChatGPT-style assistant on Azure OpenAI in your own tenant: Entra ID sign-in, search over company documents, public AI sites blocked, usage and cost monitoring.',
+  seoTitle: 'Private ChatGPT on Azure OpenAI for Companies',
+  seoDescription: 'A safe ChatGPT for staff on Azure OpenAI in your own tenant: Entra ID sign-in, company document search, public AI sites blocked, usage monitoring.',
   sections: [
     {
       eyebrow: 'Why private AI',

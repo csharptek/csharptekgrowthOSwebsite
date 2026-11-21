@@ -7,7 +7,7 @@ import { createPageMetadata } from '../lib/seo';
 
 export function industryAiMetadata(key) {
   const d = industryAiProtection[key];
-  return createPageMetadata({ title: d.seoTitle, description: d.seoDescription, path: d.path });
+  return createPageMetadata({ title: d.seoTitle, description: d.seoDescription, path: d.path, image: false });
 }
 
 export default function IndustryAiProtection({ industry }) {

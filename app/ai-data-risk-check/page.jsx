@@ -7,8 +7,9 @@ import { createPageMetadata } from '../../lib/seo';
 
 export const metadata = createPageMetadata({
   title: 'AI Data Risk Check for Microsoft 365',
-  description: 'Find out which AI tools your staff use, with which accounts, and what company data goes into them. Read-only Microsoft 365 and AI usage check with a prioritised report in 1–2 weeks.',
-  path: '/ai-data-risk-check'
+  description: 'See which AI tools staff use, with which accounts, and what company data goes into them. Read-only Microsoft 365 and AI check, report in 1–2 weeks.',
+  path: '/ai-data-risk-check',
+  image: false
 });
 
 const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL || 'https://outlook.office.com/book/BookMeetingwithBhanuGupta@csharptek.com';

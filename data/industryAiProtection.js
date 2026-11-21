@@ -4,8 +4,8 @@ export const industryAiProtection = {
   'financial-services': {
     path: '/industries/financial-services',
     name: 'Financial services',
-    seoTitle: 'AI Data Protection for Financial Services Firms',
-    seoDescription: 'Stop customer and financial data leaking into ChatGPT and other AI tools. AI data protection and governance for lenders, brokers, wealth managers, insurers and fintechs on Microsoft 365.',
+    seoTitle: 'AI Data Protection for Financial Services',
+    seoDescription: 'Keep customer and financial data out of ChatGPT and other AI tools. AI data protection and governance for lenders, brokers, wealth managers and fintechs.',
     eyebrow: 'Financial services',
     h1: 'Keep customer and financial data out of public AI tools, without banning AI at your firm.',
     supporting: 'Lenders, brokers, wealth and asset managers, insurance intermediaries and fintechs handle exactly the data that should never reach a public chatbot. We find where AI is used and put controls in place with Microsoft 365.',
@@ -35,8 +35,8 @@ export const industryAiProtection = {
   'software-companies': {
     path: '/industries/software-companies',
     name: 'Software & IT services',
-    seoTitle: 'AI Data Protection for Software and IT Services Companies',
-    seoDescription: 'Stop source code, client data and NDA material leaking into AI tools. AI data protection and governance for software, SaaS and IT services companies, with evidence for SOC 2 and ISO 27001.',
+    seoTitle: 'AI Data Protection for Software and IT Companies',
+    seoDescription: 'Keep client code, secrets and NDA data out of AI tools, with evidence for SOC 2, ISO 27001 and client questionnaires. For software and IT services firms.',
     eyebrow: 'Software & IT services',
     h1: 'Keep client code and NDA data out of public AI tools, and show your clients you control AI.',
     supporting: 'Software, SaaS and IT services teams use AI more than almost anyone. Your clients know it, and their security questionnaires now ask how AI is controlled. We put real controls and evidence in place with Microsoft 365.',
@@ -66,8 +66,8 @@ export const industryAiProtection = {
   manufacturing: {
     path: '/industries/manufacturing',
     name: 'Manufacturing',
-    seoTitle: 'AI Data Protection for Manufacturing and Pharma Companies',
-    seoDescription: 'Stop designs, formulas, pricing and supplier data leaking into ChatGPT and other AI tools. AI data protection and governance for manufacturers, pharma and exporters on Microsoft 365.',
+    seoTitle: 'AI Data Protection for Manufacturing and Pharma',
+    seoDescription: 'Keep designs, formulas, pricing and supplier data out of ChatGPT and other AI tools. AI data protection for manufacturers, pharma and exporters.',
     eyebrow: 'Manufacturing & pharma',
     h1: 'Keep designs, formulas and pricing out of public AI tools.',
     supporting: 'Manufacturers, pharma companies and exporters run on information competitors would pay for. As engineering, sales and office teams adopt AI, we make sure that information does not leave with it.',

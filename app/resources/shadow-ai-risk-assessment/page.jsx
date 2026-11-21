@@ -6,7 +6,8 @@ import { createPageMetadata } from '../../../lib/seo';
 export const metadata = createPageMetadata({
   title: 'Shadow AI Risk Assessment (10 Questions, Free)',
   description: 'Answer 10 quick questions to score your company’s shadow AI and AI data leak risk. Get an instant result and practical next steps for Microsoft 365 companies.',
-  path: '/resources/shadow-ai-risk-assessment'
+  path: '/resources/shadow-ai-risk-assessment',
+  image: false
 });
 
 const faqs = [

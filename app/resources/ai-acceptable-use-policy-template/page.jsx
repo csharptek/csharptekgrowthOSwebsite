@@ -5,9 +5,10 @@ import LeadForm from '../../../components/LeadForm';
 import { createPageMetadata } from '../../../lib/seo';
 
 export const metadata = createPageMetadata({
-  title: 'AI Acceptable Use Policy Template (Free, Editable)',
-  description: 'A free AI acceptable use policy template for companies: approved AI tools, data that must never go into AI, personal accounts, approvals, human review and AI agents. Copy it or request the editable version.',
-  path: '/resources/ai-acceptable-use-policy-template'
+  title: 'AI Acceptable Use Policy Template (Free)',
+  description: 'Free AI acceptable use policy template: approved AI tools, data never to put into AI, personal accounts, approvals and AI agents. Copy it or get the Word file.',
+  path: '/resources/ai-acceptable-use-policy-template',
+  image: false
 });
 
 const sections = [

@@ -4,7 +4,7 @@ import RelatedStories from '../../components/RelatedStories';
 import BrandArtwork from '../../components/BrandArtwork';
 import { createPageMetadata } from '../../lib/seo';
 
-export const metadata = createPageMetadata({ title: 'Industries: AI Data Protection, SaaS and Healthcare Engineering', description: 'AI data protection for financial services, software and manufacturing companies, plus AI product engineering for SaaS and healthcare workflow automation.', path: '/industries' });
+export const metadata = createPageMetadata({ title: 'AI Data Protection and Engineering by Industry', description: 'AI data protection for financial services, software and manufacturing companies, and AI product engineering for SaaS teams on Microsoft and Azure.', path: '/industries' });
 
 export default function IndustriesPage() {
   return <>

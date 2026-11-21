@@ -87,8 +87,8 @@ export const aiProtectionContent = {
 
 export const aiProtectionExtra = {
   'ai-data-loss-prevention': {
-    seoTitle: 'AI Data Loss Prevention: Stop Employees Pasting Data into ChatGPT',
-    seoDescription: 'Stop employees pasting sensitive data into ChatGPT and other AI tools. AI DLP with Microsoft Purview, Defender and Intune: detect, warn or block, and give staff a safe AI.',
+    seoTitle: 'AI Data Loss Prevention for ChatGPT and AI Tools',
+    seoDescription: 'Stop employees pasting sensitive data into ChatGPT and other AI tools. AI DLP with Microsoft Purview, Defender and Intune: detect, warn or block.',
     sections: [
       {
         eyebrow: 'The problem',
@@ -167,8 +167,8 @@ export const aiProtectionExtra = {
   },
 
   'shadow-ai-discovery': {
-    seoTitle: 'Shadow AI Detection: Find and Monitor AI Tools Employees Use',
-    seoDescription: 'Shadow AI detection with Microsoft Defender for Cloud Apps and Purview: discover AI tools employees use, personal accounts and sensitive data shared, then allow, monitor or block.',
+    seoTitle: 'Shadow AI Detection and AI Usage Monitoring',
+    seoDescription: 'Find the AI tools employees use, personal vs work accounts and sensitive data shared, with Microsoft Defender for Cloud Apps and Purview.',
     sections: [
       {
         eyebrow: 'What shadow AI looks like',
@@ -230,8 +230,8 @@ export const aiProtectionExtra = {
   },
 
   'ai-governance': {
-    seoTitle: 'AI Governance Program: AI Policy, AI Register and Agent Governance',
-    seoDescription: 'Practical AI governance for growing companies: AI acceptable-use policy, AI tool and agent register, approval flow, Copilot and AI agent governance, enforced with Microsoft 365 controls.',
+    seoTitle: 'AI Governance Program: Policy, Register, Agents',
+    seoDescription: 'Practical AI governance: AI acceptable use policy, AI tool and agent register, approval flow, and Microsoft 365 controls that enforce them.',
     sections: [
       {
         eyebrow: 'Why now',

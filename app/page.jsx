@@ -5,7 +5,7 @@ import { caseStudies, solutions, trustItems, solutionHref } from '../data/site';
 import { products } from '../data/products';
 import { createPageMetadata } from '../lib/seo';
 
-export const metadata = createPageMetadata({ title: 'Csharptek | Azure AI and .NET Engineering Partner', description: 'Csharptek is a Microsoft Solutions Partner for AI data protection and governance on Microsoft 365, production AI and AI agents, and .NET modernization on Azure.', path: '/' });
+export const metadata = createPageMetadata({ title: 'Csharptek | AI Data Protection, Azure AI & .NET Engineering', description: 'Stop company data leaking into ChatGPT and other AI tools with Microsoft 365 security and governance. Production AI, AI agents and .NET modernization on Azure.', path: '/', image: false });
 
 const intents = [
   { title: 'Stop data leaking into AI tools', text: 'Find the AI tools staff use and keep customer, financial and source-code data out of them.', slug: 'ai-data-loss-prevention', icon: 'grid' },
