@@ -26,7 +26,7 @@ const HOME_SOLUTIONS = ['ai-data-loss-prevention', 'ai-governance', 'microsoft-3
 const proof = [
   ['AI', 'Multi-agent revenue platform', 'A coordinated agent system connected to CRM, revenue workflows and SaaS commerce.'],
   ['UX', 'AI marketing product', 'An AI-enabled product with human approvals, integrations and publishing workflows.'],
-  ['API', 'Marketplace SaaS commerce', 'Fulfillment, metering and subscription lifecycle engineering for a SaaS offer.'],
+  ['DLP', 'AI data controls', 'Purview DLP, Defender for Cloud Apps and Intune policies that keep sensitive data out of public AI tools.'],
   ['RAG', 'Knowledge systems', 'Retrieval, vector search and agent workflows for private knowledge.']
 ];
 
@@ -37,7 +37,7 @@ export default function HomePage() {
       <div className="hero-inner wrap">
         <div className="hero-copy">
           <div className="hero-eyebrow">AI Data Protection · AI Engineering · Modernization</div>
-          <h1>Azure AI and .NET engineering for <em>production-ready</em> systems.</h1>
+          <h1>Use AI <em>without leaking data.</em> Azure AI and .NET engineering for production-ready systems.</h1>
           <p>Csharptek is an Azure AI and .NET engineering partner. We keep company data out of public AI tools with Microsoft 365 security and governance, build production AI and agents, and modernize .NET applications on Azure.</p>
           <div className="hero-actions"><Link className="button" data-track="cta" href="/contact">Discuss Your Initiative</Link><Link className="button button-outline" data-track="cta" href="/case-studies">Explore Our Work</Link></div>
         </div>
@@ -45,6 +45,8 @@ export default function HomePage() {
     </section>
 
     <div className="trust-row"><div className="trust-inner wrap"><span className="trust-label">Built across a connected stack</span><div className="trust-items">{trustItems.map((item) => <span key={item}>{item}</span>)}</div></div></div>
+
+    <section className="section-tight"><div className="wrap"><div className="feature-band"><div className="feature-copy"><span className="eyebrow">AI data protection</span><h2>Is your company data leaking into AI tools?</h2><p>Staff paste customer records, contracts and code into ChatGPT and other AI tools every day, often on personal accounts. Find out what is happening in your company in two minutes, or measure it properly with a read-only check.</p><div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 20 }}><Link className="button button-dark" data-track="cta" href="/ai-data-risk-check">AI Data Risk Check <Icon name="arrow" size={16}/></Link><Link className="button button-outline" data-track="cta" href="/resources/shadow-ai-risk-assessment">Take the 2-minute quiz</Link></div></div><div className="feature-visual" aria-hidden="true"><div className="platform-card"><div className="platform-head"><span>AI usage this month</span><span className="status-pill">Example</span></div><div className="platform-row"><b>AI apps in use</b><span className="platform-bar"><i style={{width:'72%'}}/></span></div><div className="platform-row"><b>Personal accounts</b><span className="platform-bar"><i style={{width:'48%'}}/></span></div><div className="platform-row"><b>Sensitive data shared</b><span className="platform-bar"><i style={{width:'31%'}}/></span></div><div className="platform-row"><b>Blocked by policy</b><span className="platform-bar"><i style={{width:'86%'}}/></span></div></div></div></div></div></section>
 
     <section className="section section-tint"><div className="wrap">
       <div className="section-heading"><span className="eyebrow">Who we work with</span><h2>Engineering partner for four kinds of teams.</h2><p>Pick the description that fits you. Each path has its own way of working.</p></div>
